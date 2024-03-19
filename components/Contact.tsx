@@ -3,13 +3,13 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-
-import { sendEmail } from "@/actions/sendEmail";
-import { useSectionInView } from "@/lib/hooks";
+import toast from "react-hot-toast";
 
 import SectionHeading from "./SectionHeading";
 import SubmitButton from "./SubmitButton";
-import toast from "react-hot-toast";
+
+import { sendEmail } from "@/actions/sendEmail";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.85);

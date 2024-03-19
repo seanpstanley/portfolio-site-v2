@@ -10,9 +10,9 @@ import {
 import SectionHeading from "@/components/SectionHeading";
 import "react-vertical-timeline-component/style.min.css";
 import TechTags from "@/components/TechTags";
+import { useTheme } from "@/context/ThemeContextProvider";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/ThemeContextProvider";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.35);

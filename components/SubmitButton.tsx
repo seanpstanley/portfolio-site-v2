@@ -1,6 +1,7 @@
 import React from "react";
-import { BiMailSend } from "react-icons/bi";
+
 import { useFormStatus } from "react-dom";
+import { BiMailSend } from "react-icons/bi";
 
 export default function SubmitButton() {
   const { pending } = useFormStatus();

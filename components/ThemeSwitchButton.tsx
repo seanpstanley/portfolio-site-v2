@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import { useTheme } from "@/context/ThemeContextProvider";
+
 import { PiSun, PiMoon } from "react-icons/pi";
+
+import { useTheme } from "@/context/ThemeContextProvider";
 
 export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
