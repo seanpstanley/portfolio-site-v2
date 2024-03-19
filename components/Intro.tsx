@@ -11,11 +11,10 @@ import { HiDownload } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
 
 // import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+import LinkIconButton from "@/components/LinkIconButton";
 import { useSectionInView } from "@/lib/hooks";
 import alienDance from "@/public/alien-dance-transparent.gif";
 import seanPortrait from "@/public/logos/sean-pixelated-512.png";
-
-import LinkIconButton from "./LinkIconButton";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home");
