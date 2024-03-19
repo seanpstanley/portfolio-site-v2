@@ -56,28 +56,29 @@ export default function Contact() {
       >
         <label className="text-lg">Name</label>
         <input
-          className="h-14 px-4 mt-1 mb-4 lowercase rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
           name="senderName"
-          placeholder="What's your name?"
+          placeholder="what's your name?"
           required
-          // add a type here
+          type="text"
+          autoComplete="name"
           // look into aria labels// making site accessible
           maxLength={500}
         />
         <label className="text-lg">Email Address</label>
         <input
-          className="h-14 px-4 mt-1 mb-4 lowercase rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
           name="senderEmail"
           type="email"
-          placeholder="Where can I reach you?"
+          placeholder="where can I reach you?"
           required
           maxLength={500}
         />
         <label className="text-lg">Message</label>
         <textarea
-          className="h-60 mt-1 mb-4 min-h-14	lowercase rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-60 mt-1 mb-4 min-h-14 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
           name="message"
-          placeholder="What would you like to say?"
+          placeholder="what would you like to say?"
           required
           // chqange outline color
           maxLength={5000}
