@@ -26,7 +26,7 @@ export default function Experience() {
       className="scroll-mt-28 mb-20 sm:mb-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.175 }}
     >
       <SectionHeading>experience</SectionHeading>
       <VerticalTimeline lineColor="">

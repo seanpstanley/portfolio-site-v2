@@ -24,7 +24,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-44 scroll-mt-[5rem] sm:scroll-mt-[100rem]"
+      className="mb-28 max-w-[50rem] text-center sm:mb-28 scroll-mt-[5rem] sm:scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center mb-3 sm:mb-8 flex-col sm:flex-row">
         <motion.div
@@ -68,6 +68,9 @@ export default function Intro() {
         className="mb-10 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.125,
+        }}
       >
         I'm a <span className="font-bold">frontend developer</span> who likes
         stuff that looks good. currently doing{" "}
@@ -116,7 +119,6 @@ export default function Intro() {
           />
         </div>
       </motion.div>
-      {/* <div className="bg-gray-200 my-28 h-28 w-1 rounded-full hidden sm:block"></div> */}
     </section>
   );
 }
