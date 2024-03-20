@@ -7,9 +7,8 @@ import { LuGraduationCap } from "react-icons/lu";
 import rollForInitLogo from "@/public/logos/roll-for-init-logo.png";
 import seanPixelPortrait from "@/public/logos/sean-pixelated-512.png";
 import ufSeal from "@/public/logos/uf-seal.png";
+import ufVergLogo from "@/public/logos/uf-verg-logo.jpeg";
 import xdgLogo from "@/public/logos/xdg-logo.png";
-
-import ufVergLogo from "@/public/uf-verg-logo.jpeg";
 
 export const links = [
   {
@@ -61,7 +60,7 @@ export const experiencesData = [
     title: "Undergraduate Researcher",
     location: "University of Florida",
     description:
-      "Working in UF's Human-Centered Computing Lab on PPCards, a card-based augmented reality learning platform for prototyping electronic circuits using OpenCV's deep learning libraries with Python. Incorporates real-time feedback on mistakes made by users. Co-authoring a soon-to-be published research paper on the project.",
+      "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality (AR) interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
     icon: React.createElement(CgWorkAlt),
     date: "December 2020 – October 2021",
     tags: [
@@ -100,7 +99,7 @@ export const projectsData = [
     title: "XDG Technologies Website",
     description:
       "Worked with XDG to replace their outdated Wordpress site with a responsive React web app. Used Figma to mock up high-fidelity prototypes of modular components. Included order and payment processing functionality via Stripe.",
-    tags: ["React.js", "React-Router", "Bootstrap", "Heroku", "MongoDB"],
+    tags: ["React.js", "React-Router", "Basic-Auth", "Heroku", "MongoDB"],
     image: xdgLogo,
     links: {
       deployment: null,
@@ -110,8 +109,15 @@ export const projectsData = [
   {
     title: "Gator Trader, University of Florida",
     description:
-      "Worked on a team with UF faculty to develop a responsive React replacement for UF's Textbook Exchange web service with goals of modernizing the site's look and reducing load times by at least 50%.",
-    tags: ["React.js", "React-Router", "Bootstrap", "Express"],
+      "Worked with UF faculty to develop a responsive React replacement for UF's Textbook Exchange web service with goals of modernizing the site's look and reducing load times by at least 50%.",
+    tags: [
+      "React.js",
+      "React-Router",
+      "Bootstrap",
+      "Material UI",
+      "Basic-Auth",
+      "Express",
+    ],
     image: ufSeal,
     links: {
       deployment: null,
@@ -129,6 +135,7 @@ export const projectsData = [
       "Bootstrap",
       "Sass",
       "Express",
+      "OAuth",
       "Heroku",
       "Webpack",
     ],
@@ -141,41 +148,37 @@ export const projectsData = [
   {
     title: "PPCards",
     description:
-      "Created an Open Gaming License-compliant alternative to sites like <span className='italic'>D&D Beyond</span>. Used React with Redux to manage the state of each player's character. Included multiplayer party functionality.",
+      "Designed and built prototypes of PPCards, a card-based augmented reality learning platform for prototyping electronic circuits. Presented a prototype at the ACM TEI2021 conference in February 2021.",
     tags: [
-      "React.js",
-      "Redux",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
+      "Unity",
+      "Python",
+      "OpenCV",
+      "Open Sound Control",
+      "3D Design/Printing",
+      "Augmented Reality",
     ],
-    image: rollForInitLogo,
+    image: ufVergLogo,
     links: {
-      deployment: "https://rollforinit.herokuapp.com/",
-      github: "https://github.com/Roll-For-Init",
+      deployment: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+      github: null,
     },
   },
   {
-    title: "BlockXr",
+    title: "BlockXR",
     description:
-      "Created an Open Gaming License-compliant alternative to sites like <span className='italic'>D&D Beyond</span>. Used React with Redux to manage the state of each player's character. Included multiplayer party functionality.",
+      "Used technology and lessons learned while working on the previous project, PPCards, to create blockXR, a tangible version of Google’s Blockly. Conducted user studies on campus, and presented a showpiece at VL/HCC in October 2021.",
     tags: [
-      "React.js",
-      "Redux",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
+      "Unity",
+      "Python",
+      "OpenCV",
+      "Open Sound Control",
+      "3D Design/Printing",
+      "Augmented Reality",
     ],
-    image: rollForInitLogo,
+    image: ufVergLogo,
     links: {
-      deployment: "https://rollforinit.herokuapp.com/",
-      github: "https://github.com/Roll-For-Init",
+      deployment: "https://ieeexplore.ieee.org/document/9576344",
+      github: null,
     },
   },
   {

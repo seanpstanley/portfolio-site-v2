@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 // import Link from "next/link";
 // import { BsArrowRight } from "react-icons/bs";
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
+import { LiaLinkedin } from "react-icons/lia";
 import { TypeAnimation } from "react-type-animation";
 
 // import { useActiveSectionContext } from "@/context/ActiveSectionContext";
@@ -111,11 +112,12 @@ export default function Intro() {
         <div className="flex gap-2">
           <LinkIconButton
             link="https://www.linkedin.com/in/seanpstanley/"
-            icon={<FaLinkedin />}
+            icon={<LiaLinkedin />}
+            size="32"
           />
           <LinkIconButton
             link="https://github.com/seanpstanley"
-            icon={<FaGithubSquare />}
+            icon={<FaGithub />}
           />
         </div>
       </motion.div>

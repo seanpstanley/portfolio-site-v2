@@ -4,7 +4,8 @@ import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { FaGithubSquare, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { LuExternalLink } from "react-icons/lu";
 
 import LinkIconButton from "@/components/LinkIconButton";
 import TechTags from "@/components/TechTags";
@@ -17,7 +18,7 @@ interface ProjectProps {
   image: StaticImageData;
   links: {
     deployment?: string | null;
-    github: string;
+    github?: string | null;
   };
 }
 
@@ -60,12 +61,9 @@ export default function Project({
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (
-                  <LinkIconButton
-                    link={deployment}
-                    icon={<FaExternalLinkSquareAlt />}
-                  />
+                  <LinkIconButton link={deployment} icon={<LuExternalLink />} />
                 )}
-                <LinkIconButton link={github} icon={<FaGithubSquare />} />
+                {github && <LinkIconButton link={github} icon={<FaGithub />} />}
               </div>
             </div>
           </div>
@@ -73,12 +71,9 @@ export default function Project({
             <TechTags tags={tags} />
             <div className="sm:hidden items-end	flex flex-col gap-2">
               {deployment && (
-                <LinkIconButton
-                  link={deployment}
-                  icon={<FaExternalLinkSquareAlt />}
-                />
+                <LinkIconButton link={deployment} icon={<LuExternalLink />} />
               )}
-              <LinkIconButton link={github} icon={<FaGithubSquare />} />
+              {github && <LinkIconButton link={github} icon={<FaGithub />} />}
             </div>
           </div>
         </div>
