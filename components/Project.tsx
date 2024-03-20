@@ -56,7 +56,7 @@ export default function Project({
                 src={image}
                 alt="Project I worked on"
                 quality={95}
-                className="h-36 w-36 rounded-full hidden sm:block mb-3 object-cover borderBlack "
+                className="h-36 w-36 rounded-full hidden sm:block mb-3 object-cover border-2 border-black/10 dark:border-white dark:border-opacity-40"
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (

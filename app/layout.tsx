@@ -12,7 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Sean | Project Portfolio",
-  description: "",
+  description:
+    "A responsive portfolio website showcasing my experience and a few of my personal projects",
 };
 
 export default function RootLayout({
@@ -33,7 +34,6 @@ export default function RootLayout({
             <Navbar />
             {children}
             {/* <Footer /> */}
-
             <Toaster position="top-right" />
             <ThemeSwitchButton />
           </ActiveSectionContextProvider>

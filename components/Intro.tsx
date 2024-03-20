@@ -5,7 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 // import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+// import { BsArrowRight } from "react-icons/bs";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
@@ -24,7 +24,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[5rem] sm:scroll-mt-[100rem]"
+      className="mb-28 max-w-[50rem] text-center sm:mb-44 scroll-mt-[5rem] sm:scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center mb-3 sm:mb-8 flex-col sm:flex-row">
         <motion.div
@@ -79,7 +79,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.125,
+          delay: 0.15,
         }}
       >
         {/* <Link
@@ -98,12 +98,12 @@ export default function Intro() {
           <HiDownload className="opacity-60 group-hover:animate-bounce transition" />
         </a> */}
         <a
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition "
-          href="/CV.pdf"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
+          href="/Sean-Stanley-Resume.pdf"
           download
         >
           Download Resume
-          <HiDownload className="opacity-60 text-xl group-hover:animate-bounce transition " />
+          <HiDownload className="opacity-60 text-xl group-hover:animate-bounce transition" />
         </a>
         <div className="flex gap-2">
           <LinkIconButton
@@ -111,12 +111,12 @@ export default function Intro() {
             icon={<FaLinkedin />}
           />
           <LinkIconButton
-            link="https://www.linkedin.com/in/seanpstanley/"
+            link="https://github.com/seanpstanley"
             icon={<FaGithubSquare />}
           />
         </div>
       </motion.div>
-      <div className="bg-gray-200 my-28 h-28 w-1 rounded-full hidden sm:block"></div>
+      {/* <div className="bg-gray-200 my-28 h-28 w-1 rounded-full hidden sm:block"></div> */}
     </section>
   );
 }

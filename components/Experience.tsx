@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { motion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -19,7 +20,14 @@ export default function Experience() {
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-20 sm:mb-28">
+    <motion.section
+      id="experience"
+      ref={ref}
+      className="scroll-mt-28 mb-20 sm:mb-28"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+    >
       <SectionHeading>experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((experience, index) => (
@@ -32,7 +40,7 @@ export default function Experience() {
                 boxShadow: "none",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
                 textAlign: "left",
-                padding: "1.3rem 2rem",
+                padding: "1.5rem 1.5rem 1.25rem 1.5rem",
               }}
               contentArrowStyle={{
                 borderRight:
@@ -60,6 +68,6 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </VerticalTimeline>
-    </section>
+    </motion.section>
   );
 }
