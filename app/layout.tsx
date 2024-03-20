@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 // import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import DesktopNavbar from "@/components/DesktopNavbar";
+import Header from "@/components/Header";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
 import ThemeContextProvider from "@/context/ThemeContextProvider";
@@ -31,7 +32,7 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Navbar />
+            <Header />
             {children}
             {/* <Footer /> */}
             <Toaster position="top-right" />
