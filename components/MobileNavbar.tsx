@@ -25,7 +25,7 @@ export default function MobileNavbar() {
           {isOpen && (
             <motion.ul
               layout
-              className="fixed flex flex-col gap-4 rounded-3xl mb-0 left-5 top-5 right-5 p-3 pr-20 border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none"
+              className="fixed flex flex-col gap-4 rounded-3xl mb-0 left-5 top-5 right-24 p-2.5 border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none"
               exit={{ opacity: 0 }}
             >
               {links.map((link, index) => (
@@ -83,11 +83,7 @@ export default function MobileNavbar() {
             // animate={{ y: 0, opacity: 1 }}
             animate={isOpen ? "open" : "closed"}
             onClick={() => setIsOpen((prev) => !prev)}
-            className={`group relative h-16 w-16 rounded-full shadow-lg ${
-              isOpen
-                ? "bg-none border-none shadow-none backdrop-blur-none"
-                : "border border-white border-opacity-40 bg-white bg-opacity-80 dark:bg-gray-950 dark:border-none dark:bg-opacity-75 shadow-black/[0.05] backdrop-blur"
-            }`}
+            className="group relative h-16 w-16 rounded-full shadow-lg border border-white border-opacity-40 bg-white bg-opacity-80 dark:bg-gray-950 dark:border-none dark:bg-opacity-75 shadow-black/[0.05] backdrop-blur"
           >
             <motion.span
               variants={hamburgerAnimationVariants.top}
