@@ -13,17 +13,17 @@ export default function ScrollIndicator() {
     <div ref={ref} className="flex flex-col gap-4 items-center sm:mb-28 mb-20">
       <motion.p
         className="text-xl font-light tracking-widest"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.45 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 1 }}
       >
         SCROLL
       </motion.p>
       <motion.div
-        className="bg-gray-300 sm:h-72 h-60 w-1 rounded-full dark:bg-opacity-20"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5 }}
+        className="bg-gray-300 h-72 w-1 rounded-full dark:bg-opacity-20"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 3 }}
       ></motion.div>
     </div>
   );
