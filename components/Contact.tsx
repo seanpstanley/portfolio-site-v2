@@ -17,7 +17,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="scroll-mt-20 mb-20 px-2 sm:px-0 w-[min(100%,38rem)] text-center"
+      className="scroll-mt-10 sm:scroll-mt-28 mb-20 px-2 sm:px-0 w-[min(100%,38rem)] text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -75,7 +75,7 @@ export default function Contact() {
           className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
           name="senderEmail"
           type="email"
-          placeholder="where can I reach you?"
+          placeholder="where can i reach you?"
           required
           maxLength={500}
           id="senderEmail"
