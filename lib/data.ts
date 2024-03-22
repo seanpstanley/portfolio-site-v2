@@ -4,6 +4,8 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
+import { FooterQuotesInterface } from "./types";
+
 import rollForInitLogo from "@/public/logos/roll-for-init-logo.png";
 import seanPixelPortrait from "@/public/logos/sean-pixelated-512.png";
 import ufSeal from "@/public/logos/uf-seal.png";
@@ -244,3 +246,98 @@ export const skillsData = [
   "Blender",
   "Figma",
 ];
+
+// export const footerQuotes = {
+//   1: "magoo",
+//   2: "moooooo",
+//   3: "moooooo",
+//   4: "moooooo",
+//   5: "moooooo",
+//   7: '"It\'s my fear that brought me this far."',
+//   8: '"To live is to be known and remembered by others."',
+//   9: '"Every moment hesitated is a moment gone from life."',
+//   10: "Never knows best.",
+//   11: "Nothing can happen until you swing the bat.",
+//   12: '"See you space cowboy..."',
+//   13: '"It was a little corny, but you\'re a violin maker, not a writer."',
+//   14: '"Do you not know that in the service, one must always choose the lesser of two weevils?"',
+//   15: '"Sometimes, to do what\'s right, we have to be steady and give up the thing we want the most, even our dreams."',
+//   17: '"You are without a doubt the worst pirate I’ve ever heard of."',
+//   19: "\"Guess why I smile a lot. Uh, 'cause it's worth it.\"",
+//   24: '"All those moments will be lost in time, like tears in rain..."',
+//   25: '"I\'m the protagonist of my own life."',
+//   26: "\"It's not about winning or losing! It's about me taking you on right here, right now!\"",
+// } as FooterQuotesInterface;
+
+export const footerQuotes = {
+  1: { quote: "poop", source: "poopy", year: 1 },
+  15: {
+    quote:
+      '"Sometimes, to do what\'s right, we have to be steady and give up the thing we want the most, even our dreams."',
+    source: "Spider-Man 2",
+    year: 2004,
+  },
+  19: {
+    quote: '"How can you not be romantic about baseball?"',
+    source: "Moneyball",
+    year: 2011,
+  },
+  20: {
+    quote: '"Congratulations!"',
+    source: "Neon Genesis Evangelion",
+    year: 1995,
+  },
+  21: {
+    quote:
+      '"Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy."',
+    source: "The End of Evangelion",
+    year: 1997,
+  },
+  22: {
+    quote:
+      '"As long as the Sun, the Moon, and the Earth exist, everything will be all right."',
+    source: "The End of Evangelion",
+    year: 1997,
+  },
+  23: {
+    quote: '"Talk to me, Goose."',
+    source: "Top Gun",
+    year: 1986,
+  },
+  24: {
+    quote: '"It’s Not The Plane, It’s The Pilot."',
+    source: "Top Gun: Maverick",
+    year: 2022,
+  },
+  26: {
+    quote:
+      "\"When it comes to the safety of these people, there's me and then there's God, understand?\"",
+    source: "The Abyss",
+    year: 1989,
+  },
+  27: {
+    quote: '"A woman’s heart is a deep ocean of secrets."',
+    source: "Titanic",
+    year: 1997,
+  },
+  28: {
+    quote: '"More like a NON-ja. Terrible what passes for a ninja these days."',
+    source: "Speed Racer",
+    year: 2008,
+  },
+  29: {
+    quote: '"Hey man, you got somethin\' to eat up in there? We hongry."',
+    source: "2 Fast 2 Furious",
+    year: 2003,
+  },
+  30: {
+    quote: '"Some guys, they just hate for no reason, capisce?"',
+    source: "Rocky",
+    year: 1976,
+  },
+  31: {
+    quote: "\"Oh, he's a little guy, kind of funny-lookin'.\"",
+    source: "Fargo",
+    year: 1996,
+  },
+} as FooterQuotesInterface;

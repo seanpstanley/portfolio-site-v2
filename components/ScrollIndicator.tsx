@@ -15,7 +15,7 @@ export default function ScrollIndicator() {
         className="text-xl font-light tracking-widest"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
+        transition={{ delay: 2.5, duration: 1.25 }}
       >
         SCROLL
       </motion.p>
@@ -23,7 +23,12 @@ export default function ScrollIndicator() {
         className="bg-gray-300 h-72 w-1 rounded-full dark:bg-opacity-20"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 3 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+          delay: 3,
+        }}
       ></motion.div>
     </div>
   );

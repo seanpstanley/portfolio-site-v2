@@ -24,13 +24,14 @@ export default function MobileNavbar() {
         <AnimatePresence>
           {isOpen && (
             <motion.ul
-              layout
-              className="fixed flex flex-col gap-4 rounded-3xl mb-0 left-5 top-5 right-24 p-2.5 border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none"
+              layout="size"
+              className={`${
+                isOpen ? "" : "w-0 h-0"
+              }flex flex-col gap-4 rounded-3xl mb-0 left-5 top-5 right-24 p-2.5 nav`}
               exit={{ opacity: 0 }}
             >
               {links.map((link, index) => (
                 <motion.li
-                  //first:mr-10
                   className="flex items-center justify-center relative"
                   key={link.hash}
                   variants={fadeUpAnimationVariants}

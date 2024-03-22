@@ -36,11 +36,14 @@ export default function Experience() {
               visible={true}
               contentStyle={{
                 background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.05)",
+                  theme === "light"
+                    ? "rgba(255, 255, 255, 0.9)"
+                    : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                border: "1px solid rgba(0, 0, 0, 0.1)",
+                borderRadius: "0.5rem",
                 textAlign: "left",
-                padding: "1.5rem 1.5rem 1.25rem 1.5rem",
+                padding: "1.25rem 1.25rem 1rem 1.25rem",
               }}
               contentArrowStyle={{
                 borderRight:
