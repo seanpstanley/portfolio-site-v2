@@ -4,8 +4,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
-import { FooterQuotesInterface } from "./types";
-
+import { FooterQuotesInterface } from "@/lib/types";
 import rollForInitLogo from "@/public/logos/roll-for-init-logo.png";
 import seanPixelPortrait from "@/public/logos/sean-pixelated-512.png";
 import ufSeal from "@/public/logos/uf-seal.png";
