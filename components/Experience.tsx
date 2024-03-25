@@ -43,7 +43,7 @@ export default function Experience() {
                 border: "1px solid rgba(0, 0, 0, 0.1)",
                 borderRadius: "0.5rem",
                 textAlign: "left",
-                padding: "1.25rem 1.25rem 1rem 1.25rem",
+                padding: "1.25rem 1.25rem 0.75rem 1.25rem",
               }}
               contentArrowStyle={{
                 borderRight:
@@ -64,7 +64,7 @@ export default function Experience() {
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
-              <div className="flex gap-2 mt-4 justify-between items-end">
+              <div className="flex gap-2 mt-3 mb:1 sm:mt-4 sm:mb-0 justify-between items-end">
                 <TechTags tags={experience.tags} />
               </div>
             </VerticalTimelineElement>

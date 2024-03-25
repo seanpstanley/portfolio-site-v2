@@ -1,7 +1,6 @@
 import React from "react";
 
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 import { FooterQuotesInterface } from "@/lib/types";
@@ -44,7 +43,7 @@ export const experiencesData = [
     location: "Burnley Consulting",
     description:
       "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "May 2018 - August 2018",
     tags: [
       "Redux",
@@ -62,7 +61,7 @@ export const experiencesData = [
     location: "University of Florida",
     description:
       "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality (AR) interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(LuGraduationCap),
     date: "December 2020 – October 2021",
     tags: [
       "Redux",
@@ -79,18 +78,15 @@ export const experiencesData = [
     title: "Software Engineer I",
     location: "CAE USA",
     description:
-      "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
-    icon: React.createElement(FaReact),
+      "Worked on bleeding-edge products for use on classified network environments. Wore multiple hats as a Developer, Tester, and Product Owner while holding Top Secret security clearance.",
+    icon: React.createElement(CgWorkAlt),
     date: "June 2021 - Present",
     tags: [
-      "Redux",
-      "React.js",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
+      "Sprint Planning",
+      "Test-Driven Development",
+      "xUnit.net",
+      "Java",
+      "JavaScript",
     ],
   },
 ];
@@ -246,97 +242,148 @@ export const skillsData = [
   "Figma",
 ];
 
-// export const footerQuotes = {
-//   1: "magoo",
-//   2: "moooooo",
-//   3: "moooooo",
-//   4: "moooooo",
-//   5: "moooooo",
-//   7: '"It\'s my fear that brought me this far."',
-//   8: '"To live is to be known and remembered by others."',
-//   9: '"Every moment hesitated is a moment gone from life."',
-//   10: "Never knows best.",
-//   11: "Nothing can happen until you swing the bat.",
-//   12: '"See you space cowboy..."',
-//   13: '"It was a little corny, but you\'re a violin maker, not a writer."',
-//   14: '"Do you not know that in the service, one must always choose the lesser of two weevils?"',
-//   15: '"Sometimes, to do what\'s right, we have to be steady and give up the thing we want the most, even our dreams."',
-//   17: '"You are without a doubt the worst pirate I’ve ever heard of."',
-//   19: "\"Guess why I smile a lot. Uh, 'cause it's worth it.\"",
-//   24: '"All those moments will be lost in time, like tears in rain..."',
-//   25: '"I\'m the protagonist of my own life."',
-//   26: "\"It's not about winning or losing! It's about me taking you on right here, right now!\"",
-// } as FooterQuotesInterface;
-
 export const footerQuotes = {
-  1: { quote: "poop", source: "poopy", year: 1 },
-  15: {
-    quote:
-      '"Sometimes, to do what\'s right, we have to be steady and give up the thing we want the most, even our dreams."',
-    source: "Spider-Man 2",
-    year: 2004,
+  8: {
+    quote: '"Some guys, they just hate for no reason, capisce?"',
+    source: "Rocky",
+    year: 1976,
   },
-  19: {
-    quote: '"How can you not be romantic about baseball?"',
-    source: "Moneyball",
-    year: 2011,
-  },
-  20: {
-    quote: '"Congratulations!"',
-    source: "Neon Genesis Evangelion",
-    year: 1995,
-  },
-  21: {
-    quote:
-      '"Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy."',
-    source: "The End of Evangelion",
-    year: 1997,
-  },
-  22: {
-    quote:
-      '"As long as the Sun, the Moon, and the Earth exist, everything will be all right."',
-    source: "The End of Evangelion",
-    year: 1997,
-  },
-  23: {
+  9: {
     quote: '"Talk to me, Goose."',
     source: "Top Gun",
     year: 1986,
   },
-  24: {
-    quote: '"It’s Not The Plane, It’s The Pilot."',
-    source: "Top Gun: Maverick",
-    year: 2022,
-  },
-  26: {
+  10: {
     quote:
       "\"When it comes to the safety of these people, there's me and then there's God, understand?\"",
     source: "The Abyss",
     year: 1989,
   },
-  27: {
-    quote: '"A woman’s heart is a deep ocean of secrets."',
-    source: "Titanic",
-    year: 1997,
+  11: {
+    quote: '"Congratulations!"',
+    source: "Neon Genesis Evangelion",
+    year: 1995,
   },
-  28: {
-    quote: '"More like a NON-ja. Terrible what passes for a ninja these days."',
-    source: "Speed Racer",
-    year: 2008,
+  12: {
+    quote: "It was a little corny, but you're a violin maker, not a writer.",
+    source: "Whisper of the Heart",
+    year: 1995,
   },
-  29: {
-    quote: '"Hey man, you got somethin\' to eat up in there? We hongry."',
-    source: "2 Fast 2 Furious",
-    year: 2003,
-  },
-  30: {
-    quote: '"Some guys, they just hate for no reason, capisce?"',
-    source: "Rocky",
-    year: 1976,
-  },
-  31: {
+  13: {
     quote: "\"Oh, he's a little guy, kind of funny-lookin'.\"",
     source: "Fargo",
     year: 1996,
   },
+  14: {
+    quote: '"A woman’s heart is a deep ocean of secrets."',
+    source: "Titanic",
+    year: 1997,
+  },
+  15: {
+    quote:
+      '"Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy."',
+    source: "The End of Evangelion",
+    year: 1997,
+  },
+  16: {
+    quote:
+      '"As long as the Sun, the Moon, and the Earth exist, everything will be all right."',
+    source: "The End of Evangelion",
+    year: 1997,
+  },
+  17: {
+    quote: "See you space cowboy...",
+    source: "Cowboy Bebop",
+    year: 1998,
+  },
+  18: {
+    quote: "This land is made of... LOVE AND PEACE!",
+    source: "Trigun",
+    year: 1998,
+  },
+  19: {
+    quote: "Nothing can happen until you swing the bat.",
+    source: "FLCL",
+    year: 2000,
+  },
+  20: {
+    quote: '"Hey man, you got somethin\' to eat up in there? We hongry."',
+    source: "2 Fast 2 Furious",
+    year: 2003,
+  },
+  21: {
+    quote:
+      "Do you not know that in the service, one must always choose the lesser of two weevils?",
+    source: "Master and Commander: The Far Side of the World",
+    year: 2003,
+  },
+  22: {
+    quote: "You are without a doubt the worst pirate I’ve ever heard of.",
+    source: "Pirates of the Caribbean: The Curse of the Black Pearl",
+    year: 2003,
+  },
+  23: {
+    quote:
+      "Sometimes, to do what's right, we have to be steady and give up the thing we want the most, even our dreams.",
+    source: "Spider-Man 2",
+    year: 2004,
+  },
+  24: {
+    quote: '"More like a NON-ja. Terrible what passes for a ninja these days."',
+    source: "Speed Racer",
+    year: 2008,
+  },
+  25: {
+    quote: '"How can you not be romantic about baseball?"',
+    source: "Moneyball",
+    year: 2011,
+  },
+  26: {
+    quote:
+      "It's not about winning or losing! It's about me taking you on right here, right now!",
+    source: "One Punch Man",
+    year: 2015,
+  },
+  27: {
+    quote: "I'm the protagonist of my own life.",
+    source: "Mob Psycho 100",
+    year: 2018,
+  },
+  28: {
+    quote: "Guess why I smile a lot. Uh, 'cause it's worth it.",
+    source: "Marcel the Shell with the Shoes On",
+    year: 2021,
+  },
+  29: {
+    quote: '"It’s Not The Plane, It’s The Pilot."',
+    source: "Top Gun: Maverick",
+    year: 2022,
+  },
+  30: {
+    quote: "It's my fear that brought me this far.",
+    source: "Frieren: Beyond Journey's End",
+    year: 2023,
+  },
+  31: {
+    quote: "To live is to be known and remembered by others.",
+    source: "Frieren: Beyond Journey's End",
+    year: 2023,
+  },
 } as FooterQuotesInterface;
+
+export const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+export const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];

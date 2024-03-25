@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
@@ -12,6 +12,8 @@ import { useSectionInView } from "@/lib/hooks";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.85);
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <motion.section
@@ -27,12 +29,13 @@ export default function Contact() {
 
       <p className="text-gray-700 dark:text-white/80">
         use the form below, or contact me directly at{" "}
-        <a className="underline" href="mailto:sean.pj.stanley@gmail.com">
-          sean.pj.stanley@gmail.com
+        <a className="underline" href="mailto:seans09comp@gmail.com">
+          seans09comp@gmail.com
         </a>
       </p>
 
       <form
+        ref={formRef}
         className="mt-4 flex flex-col text-start"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
@@ -45,6 +48,9 @@ export default function Contact() {
             });
             return;
           }
+
+          // clear the form after successful submission
+          formRef.current?.reset();
 
           toast.success("Your message is on its way!", {
             style: {

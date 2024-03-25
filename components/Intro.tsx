@@ -13,7 +13,6 @@ import { TypeAnimation } from "react-type-animation";
 
 // import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 import LinkIconButton from "@/components/LinkIconButton";
-import Today from "@/components/Today";
 import { useSectionInView } from "@/lib/hooks";
 import alienDance from "@/public/alien-dance-transparent.gif";
 import seanPortrait from "@/public/logos/sean-pixelated-512.png";
@@ -29,7 +28,6 @@ export default function Intro() {
       className="mb-20 max-w-[50rem] text-center sm:mb-28 scroll-mt-20 sm:scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center mb-3 sm:mb-8 flex-col sm:flex-row">
-        {/* <Today /> */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -46,6 +44,7 @@ export default function Intro() {
           <Image
             src={alienDance}
             alt="Sean Stanley portrait"
+            unoptimized
             quality="95"
             priority
             className="h-14 w-14 object-cover hidden group-hover:block absolute -bottom-1 -right-2 text-4xl"
@@ -104,7 +103,7 @@ export default function Intro() {
           <HiDownload className="opacity-60 group-hover:animate-bounce transition" />
         </a> */}
         <a
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
+          className="group bg-gray-900 dark:bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
           href="/Sean-Stanley-Resume.pdf"
           download
         >
