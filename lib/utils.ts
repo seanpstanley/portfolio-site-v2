@@ -13,6 +13,41 @@ export const fadeUpAnimationVariants = {
   }),
 };
 
+// hamburger menu --> x animations
+export const hamburgerAnimationVariants = {
+  top: {
+    open: {
+      rotate: "45deg",
+      top: ["35%", "50%"],
+    },
+    closed: {
+      rotate: "0deg",
+      top: ["50%", "35%"],
+    },
+  },
+  middle: {
+    open: {
+      rotate: "-45deg",
+      opacity: 0,
+    },
+    closed: {
+      rotate: "0deg",
+      opacity: 100,
+    },
+  },
+  bottom: {
+    open: {
+      rotate: "-45deg",
+      bottom: ["35%", "50%"],
+      left: "50%",
+    },
+    closed: {
+      rotate: "0deg",
+      bottom: ["50%", "35%"],
+    },
+  },
+};
+
 // server-side validation for email contents in contact
 export const validateString = (value: unknown, maxLength: number) => {
   if (!value || typeof value !== "string" || value.length > maxLength) {

@@ -1,15 +1,23 @@
+// "use";
+
 import React from "react";
 
+import { footerQuotes } from "@/lib/data";
+
 export default function Footer() {
+  const dayToQuote = () => {
+    const weekdayNum = new Date().getDate();
+    const quoteObj = footerQuotes[weekdayNum];
+    return quoteObj;
+  };
+
+  const { quote, source, year } = dayToQuote();
+
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 block text-xs">
-        &copy; 2024 Sean Stanley. All rights reserved.
-      </small>
+    <footer className="text-center  text-gray-500 mb-10 px-4">
+      <small className="mb-2 block text-xs">&copy; MMXXIV.</small>
       <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React and Next.js (App Router and Server Actions), TypeScript, Tailwind
-        CSS, Framer Motion, React Email & Resend, Vercel hosting.
+        {quote} -<span className="italic">{source}</span>, {year}
       </p>
     </footer>
   );

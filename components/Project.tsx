@@ -4,7 +4,8 @@ import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { FaGithubSquare, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { LuExternalLink } from "react-icons/lu";
 
 import LinkIconButton from "@/components/LinkIconButton";
 import TechTags from "@/components/TechTags";
@@ -17,7 +18,7 @@ interface ProjectProps {
   image: StaticImageData;
   links: {
     deployment?: string | null;
-    github: string;
+    github?: string | null;
   };
 }
 
@@ -42,7 +43,7 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="pt-5 pb-6 px-5 sm:px-10 sm:pt-10 bg-white max-w-[34rem] border border-black/5 rounded-lg overflow-hidden sm:h-[24rem] hover:bg-gray-100 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-[34rem] rounded-lg overflow-hidden sm:h-[24rem]">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">
@@ -60,12 +61,9 @@ export default function Project({
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (
-                  <LinkIconButton
-                    link={deployment}
-                    icon={<FaExternalLinkSquareAlt />}
-                  />
+                  <LinkIconButton link={deployment} icon={<LuExternalLink />} />
                 )}
-                <LinkIconButton link={github} icon={<FaGithubSquare />} />
+                {github && <LinkIconButton link={github} icon={<FaGithub />} />}
               </div>
             </div>
           </div>
@@ -73,12 +71,9 @@ export default function Project({
             <TechTags tags={tags} />
             <div className="sm:hidden items-end	flex flex-col gap-2">
               {deployment && (
-                <LinkIconButton
-                  link={deployment}
-                  icon={<FaExternalLinkSquareAlt />}
-                />
+                <LinkIconButton link={deployment} icon={<LuExternalLink />} />
               )}
-              <LinkIconButton link={github} icon={<FaGithubSquare />} />
+              {github && <LinkIconButton link={github} icon={<FaGithub />} />}
             </div>
           </div>
         </div>

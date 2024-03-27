@@ -17,7 +17,7 @@ export default function LinkIconButton({
     <>
       <a
         className={
-          "bg-white w-14 h-14 text-gray-700 flex items-center justify-center rounded-full focus:scale-110 hover:scale-110 hover:text-gray-900 active:scale-100 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-gray-300 dark:border-white dark:border-opacity-40"
+          "bg-white w-14 h-14 text-gray-700 flex items-center justify-center rounded-full focus:scale-110 hover:scale-110 hover:text-gray-900 active:scale-100 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 dark:hover:text-gray-300 dark:border-white/40"
         }
         href={link}
         target="_blank"
