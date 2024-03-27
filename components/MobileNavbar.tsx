@@ -41,7 +41,7 @@ export default function MobileNavbar() {
                 >
                   <Link
                     className={clsx(
-                      "flex w-full items-center justify-center py-5 hover:text-gray-800 transition dark:text-white/60 dark:hover:text-white/75",
+                      "flex justify-center items-center w-full py-5 hover:text-gray-800 transition dark:text-white/60 dark:hover:text-white/75",
                       {
                         "text-gray-950 font-semibold dark:text-white/90":
                           activeSection === link.name,

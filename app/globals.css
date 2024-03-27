@@ -15,7 +15,7 @@ html.dark {
 }
 
 .nav {
-  @apply fixed border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none dark:bg-opacity-75;
+  @apply fixed border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none;
 }
 
 .card {

@@ -25,7 +25,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-20 lg:mt-28 max-w-[72rem] text-center sm:mb-28 scroll-mt-20 sm:scroll-mt-[100rem]"
+      className="mb-20 lg:mt-20 max-w-[72rem] text-center scroll-mt-20 sm:scroll-mt-[100rem]"
     >
       <div className="flex lg:flex-row lg:gap-6 flex-col items-center">
         <motion.div

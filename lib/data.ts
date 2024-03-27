@@ -45,16 +45,7 @@ export const experiencesData = [
       "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
     icon: React.createElement(CgWorkAlt),
     date: "May 2018 - August 2018",
-    tags: [
-      "Redux",
-      "React.js",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
-    ],
+    tags: ["Java", "OpenCV"],
   },
   {
     title: "Undergraduate Researcher",
@@ -216,7 +207,7 @@ export const projectsData = [
     image: seanPixelPortrait,
     links: {
       deployment: null,
-      github: "https://github.com/seanpstanley/personal-website-v2",
+      github: null,
     },
   },
 ];
@@ -242,23 +233,23 @@ export const skillsData = [
 
 export const footerQuotes = {
   8: {
-    quote: '"Some guys, they just hate for no reason, capisce?"',
+    quote: "Some guys, they just hate for no reason, capisce?",
     source: "Rocky",
     year: 1976,
   },
   9: {
-    quote: '"Talk to me, Goose."',
+    quote: "Talk to me, Goose.",
     source: "Top Gun",
     year: 1986,
   },
   10: {
     quote:
-      "\"When it comes to the safety of these people, there's me and then there's God, understand?\"",
+      "When it comes to the safety of these people, there's me and then there's God, understand?",
     source: "The Abyss",
     year: 1989,
   },
   11: {
-    quote: '"Congratulations!"',
+    quote: "Congratulations!",
     source: "Neon Genesis Evangelion",
     year: 1995,
   },
@@ -268,24 +259,24 @@ export const footerQuotes = {
     year: 1995,
   },
   13: {
-    quote: "\"Oh, he's a little guy, kind of funny-lookin'.\"",
+    quote: "Oh, he's a little guy, kind of funny-lookin'.",
     source: "Fargo",
     year: 1996,
   },
   14: {
-    quote: '"A woman’s heart is a deep ocean of secrets."',
+    quote: "A woman’s heart is a deep ocean of secrets.",
     source: "Titanic",
     year: 1997,
   },
   15: {
     quote:
-      '"Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy."',
+      "Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy.",
     source: "The End of Evangelion",
     year: 1997,
   },
   16: {
     quote:
-      '"As long as the Sun, the Moon, and the Earth exist, everything will be all right."',
+      "As long as the Sun, the Moon, and the Earth exist, everything will be all right.",
     source: "The End of Evangelion",
     year: 1997,
   },
@@ -305,7 +296,7 @@ export const footerQuotes = {
     year: 2000,
   },
   20: {
-    quote: '"Hey man, you got somethin\' to eat up in there? We hongry."',
+    quote: "Hey man, you got somethin' to eat up in there? We hongry.",
     source: "2 Fast 2 Furious",
     year: 2003,
   },
@@ -327,12 +318,12 @@ export const footerQuotes = {
     year: 2004,
   },
   24: {
-    quote: '"More like a NON-ja. Terrible what passes for a ninja these days."',
+    quote: "More like a NON-ja. Terrible what passes for a ninja these days.",
     source: "Speed Racer",
     year: 2008,
   },
   25: {
-    quote: '"How can you not be romantic about baseball?"',
+    quote: "How can you not be romantic about baseball?",
     source: "Moneyball",
     year: 2011,
   },
@@ -353,7 +344,7 @@ export const footerQuotes = {
     year: 2021,
   },
   29: {
-    quote: '"It’s Not The Plane, It’s The Pilot."',
+    quote: "It’s Not The Plane, It’s The Pilot.",
     source: "Top Gun: Maverick",
     year: 2022,
   },
