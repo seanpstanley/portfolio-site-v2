@@ -64,14 +64,12 @@ export const experiencesData = [
     icon: React.createElement(LuGraduationCap),
     date: "December 2020 – October 2021",
     tags: [
-      "Redux",
-      "React.js",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
+      "Unity",
+      "Python",
+      "OpenCV",
+      "Open Sound Control",
+      "3D Design/Printing",
+      "Augmented Reality",
     ],
   },
   {
@@ -124,7 +122,7 @@ export const projectsData = [
   {
     title: "Roll for Init, 5E Tabletop RPG Aide",
     description:
-      "Created an Open Gaming License-compliant alternative to sites like <span className='italic'>D&D Beyond</span>. Used React with Redux to manage the state of each player's character. Included multiplayer party functionality.",
+      "Created an Open Gaming License-compliant alternative to sites like D&D Beyond. Used React with Redux to manage the state of each player's character. Included multiplayer party functionality.",
     tags: [
       "React.js",
       "Redux",

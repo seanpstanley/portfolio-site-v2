@@ -13,6 +13,7 @@ export const fadeUpAnimationVariants = {
   }),
 };
 
+// hamburger menu --> x animations
 export const hamburgerAnimationVariants = {
   top: {
     open: {

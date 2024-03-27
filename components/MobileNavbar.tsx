@@ -20,14 +20,14 @@ export default function MobileNavbar() {
 
   return (
     <header>
-      <nav className="z-[999] sm:hidden fixed top-5 right-5" ref={ref}>
+      <nav className="z-[999] sm:hidden fixed top-6 right-5" ref={ref}>
         <AnimatePresence>
           {isOpen && (
             <motion.ul
               layout="size"
               className={`${
                 isOpen ? "" : "w-0 h-0"
-              }flex flex-col gap-4 rounded-3xl mb-0 left-5 top-5 right-24 p-2.5 nav`}
+              }flex flex-col gap-2 rounded-3xl mb-0 left-5 top-6 right-24 p-2.5 nav`}
               exit={{ opacity: 0 }}
             >
               {links.map((link, index) => (
@@ -41,7 +41,7 @@ export default function MobileNavbar() {
                 >
                   <Link
                     className={clsx(
-                      "flex w-full items-center justify-center py-4 hover:text-gray-800 transition dark:text-white/60 dark:hover:text-white/75",
+                      "flex w-full items-center justify-center py-5 hover:text-gray-800 transition dark:text-white/60 dark:hover:text-white/75",
                       {
                         "text-gray-950 font-semibold dark:text-white/90":
                           activeSection === link.name,
@@ -65,16 +65,6 @@ export default function MobileNavbar() {
             </motion.ul>
           )}
         </AnimatePresence>
-        {/* <motion.div
-          layout="size"
-          initial={{ borderRadius: 50 }}
-          className={`bg-white ${
-            isOpen ? "w-10 h-10" : "w-24 h-24"
-          } flex justify-center items-center`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <motion.div layout className="rounded-full bg-black h-3 w-3" />
-        </motion.div> */}
         <MotionConfig
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >

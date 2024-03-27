@@ -64,7 +64,7 @@ export default function Experience() {
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
-              <div className="flex gap-2 mt-3 mb:1 sm:mt-4 sm:mb-0 justify-between items-end">
+              <div className="flex gap-2 mt-3 mb:1 sm:mt-4 justify-between items-end">
                 <TechTags tags={experience.tags} />
               </div>
             </VerticalTimelineElement>

@@ -24,15 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="lowercase !scroll-smooth">
       <body
-        className={`${inter.className} bg-gradient-to-tl from-gray-50 to-indigo-100 text-gray-950 relative pt-20 sm:pt-32 dark:from-gray-900 dark:to-slate-900 dark:text-gray-50/90 transition-colors`}
+        className={`${inter.className} bg-gradient-to-tl from-gray-50 to-[#e6e6fd] text-gray-950 relative pt-20 sm:pt-32 dark:from-gray-900 dark:to-[#28283e] dark:text-gray-50/90 transition-colors`}
       >
-        {/* <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div> */}
-        <div className="absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#524f72]"></div>
-
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
-
             {children}
             <Footer />
             <Toaster position="top-right" />
