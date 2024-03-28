@@ -43,7 +43,7 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-[34rem] rounded-lg overflow-hidden sm:h-[24rem]">
+      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-[34rem] sm:h-[24rem] rounded-lg overflow-hidden">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">
@@ -52,12 +52,12 @@ export default function Project({
                 {description}
               </p>
             </div>
-            <div className="flex flex-col sm:ml-6 flex-shrink-0 sm:items-center">
+            <div className="flex flex-col flex-shrink-0 sm:items-center sm:ml-6">
               <Image
                 src={image}
-                alt="Project I worked on"
+                alt={`Logo for ${title}, a project that I worked on.`}
                 quality={95}
-                className="h-36 w-36 rounded-full hidden sm:block mb-3 object-cover border-2 border-black/10 dark:border-white dark:border-opacity-40"
+                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full border-2 border-black/10 dark:border-white dark:border-opacity-40"
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (
@@ -67,9 +67,9 @@ export default function Project({
               </div>
             </div>
           </div>
-          <div className="flex gap-2 mt-2 justify-between items-end	sm:mt-auto">
+          <div className="flex justify-between items-end gap-2 mt-2 sm:mt-auto">
             <TechTags tags={tags} />
-            <div className="sm:hidden items-end	flex flex-col gap-2">
+            <div className="sm:hidden flex flex-col items-end	gap-2">
               {deployment && (
                 <LinkIconButton link={deployment} icon={<LuExternalLink />} />
               )}

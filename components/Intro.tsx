@@ -27,7 +27,7 @@ export default function Intro() {
       id="home"
       className="mb-20 lg:mt-20 max-w-[72rem] text-center scroll-mt-20 sm:scroll-mt-[100rem]"
     >
-      <div className="flex lg:flex-row lg:gap-6 flex-col items-center">
+      <div className="flex lg:flex-row flex-col items-center lg:gap-6">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -36,14 +36,14 @@ export default function Intro() {
         >
           <Image
             src={seanPortrait}
-            alt="Sean Stanley portrait"
+            alt="A portrait of me."
             quality="95"
             priority
             className="h-36 w-36 lg:h-72 lg:w-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-opacity-40 shadow-xl"
           />
           <Image
             src={alienDance}
-            alt="Sean Stanley portrait"
+            alt="A small, animated green alien dancing near the bottom right corner of my portrait photo."
             unoptimized
             quality="95"
             priority
@@ -52,7 +52,7 @@ export default function Intro() {
         </motion.div>
         <div className="flex flex-col items-center">
           <motion.div
-            className="flex w-[11.353rem] items-start mt-8 sm:w-[18.164rem] sm:mb-4 mb-3 lg:mt-0 text-3xl font-bold sm:text-5xl"
+            className="flex w-[11.353rem] items-start sm:w-[18.164rem] mt-8 lg:mt-0 mb-3 sm:mb-4  font-bold text-3xl sm:text-5xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -67,7 +67,7 @@ export default function Intro() {
             />
           </motion.div>
           <motion.h2
-            className="mb-10 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+            className="mb-10 px-4 font-medium !leading-[1.5] text-2xl sm:text-4xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -80,7 +80,7 @@ export default function Intro() {
             <span className="font-bold">CAE USA</span>.
           </motion.h2>
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2 px-4 text-lg font-medium"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2 px-4 font-medium text-lg"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -103,7 +103,7 @@ export default function Intro() {
           <HiDownload className="opacity-60 group-hover:animate-bounce transition" />
         </a> */}
             <a
-              className="group bg-gray-900 dark:bg-white/10 text-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
+              className="group flex items-center gap-2 px-7 py-3 rounded-full text-white bg-gray-900 dark:bg-white/10 focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
               href="/Sean-Stanley-Resume.pdf"
               download
             >

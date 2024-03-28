@@ -14,15 +14,15 @@ export default function Skills() {
 
   return (
     <section
-      id="skills"
       ref={ref}
-      className="mb-28 max-w-4xl scroll-mt-10 sm:scroll-mt-28 text-center px-2"
+      id="skills"
+      className="mb-28 px-2 max-w-4xl text-center scroll-mt-10 sm:scroll-mt-28 "
     >
       <SectionHeading>My skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="card rounded-xl px-5 py-3"
+            className="card px-5 py-3 rounded-xl"
             key={index}
             variants={fadeUpAnimationVariants}
             initial="initial"

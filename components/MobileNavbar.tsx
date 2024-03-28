@@ -20,19 +20,19 @@ export default function MobileNavbar() {
 
   return (
     <header>
-      <nav className="z-[999] sm:hidden fixed top-6 right-5" ref={ref}>
+      <nav className="z-[999] sm:hidden fixed top-6 left-5" ref={ref}>
         <AnimatePresence>
           {isOpen && (
             <motion.ul
               layout="size"
               className={`${
                 isOpen ? "" : "w-0 h-0"
-              }flex flex-col gap-2 rounded-3xl mb-0 left-5 top-6 right-24 p-2.5 nav`}
+              } fixed right-5 top-6 left-24 flex flex-col gap-2 mb-0 p-2.5 rounded-3xl nav`}
               exit={{ opacity: 0 }}
             >
               {links.map((link, index) => (
                 <motion.li
-                  className="flex items-center justify-center relative"
+                  className="relative flex items-center justify-center"
                   key={link.hash}
                   variants={fadeUpAnimationVariants}
                   initial="initial"
@@ -57,7 +57,7 @@ export default function MobileNavbar() {
                     {link.name}
 
                     {link.name === activeSection && (
-                      <span className="bg-gray-100 rounded-2xl absolute inset-0 -z-10 dark:bg-gray-800"></span>
+                      <span className="absolute inset-0 -z-10 bg-gray-100 rounded-2xl dark:bg-gray-800"></span>
                     )}
                   </Link>
                 </motion.li>
@@ -65,39 +65,47 @@ export default function MobileNavbar() {
             </motion.ul>
           )}
         </AnimatePresence>
-        <MotionConfig
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
         >
-          <motion.button
-            initial={false}
-            // initial={{ y: -100, opacity: 0 }}
-            // animate={{ y: 0, opacity: 1 }}
-            animate={isOpen ? "open" : "closed"}
-            onClick={() => setIsOpen((prev) => !prev)}
-            className="group relative h-16 w-16 rounded-full shadow-lg border border-white border-opacity-40 bg-white bg-opacity-80 dark:bg-gray-950 dark:border-none dark:bg-opacity-75 shadow-black/[0.05] backdrop-blur"
+          <MotionConfig
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
           >
-            <motion.span
-              variants={hamburgerAnimationVariants.top}
-              className="absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-gray-800 transition-colors dark:bg-gray-400 dark:group-hover:bg-gray-300"
-              style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
-            />
-            <motion.span
-              variants={hamburgerAnimationVariants.middle}
-              className="absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-gray-800 transition-colors dark:bg-gray-400 dark:group-hover:bg-gray-300"
-              style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
-            />
-            <motion.span
-              variants={hamburgerAnimationVariants.bottom}
-              className="absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-gray-800 transition-colors dark:bg-gray-400 dark:group-hover:bg-gray-300"
-              style={{
-                left: "50%",
-                x: "-50%",
-                y: "50%",
-                bottom: "35%",
-              }}
-            />
-          </motion.button>
-        </MotionConfig>
+            <motion.button
+              initial={false}
+              animate={isOpen ? "open" : "closed"}
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="group relative h-16 w-16 rounded-full nav"
+              aria-label="Hamburger nav menu toggle"
+              aria-pressed={isOpen ? "true" : "false"}
+            >
+              <motion.span
+                variants={hamburgerAnimationVariants.top}
+                className="hamburger-line "
+                style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+              />
+              <motion.span
+                variants={hamburgerAnimationVariants.middle}
+                className="hamburger-line "
+                style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+              />
+              <motion.span
+                variants={hamburgerAnimationVariants.bottom}
+                className="hamburger-line"
+                style={{
+                  left: "50%",
+                  x: "-50%",
+                  y: "50%",
+                  bottom: "35%",
+                }}
+              />
+            </motion.button>
+          </MotionConfig>
+        </motion.div>
       </nav>
     </header>
   );

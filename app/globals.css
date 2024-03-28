@@ -15,9 +15,13 @@ html.dark {
 }
 
 .nav {
-  @apply fixed border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none;
+  @apply border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none;
 }
 
 .card {
   @apply bg-white/90 borderBlack hover:bg-gray-100 transition-colors dark:text-white/80 dark:bg-white/5 dark:hover:bg-white/10;
+}
+
+.hamburger-line {
+  @apply absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-gray-800 transition-colors dark:bg-gray-400 dark:group-hover:bg-gray-300;
 }
