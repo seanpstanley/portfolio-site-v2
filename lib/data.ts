@@ -127,7 +127,7 @@ export const projectsData = [
     ],
     image: rollForInitLogo,
     links: {
-      deployment: "https://rollforinit.herokuapp.com/",
+      deployment: null,
       github: "https://github.com/Roll-For-Init",
     },
   },
