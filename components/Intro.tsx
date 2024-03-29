@@ -39,7 +39,7 @@ export default function Intro() {
             alt="A portrait of me."
             quality="95"
             priority
-            className="h-36 w-36 lg:h-72 lg:w-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-opacity-40 shadow-xl"
+            className="h-36 w-36 lg:w-72 lg:h-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-opacity-40 shadow-xl"
           />
           <Image
             src={alienDance}
@@ -47,12 +47,12 @@ export default function Intro() {
             unoptimized
             quality="95"
             priority
-            className="h-14 w-14 object-cover hidden group-hover:block absolute -bottom-1 lg:right-4 right-0 text-4xl"
+            className="hidden group-hover:block absolute -bottom-0.5 lg:-bottom-1.5 right-1.5 lg:right-2.5 h-10 w-10 lg:h-20 lg:w-20 object-cover text-4xl"
           />
         </motion.div>
         <div className="flex flex-col items-center">
           <motion.div
-            className="flex w-[11.353rem] items-start sm:w-[18.164rem] mt-8 lg:mt-0 mb-3 sm:mb-4  font-bold text-3xl sm:text-5xl"
+            className="flex items-start w-[11.353rem] sm:w-[18.164rem] mt-8 lg:mt-0 mb-3 sm:mb-4 font-bold text-3xl sm:text-5xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{

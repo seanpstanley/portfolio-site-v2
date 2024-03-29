@@ -20,14 +20,14 @@ export default function MobileNavbar() {
 
   return (
     <header>
-      <nav className="z-[999] sm:hidden fixed top-6 left-5" ref={ref}>
+      <nav className="z-[999] sm:hidden fixed top-6 left-6" ref={ref}>
         <AnimatePresence>
           {isOpen && (
             <motion.ul
               layout="size"
               className={`${
                 isOpen ? "" : "w-0 h-0"
-              } fixed right-5 top-6 left-24 flex flex-col gap-2 mb-0 p-2.5 rounded-3xl nav`}
+              } fixed right-6 top-6 left-24 flex flex-col gap-2 mb-0 p-2.5 rounded-3xl nav`}
               exit={{ opacity: 0 }}
             >
               {links.map((link, index) => (
@@ -80,7 +80,7 @@ export default function MobileNavbar() {
               animate={isOpen ? "open" : "closed"}
               onClick={() => setIsOpen((prev) => !prev)}
               className="group relative h-16 w-16 rounded-full nav"
-              aria-label="Hamburger nav menu toggle"
+              aria-label="Nav menu toggle"
               aria-pressed={isOpen ? "true" : "false"}
             >
               <motion.span

@@ -17,8 +17,8 @@ interface ProjectProps {
   tags: string[];
   image: StaticImageData;
   links: {
-    deployment?: string | null;
-    github?: string | null;
+    deployment: { link: string; accessibilityText: string } | null;
+    github: { link: string; accessibilityText: string } | null;
   };
 }
 
@@ -61,9 +61,19 @@ export default function Project({
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (
-                  <LinkIconButton link={deployment} icon={<LuExternalLink />} />
+                  <LinkIconButton
+                    link={deployment.link}
+                    accessibilityText={deployment.accessibilityText}
+                    icon={<LuExternalLink />}
+                  />
                 )}
-                {github && <LinkIconButton link={github} icon={<FaGithub />} />}
+                {github && (
+                  <LinkIconButton
+                    link={github.link}
+                    accessibilityText={github.accessibilityText}
+                    icon={<FaGithub />}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -71,9 +81,19 @@ export default function Project({
             <TechTags tags={tags} />
             <div className="sm:hidden flex flex-col items-end	gap-2">
               {deployment && (
-                <LinkIconButton link={deployment} icon={<LuExternalLink />} />
+                <LinkIconButton
+                  link={deployment.link}
+                  accessibilityText={deployment.accessibilityText}
+                  icon={<LuExternalLink />}
+                />
               )}
-              {github && <LinkIconButton link={github} icon={<FaGithub />} />}
+              {github && (
+                <LinkIconButton
+                  link={github.link}
+                  accessibilityText={github.accessibilityText}
+                  icon={<FaGithub />}
+                />
+              )}
             </div>
           </div>
         </div>

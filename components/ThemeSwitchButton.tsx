@@ -17,7 +17,8 @@ export default function ThemeSwitcher() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      aria-label="Light and dark mode toggle. Default is light mode, or user's system preference if there is one."
+      aria-label="Light/dark mode toggle"
+      aria-description="Default is light mode, or user's system preference if there is one."
       aria-pressed={theme === "light" ? "false" : "true"}
     >
       {theme === "light" ? <PiSun /> : <PiMoon />}

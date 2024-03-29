@@ -20,9 +20,7 @@ export default function Analog() {
       <p className="-mb-1 text-5xl font-semibold tracking-tight">
         {(hours24to12(date) < 10 ? "0" : "") + hours24to12(date)}
       </p>
-      <p className="mr-2.5 -mt-1 self-end text-sm tracking-wide">
-        {amPm(date)}
-      </p>
+      <p className="mr-3 -mt-1 self-end text-sm">{amPm(date)}</p>
       <div className="absolute flex justify-center items-center w-full h-full">
         <div className="absolute w-2 h-2 z-20 rounded-full bg-gray-800/60 dark:bg-white/80" />
         <div className="absolute w-1.5 h-1.5 z-30 rounded-full bg-orange-400" />

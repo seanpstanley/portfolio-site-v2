@@ -89,7 +89,11 @@ export const projectsData = [
     image: xdgLogo,
     links: {
       deployment: null,
-      github: "https://github.com/CEN30315A/Site/",
+      github: {
+        link: "https://github.com/CEN30315A/Site/",
+        accessibilityText:
+          "GitHub project page for the XDG Technologies Website.",
+      },
     },
   },
   {
@@ -107,7 +111,10 @@ export const projectsData = [
     image: ufSeal,
     links: {
       deployment: null,
-      github: "https://github.com/seanpstanley/react-gator-trader",
+      github: {
+        link: "https://github.com/seanpstanley/react-gator-trader",
+        accessibilityText: "GitHub project page for Gator Trader.",
+      },
     },
   },
   {
@@ -128,7 +135,10 @@ export const projectsData = [
     image: rollForInitLogo,
     links: {
       deployment: null,
-      github: "https://github.com/Roll-For-Init",
+      github: {
+        link: "https://github.com/Roll-For-Init",
+        accessibilityText: "GitHub project page for Roll for Init.",
+      },
     },
   },
   {
@@ -145,7 +155,10 @@ export const projectsData = [
     ],
     image: ufVergLogo,
     links: {
-      deployment: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+      deployment: {
+        link: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+        accessibilityText: "ACM Digital Library page for PPCards publication.",
+      },
       github: null,
     },
   },
@@ -163,25 +176,32 @@ export const projectsData = [
     ],
     image: ufVergLogo,
     links: {
-      deployment: "https://ieeexplore.ieee.org/document/9576344",
+      deployment: {
+        link: "https://ieeexplore.ieee.org/document/9576344",
+        accessibilityText: "IEEE Xplore page for BlockXR publication.",
+      },
       github: null,
     },
   },
   {
     title: "Portfolio Website v1",
     description:
-      "I wanted to test my skills by creating a React app using React-Router and React Hooks without using any template. I also wanted to avoid using Bootstrap or any other CSS libraries. however, i learned those tools exist for a reason. the website turned out okay, if a little clunky.",
+      "I wanted to test my skills by creating a React app using React-Router and React Hooks without using any template. I also wanted to avoid using Bootstrap or any other CSS libraries. This experience reminded me that those tools exist for a reason. The website turned out okay, if a little clunky.",
     tags: ["React.js", "React-Router", "Netlify"],
     image: seanPixelPortrait,
     links: {
       deployment: null,
-      github: "https://github.com/seanpstanley/personal-website",
+      github: {
+        link: "https://github.com/seanpstanley/personal-website",
+        accessibilityText:
+          "GitHub project page for my first portfolio website.",
+      },
     },
   },
   {
     title: "This Website, Portfolio Website v2",
     description:
-      "The new hotness. Used Tailwind and Framer Motion to learn how to implement flashier stuff with as little work as possible. I feel like it turned out pretty well. The jury's still out on Tailwind, though.",
+      "Used Tailwind/Framer Motion to learn how to implement flashier stuff, faster. Heavily focused on accessibility--including full compatibility with screen readers and keyboard navigation. Used axe DevTools/WCAG 2.1 to verify compliance.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -189,14 +209,21 @@ export const projectsData = [
       "Framer Motion",
       "React Context API",
       "Resend",
-      "React Email",
       "Toast",
       "Vercel",
+      "axe DevTools",
     ],
     image: seanPixelPortrait,
     links: {
-      deployment: "https://www.seanpstanley.dev/",
-      github: "https://github.com/seanpstanley/personal-website-v2",
+      deployment: {
+        link: "https://www.seanpstanley.dev/",
+        accessibilityText: "My current portfolio website.",
+      },
+      github: {
+        link: "https://github.com/seanpstanley/personal-website-v2",
+        accessibilityText:
+          "GitHub project page for my current portfolio website.",
+      },
     },
   },
   {
