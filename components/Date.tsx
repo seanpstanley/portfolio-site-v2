@@ -3,7 +3,7 @@ import React from "react";
 import { weekdays, months } from "@/lib/data";
 import { useDate } from "@/lib/hooks";
 
-export default function Calendar() {
+export default function Date() {
   const { date } = useDate();
 
   return (

@@ -240,12 +240,13 @@ export const projectsData = [
 ];
 
 export const skillsData = [
-  "HTML",
-  "CSS",
+  "HTML5",
+  "CSS/SCSS",
   "JavaScript ES6+",
   "TypeScript",
   "React.js",
   "Next.js",
+  "Accessible Design",
   "Git",
   "Tailwind CSS",
   "Framer Motion",
@@ -259,6 +260,41 @@ export const skillsData = [
 ];
 
 export const footerQuotes = {
+  1: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  2: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  3: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  4: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  5: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  6: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
+  7: {
+    quote: "Some guys, they just hate for no reason, capisce?",
+    source: "Rocky",
+    year: 1976,
+  },
   8: {
     quote: "Some guys, they just hate for no reason, capisce?",
     source: "Rocky",

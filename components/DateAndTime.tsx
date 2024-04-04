@@ -2,8 +2,8 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import AnalogClock from "@/components/AnalogClock";
-import Calendar from "@/components/Calendar";
+import Date from "@/components/Date";
+import Time from "@/components/Time";
 
 export default function DateAndTime() {
   return (
@@ -12,8 +12,8 @@ export default function DateAndTime() {
       initial={{ y: -100, x: "-50%", opacity: 0 }}
       animate={{ y: 0, x: "-50%", opacity: 1 }}
     >
-      <Calendar />
-      <AnalogClock />
+      <Date />
+      <Time />
     </motion.div>
   );
 }
