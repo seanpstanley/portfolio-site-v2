@@ -15,7 +15,7 @@ import { TypeAnimation } from "react-type-animation";
 import LinkIconButton from "@/components/LinkIconButton";
 import { useSectionInView } from "@/lib/hooks";
 import alienDance from "@/public/alien-dance-transparent.gif";
-import seanPortrait from "@/public/sean-portrait.jpg";
+import seanPortrait from "@/public/sean-portrait.png";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home");
