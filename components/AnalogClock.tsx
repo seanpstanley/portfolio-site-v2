@@ -1,5 +1,3 @@
-import React from "react";
-
 import { motion } from "framer-motion";
 
 import { useDate } from "@/lib/hooks";
@@ -15,23 +13,27 @@ export default function AnalogClock() {
       <div className="flex justify-center">
         <motion.div
           className="absolute origin-top flex items-center justify-center w-[0.225rem] h-2.5 rounded-full shadow-md bg-gray-900 dark:bg-gray-50"
-          animate={{ rotate: `${hours}deg` }}
+          // animate={{ rotate: `${hours}deg` }}
+          style={{ rotate: `${hours}deg` }}
         >
           <motion.div className="absolute translate-y-[0.7rem] w-1.5 h-[1.1rem] rounded-full shadow-md bg-gray-900 dark:bg-gray-50" />
         </motion.div>
         <motion.div
           className="absolute origin-top flex items-center justify-center w-[0.225rem] h-2.5 z-20 rounded-full shadow-md bg-gray-900 dark:bg-gray-50"
-          animate={{ rotate: `${minutes}deg` }}
+          // animate={{ rotate: `${minutes}deg` }}
+          style={{ rotate: `${minutes}deg` }}
         >
           <motion.div className="absolute translate-y-[1.05rem] origin-top w-1.5 h-[1.8rem] z-20 rounded-full shadow-md bg-gray-900 dark:bg-gray-50" />
         </motion.div>
         <motion.div
           className="absolute origin-top w-[0.075rem] h-9 z-30 rounded-full shadow-md bg-orange-400 "
-          animate={{ rotate: `${seconds}deg` }}
+          // animate={{ rotate: `${seconds}deg` }}
+          style={{ rotate: `${seconds}deg` }}
         />
         <motion.div
           className="absolute origin-top  w-[0.075rem] h-2.5 z-30 rounded-full shadow-md bg-orange-400"
-          animate={{ rotate: `${seconds - 180}deg` }}
+          // animate={{ rotate: `${seconds - 180}deg` }}
+          style={{ rotate: `${seconds - 180}deg` }}
         />
       </div>
     </div>

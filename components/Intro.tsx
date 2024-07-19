@@ -15,7 +15,7 @@ import { TypeAnimation } from "react-type-animation";
 import LinkIconButton from "@/components/LinkIconButton";
 import { useSectionInView } from "@/lib/hooks";
 import alienDance from "@/public/alien-dance-transparent.gif";
-import seanPortrait from "@/public/logos/sean-pixelated-512.png";
+import seanPortrait from "@/public/sean-portrait.jpg";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home");
@@ -104,7 +104,7 @@ export default function Intro() {
         </a> */}
             <a
               className="group flex items-center gap-2 px-7 py-3 rounded-full text-white bg-gray-900 dark:bg-white/10 focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
-              href="/Sean-Stanley-Resume.pdf"
+              href="/sean-stanley-resume.pdf"
               download
             >
               Download Resume

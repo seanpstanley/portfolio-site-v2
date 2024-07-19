@@ -48,6 +48,37 @@ export const hamburgerAnimationVariants = {
   },
 };
 
+const romanNumerals = [
+  { value: 1000, numeral: "M" },
+  { value: 900, numeral: "CM" },
+  { value: 500, numeral: "D" },
+  { value: 400, numeral: "CD" },
+  { value: 100, numeral: "C" },
+  { value: 90, numeral: "XC" },
+  { value: 50, numeral: "L" },
+  { value: 40, numeral: "XL" },
+  { value: 10, numeral: "X" },
+  { value: 9, numeral: "IX" },
+  { value: 5, numeral: "V" },
+  { value: 4, numeral: "IV" },
+  { value: 1, numeral: "I" },
+];
+
+// convert number to roman numerals (used for year in footer)
+export const romanize = (num: number) => {
+  if (isNaN(num)) {
+    return "";
+  }
+  let romanNumeral = "";
+  for (let i = 0; i < romanNumerals.length; i++) {
+    while (num >= romanNumerals[i].value) {
+      romanNumeral += romanNumerals[i].numeral;
+      num -= romanNumerals[i].value;
+    }
+  }
+  return romanNumeral;
+};
+
 // takes in a url and returns just what's between the www. and the .com (host name)
 export const getHostName = (url: string) => {
   var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
