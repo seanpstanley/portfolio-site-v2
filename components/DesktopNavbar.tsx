@@ -17,7 +17,7 @@ export default function DesktopNavbar() {
   return (
     <header className="z-[999] hidden sm:block relative">
       <motion.div
-        className="top-0 left-1/2 h-16 w-full rounded-none sm:top-6 sm:h-[3.25rem] sm:w-[30rem] sm:rounded-full nav"
+        className="top-0 left-1/2 h-16 w-full rounded-none sm:top-6 sm:h-[3.25rem] sm:w-[30rem] sm:rounded-full fixed nav"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>

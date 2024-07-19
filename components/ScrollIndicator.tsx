@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 
@@ -12,25 +12,47 @@ export default function ScrollIndicator() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [opacity, setOpacity] = useState(1);
 
-  const handleOpacityChange = (newOpacity: number) => {
-    setOpacity(newOpacity);
-    scrollRef.current!.style.opacity = newOpacity.toString();
-  };
+  useEffect(() => {
+    let scrollHeight = 0;
+    if (scrollRef.current) {
+      scrollHeight = scrollRef.current.clientHeight;
+    }
+
+    const range = 300;
+    const offset = scrollHeight * 2.5;
+
+    const didScrollPage = (e: Event) => {
+      let calc = 1 - (window.scrollY - offset + range) / range;
+      if (calc > 1) {
+        calc = 1;
+      } else if (calc < 0) {
+        calc = 0;
+      }
+
+      setOpacity(calc);
+    };
+
+    window.addEventListener("scroll", didScrollPage);
+
+    return () => {
+      window.removeEventListener("keydown", didScrollPage);
+    };
+  }, []);
 
   return (
-    <div ref={ref} className="flex flex-col gap-4 items-center sm:mb-28 mb-20">
+    <div ref={ref} className="flex flex-col gap-4 items-center mb-20">
       <motion.p
         className="text-xl font-light tracking-widest"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1.25 }}
         ref={scrollRef}
-        style={{ opacity }}
+        style={{ opacity: opacity }}
       >
         Scroll
       </motion.p>
       <motion.div
-        className="bg-gray-300 h-72 w-1 rounded-full dark:bg-opacity-20"
+        className="bg-gray-300 w-1 h-72 rounded-full dark:bg-opacity-20"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
@@ -40,7 +62,7 @@ export default function ScrollIndicator() {
           delay: 3,
         }}
         ref={scrollRef}
-        style={{ opacity }}
+        style={{ opacity: opacity }}
       ></motion.div>
     </div>
   );

@@ -44,7 +44,7 @@ export function useDate() {
 
     // clean up the timer when component unmounts
     return () => clearInterval(timer);
-  }, [date]);
+  }, [date, seconds]);
 
   return {
     date,

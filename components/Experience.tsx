@@ -21,14 +21,14 @@ export default function Experience() {
 
   return (
     <motion.section
-      id="experience"
       ref={ref}
+      id="experience"
       className="scroll-mt-10 sm:scroll-mt-28 mb-20 sm:mb-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <SectionHeading>experience</SectionHeading>
+      <SectionHeading>My Experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>
@@ -64,7 +64,7 @@ export default function Experience() {
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
-              <div className="flex gap-2 mt-3 mb:1 sm:mt-4 justify-between items-end">
+              <div className="flex mt-3 mb:1 sm:mt-4 justify-between items-end gap-2">
                 <TechTags tags={experience.tags} />
               </div>
             </VerticalTimelineElement>

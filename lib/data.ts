@@ -45,16 +45,7 @@ export const experiencesData = [
       "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
     icon: React.createElement(CgWorkAlt),
     date: "May 2018 - August 2018",
-    tags: [
-      "Redux",
-      "React.js",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "Heroku",
-      "Webpack",
-    ],
+    tags: ["Java", "OpenCV"],
   },
   {
     title: "Undergraduate Researcher",
@@ -98,7 +89,11 @@ export const projectsData = [
     image: xdgLogo,
     links: {
       deployment: null,
-      github: "https://github.com/CEN30315A/Site/",
+      github: {
+        link: "https://github.com/CEN30315A/Site/",
+        accessibilityText:
+          "GitHub project page for the XDG Technologies Website.",
+      },
     },
   },
   {
@@ -116,7 +111,10 @@ export const projectsData = [
     image: ufSeal,
     links: {
       deployment: null,
-      github: "https://github.com/seanpstanley/react-gator-trader",
+      github: {
+        link: "https://github.com/seanpstanley/react-gator-trader",
+        accessibilityText: "GitHub project page for Gator Trader.",
+      },
     },
   },
   {
@@ -136,8 +134,11 @@ export const projectsData = [
     ],
     image: rollForInitLogo,
     links: {
-      deployment: "https://rollforinit.herokuapp.com/",
-      github: "https://github.com/Roll-For-Init",
+      deployment: null,
+      github: {
+        link: "https://github.com/Roll-For-Init",
+        accessibilityText: "GitHub project page for Roll for Init.",
+      },
     },
   },
   {
@@ -154,7 +155,10 @@ export const projectsData = [
     ],
     image: ufVergLogo,
     links: {
-      deployment: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+      deployment: {
+        link: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+        accessibilityText: "ACM Digital Library page for PPCards publication.",
+      },
       github: null,
     },
   },
@@ -172,62 +176,94 @@ export const projectsData = [
     ],
     image: ufVergLogo,
     links: {
-      deployment: "https://ieeexplore.ieee.org/document/9576344",
+      deployment: {
+        link: "https://ieeexplore.ieee.org/document/9576344",
+        accessibilityText: "IEEE Xplore page for BlockXR publication.",
+      },
       github: null,
     },
   },
   {
     title: "Portfolio Website v1",
     description:
-      "I wanted to test my skills by creating a React app using React-Router and React Hooks without using any template. I also wanted to avoid using Bootstrap or any other CSS libraries. however, i learned those tools exist for a reason. the website turned out okay, if a little clunky.",
+      "I wanted to test my skills by creating a React app using React-Router and React Hooks without using any template. I also wanted to avoid using Bootstrap or any other CSS libraries. This experience reminded me that those tools exist for a reason. The website turned out okay, if a little clunky.",
     tags: ["React.js", "React-Router", "Netlify"],
     image: seanPixelPortrait,
     links: {
       deployment: null,
-      github: "https://github.com/seanpstanley/personal-website",
+      github: {
+        link: "https://github.com/seanpstanley/personal-website",
+        accessibilityText:
+          "GitHub project page for my first portfolio website.",
+      },
     },
   },
   {
     title: "This Website, Portfolio Website v2",
     description:
-      "The new hotness. Used Tailwind and Framer Motion to learn how to implement flashier stuff with as little work as possible. I feel like it turned out pretty well. The jury's still out on Tailwind, though.",
+      "Used Tailwind/Framer Motion to learn how to implement flashier stuff, faster. Heavily focused on accessibility--including full compatibility with screen readers and keyboard navigation. Used axe DevTools/WCAG 2.1 to verify compliance.",
     tags: [
       "Next.js",
+      "Server Actions",
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
       "React Context API",
       "Resend",
-      "React Email",
-      "Toast",
+      "React Hot Toast",
+      "Vercel",
+      "axe DevTools",
+    ],
+    image: seanPixelPortrait,
+    links: {
+      deployment: {
+        link: "https://www.seanpstanley.dev/",
+        accessibilityText: "My current portfolio website.",
+      },
+      github: {
+        link: "https://github.com/seanpstanley/personal-website-v2",
+        accessibilityText:
+          "GitHub project page for my current portfolio website.",
+      },
+    },
+  },
+  {
+    title: "Brewd - A Social Coffee Experience",
+    description:
+      "Currently brewing. Brewd is a coffee-rating webapp that helps users discover, rate, and share their coffee experiences, inspired by platforms like Letterboxd, Untappd, and Backloggd.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "Dynamic Routes",
+      "Google Places API",
+      "Postgres",
+      "Drizzle ORM",
       "Vercel",
     ],
     image: seanPixelPortrait,
     links: {
-      deployment: "https://www.seanpstanley.dev/",
-      github: "https://github.com/seanpstanley/personal-website-v2",
-    },
-  },
-  {
-    title: "TBD Seartin Project",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    tags: ["?", "??", "???", "..."],
-    image: seanPixelPortrait,
-    links: {
-      deployment: null,
-      github: "https://github.com/seanpstanley/personal-website-v2",
+      deployment: {
+        link: "https://brewd.org/",
+        accessibilityText: "Brewd homepage.",
+      },
+      github: {
+        link: "hhttps://github.com/Brewd-Co/Brewd",
+        accessibilityText: "GitHub project page for Brewd.",
+      },
     },
   },
 ];
 
 export const skillsData = [
-  "HTML",
-  "CSS",
+  "HTML5",
+  "CSS/SCSS",
   "JavaScript ES6+",
   "TypeScript",
   "React.js",
   "Next.js",
+  "Accessible Design",
   "Git",
   "Tailwind CSS",
   "Framer Motion",
@@ -236,111 +272,148 @@ export const skillsData = [
   "Unity",
   "Python",
   "Java",
+  ".NET/C#",
   "Blender",
   "Figma",
 ];
 
 export const footerQuotes = {
-  8: {
-    quote: '"Some guys, they just hate for no reason, capisce?"',
+  1: {
+    quote: "Some guys, they just hate for no reason, capisce?",
     source: "Rocky",
     year: 1976,
   },
-  9: {
-    quote: '"Talk to me, Goose."',
+  2: {
+    quote: "Talk to me, Goose.",
     source: "Top Gun",
     year: 1986,
   },
-  10: {
+  3: {
     quote:
-      "\"When it comes to the safety of these people, there's me and then there's God, understand?\"",
+      "When it comes to the safety of these people, there's me and then there's God, understand?",
     source: "The Abyss",
     year: 1989,
   },
-  11: {
-    quote: '"Congratulations!"',
+  4: {
+    quote: "Congratulations!",
     source: "Neon Genesis Evangelion",
     year: 1995,
   },
-  12: {
+  5: {
     quote: "It was a little corny, but you're a violin maker, not a writer.",
     source: "Whisper of the Heart",
     year: 1995,
   },
-  13: {
-    quote: "\"Oh, he's a little guy, kind of funny-lookin'.\"",
+  6: {
+    quote: "Sure, fine. Whatever.",
+    source: "The X-Files",
+    year: 1996,
+  },
+  7: {
+    quote: "Oh, he's a little guy, kind of funny-lookin'.",
     source: "Fargo",
     year: 1996,
   },
-  14: {
-    quote: '"A woman’s heart is a deep ocean of secrets."',
+  8: {
+    quote: "A woman’s heart is a deep ocean of secrets.",
     source: "Titanic",
     year: 1997,
   },
-  15: {
+  9: {
     quote:
-      '"Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy."',
+      "Anywhere can be paradise as long as you have the will to live. After all, you are alive, so you will always have the chance to be happy.",
     source: "The End of Evangelion",
     year: 1997,
   },
-  16: {
+  10: {
     quote:
-      '"As long as the Sun, the Moon, and the Earth exist, everything will be all right."',
+      "As long as the Sun, the Moon, and the Earth exist, everything will be all right.",
     source: "The End of Evangelion",
     year: 1997,
   },
-  17: {
-    quote: "See you space cowboy...",
-    source: "Cowboy Bebop",
-    year: 1998,
-  },
-  18: {
+  11: {
     quote: "This land is made of... LOVE AND PEACE!",
     source: "Trigun",
     year: 1998,
   },
-  19: {
+  12: {
     quote: "Nothing can happen until you swing the bat.",
     source: "FLCL",
     year: 2000,
   },
-  20: {
-    quote: '"Hey man, you got somethin\' to eat up in there? We hongry."',
+  13: {
+    quote: "I'll use my trusty frying pan, as a drying pan!",
+    source: "Pokémon: Mewtwo Returns",
+    year: 2002,
+  },
+  14: {
+    quote: "With great power comes great responsibility.",
+    source: "Spider-Man",
+    year: 2002,
+  },
+  15: {
+    quote: "Hey man, you got somethin' to eat up in there? We hongry.",
     source: "2 Fast 2 Furious",
     year: 2003,
   },
-  21: {
+  16: {
     quote:
       "Do you not know that in the service, one must always choose the lesser of two weevils?",
     source: "Master and Commander: The Far Side of the World",
     year: 2003,
   },
-  22: {
+  17: {
     quote: "You are without a doubt the worst pirate I’ve ever heard of.",
     source: "Pirates of the Caribbean: The Curse of the Black Pearl",
     year: 2003,
   },
-  23: {
+  18: {
     quote:
       "Sometimes, to do what's right, we have to be steady and give up the thing we want the most, even our dreams.",
     source: "Spider-Man 2",
     year: 2004,
   },
-  24: {
-    quote: '"More like a NON-ja. Terrible what passes for a ninja these days."',
+  19: {
+    quote: "So just, like, evaporate or something, I don't know.",
+    source: "Veronica Mars",
+    year: 2005,
+  },
+  20: {
+    quote: "No one writes songs about the ones that come easy.",
+    source: "Veronica Mars",
+    year: 2006,
+  },
+  21: {
+    quote: "More like a NON-ja. Terrible what passes for a ninja these days.",
     source: "Speed Racer",
     year: 2008,
   },
-  25: {
-    quote: '"How can you not be romantic about baseball?"',
+  22: {
+    quote: "How can you not be romantic about baseball?",
     source: "Moneyball",
     year: 2011,
   },
-  26: {
+  23: {
+    quote: "I don't play the odds, I play the man.",
+    source: "Suits",
+    year: 2012,
+  },
+  24: {
     quote:
       "It's not about winning or losing! It's about me taking you on right here, right now!",
     source: "One Punch Man",
     year: 2015,
+  },
+  25: {
+    quote: "And being alive is pretty much a constant stream of embarrassment.",
+    source: "Nier Automata",
+    year: 2017,
+  },
+  26: {
+    quote:
+      "A future is not given to you. It is something that you must take for yourself.",
+    source: "Nier Automata",
+    year: 2017,
   },
   27: {
     quote: "I'm the protagonist of my own life.",
@@ -348,17 +421,18 @@ export const footerQuotes = {
     year: 2018,
   },
   28: {
+    quote: "I'm the protagonist.",
+    source: "Tenet",
+    year: 2020,
+  },
+  29: {
     quote: "Guess why I smile a lot. Uh, 'cause it's worth it.",
     source: "Marcel the Shell with the Shoes On",
     year: 2021,
   },
-  29: {
-    quote: '"It’s Not The Plane, It’s The Pilot."',
-    source: "Top Gun: Maverick",
-    year: 2022,
-  },
   30: {
-    quote: "It's my fear that brought me this far.",
+    quote:
+      "Being afraid isn't a bad thing. It's my fear that brought me this far.",
     source: "Frieren: Beyond Journey's End",
     year: 2023,
   },
