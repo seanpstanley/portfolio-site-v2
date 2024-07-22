@@ -43,11 +43,11 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-[34rem] sm:h-[24rem] rounded-lg overflow-hidden">
+      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-xl sm:h-[24rem] rounded-lg overflow-hidden">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">
-              <h3 className="text-2xl font-semibold">{title}</h3>
+              <h3 className="text-2xl font-semibold leading-tight">{title}</h3>
               <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
                 {description}
               </p>
@@ -57,7 +57,7 @@ export default function Project({
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}
                 quality={95}
-                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full border-2 border-black/10 dark:border-white dark:border-opacity-40"
+                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full nm-flat-gray-50 dark:nm-flat-gray-900 transition"
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (

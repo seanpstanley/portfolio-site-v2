@@ -28,7 +28,7 @@ export default function Experience() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <SectionHeading>My Experience</SectionHeading>
+      <SectionHeading>Experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>

@@ -39,7 +39,7 @@ export default function Intro() {
             alt="A portrait of me."
             quality="95"
             priority
-            className="h-36 w-36 lg:w-72 lg:h-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-opacity-40 shadow-xl"
+            className="h-36 w-36 lg:w-72 lg:h-72 lg:ml-4 rounded-full object-cover nm-flat-gray-50-lg dark:nm-flat-gray-900-lg transition-colors"
           />
           <Image
             src={alienDance}

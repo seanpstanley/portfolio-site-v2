@@ -12,8 +12,16 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        "pattens-blue": "#e3eaf4",
+      },
     },
+    // neumorphismColor: {
+    //   pattens: {
+    //     100: "#e3eaf4",
+    //   },
+    // },
   },
-  plugins: [],
+  plugins: [require("tw-neumorphism")],
   darkMode: "class",
 };

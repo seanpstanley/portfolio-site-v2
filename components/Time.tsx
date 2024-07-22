@@ -15,7 +15,7 @@ export default function Time() {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-20 h-20  rounded-xl text-2xl shadow-lg shadow-black/5 backdrop-blur transition-colors border border-white/40 hover:text-gray-600 bg-white/80 dark:border-none dark:text-white/60 dark:bg-white/10 dark:hover:text-gray-300">
+    <div className="relative flex flex-col items-center justify-center w-20 h-20 rounded-xl text-2xl nm-flat-pattens-blue dark:nm-flat-gray-900 backdrop-blur transition text-[#6c5cfb]  bg-white/80 dark:border-none dark:text-white/60 dark:bg-white/10 dark:hover:text-gray-300 ">
       <p className="-mb-1 text-5xl font-semibold tracking-tight">
         {(hours24to12(date) < 10 ? "0" : "") + hours24to12(date)}
       </p>

@@ -18,8 +18,16 @@ html.dark {
   @apply border border-white/40 bg-white/80 shadow-lg shadow-black/[0.05] backdrop-blur dark:bg-gray-950/75 dark:border-none;
 }
 
-.card {
+/* .card {
   @apply bg-white/90 borderBlack hover:bg-gray-100 transition-colors dark:text-white/80 dark:bg-white/5 dark:hover:bg-white/10;
+} */
+
+.card {
+  @apply bg-white/90 hover:nm-flat-pattens-blue-xl transition dark:text-white/80 dark:bg-white/5 dark:hover:nm-flat-gray-900-xl nm-flat-pattens-blue-lg dark:nm-flat-gray-900-lg;
+}
+
+.inset-card {
+  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition-colors dark:text-white/80 dark:bg-white/5 dark:hover:nm-concave-gray-900 nm-concave-pattens-blue-sm dark:nm-concave-gray-900-sm;
 }
 
 .hamburger-line {

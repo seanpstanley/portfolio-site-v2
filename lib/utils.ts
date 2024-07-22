@@ -1,3 +1,11 @@
+import { clsx, ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+// combo of tailwind merge and clsx
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 // fade in from bottom animation for projects, skills, etc.
 export const fadeUpAnimationVariants = {
   initial: {

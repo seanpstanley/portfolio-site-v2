@@ -25,7 +25,7 @@ export default function Contact() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <SectionHeading>Contact Me</SectionHeading>
+      <SectionHeading>Contact</SectionHeading>
 
       <p className="text-gray-700 dark:text-white/80">
         use the form below, or contact me directly at{" "}
@@ -63,7 +63,7 @@ export default function Contact() {
           Name
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-gray-800-sm dark:bg-white dark:bg-opacity-70 dark:placeholder:text-white/50 dark:focus:bg-opacity-80 transition dark:text-white"
           name="senderName"
           placeholder="what's your name?"
           required
@@ -77,7 +77,7 @@ export default function Contact() {
           Email Address
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-gray-800-sm dark:bg-white dark:bg-opacity-35 dark:placeholder:text-white/50 dark:focus:bg-opacity-40 transition dark:text-white"
           name="senderEmail"
           type="email"
           placeholder="where can i reach you?"
@@ -90,14 +90,14 @@ export default function Contact() {
           Message
         </label>
         <textarea
-          className="h-60 mt-1 mb-4 min-h-14 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-60 mt-1 mb-4 min-h-14 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-gray-800-sm p-4 dark:bg-white dark:bg-opacity-70 dark:placeholder:text-white/50 dark:focus:bg-opacity-80 transition dark:text-white"
           name="message"
           placeholder="what would you like to say?"
           required
           maxLength={5000}
           id="message"
         />
-        <SubmitButton />
+        <SubmitButton className="self-end">Submit</SubmitButton>
       </form>
     </motion.section>
   );

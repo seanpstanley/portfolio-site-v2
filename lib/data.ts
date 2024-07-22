@@ -4,6 +4,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 
 import { FooterQuotesInterface } from "@/lib/types";
+import brewdLogo from "@/public/logos/brewd-logo.png";
 import rollForInitLogo from "@/public/logos/roll-for-init-logo.png";
 import seanPixelPortrait from "@/public/logos/sean-pixelated-512.png";
 import ufSeal from "@/public/logos/uf-seal.png";
@@ -247,7 +248,7 @@ export const projectsData = [
       "Drizzle ORM",
       "Vercel",
     ],
-    image: seanPixelPortrait,
+    image: brewdLogo,
     links: {
       deployment: {
         link: "https://brewd.org/",
@@ -272,6 +273,8 @@ export const skillsData = [
   "Git",
   "Tailwind CSS",
   "Framer Motion",
+  "Responsive Design",
+  "REST APIs",
   "React Redux",
   "SQL",
   "Unity",

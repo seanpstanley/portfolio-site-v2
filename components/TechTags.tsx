@@ -9,7 +9,7 @@ export default function TechTags({ tags }: TagsProps) {
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag: string, index: number) => (
         <li
-          className="bg-black/70 px-3 py-1 text-[0.7rem] flex-grow-0 tracking-wider text-white dark:text-white/80 rounded-full"
+          className="nm-flat-pattens-blue-sm dark:nm-flat-gray-900-sm px-3 py-1 text-[0.7rem] flex-grow-0 tracking-wider text-gray-600 dark:text-white/80 transition rounded-full"
           key={index}
         >
           {tag}

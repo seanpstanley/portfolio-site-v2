@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="lowercase !scroll-smooth">
       <body
-        className={`${inter.className} bg-gradient-to-tl from-gray-50 to-[#e6e6fd] text-gray-950 relative pt-20 sm:pt-32 dark:from-gray-900 dark:to-[#28283e] dark:text-gray-50/90 transition-colors`}
+        className={`${inter.className} bg-[#e3eaf4] text-gray-950 relative pt-20 sm:pt-32 dark:bg-gray-900 dark:text-gray-50/90 transition-colors max-w-screen-xl mx-auto`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
