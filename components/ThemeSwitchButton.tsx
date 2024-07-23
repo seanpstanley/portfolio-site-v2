@@ -12,7 +12,7 @@ export default function ThemeSwitcher() {
 
   return (
     <motion.button
-      className="flex nav fixed bottom-5 right-5 size-12 sm:w-48 justify-center sm:justify-between sm:py-2 sm:px-4 text-xl items-center rounded-full text-gray-700 hover:text-gray-900 dark:text-white/60 dark:hover:text-gray-300 transition-colors"
+      className="flex nav fixed bottom-5 right-5 size-12 sm:w-48 justify-center sm:justify-between sm:py-2 sm:px-4 text-xl items-center rounded-full text-gray-700 hover:text-[#6c5cfb] dark:text-white/60 dark:hover:text-[#6c5cfb] transition-colors"
       onClick={toggleTheme}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

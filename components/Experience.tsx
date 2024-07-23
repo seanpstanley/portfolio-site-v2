@@ -35,12 +35,12 @@ export default function Experience() {
             <VerticalTimelineElement
               visible={true}
               contentStyle={{
-                background:
+                background: theme === "light" ? "#e3eaf4" : "#1f2427",
+                boxShadow:
                   theme === "light"
-                    ? "rgba(255, 255, 255, 0.9)"
-                    : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.1)",
+                    ? "0.4em 0.4em calc(0.4em * 2) #a2bbdb, calc(0.4em * -1) calc(0.4em * -1) calc(0.4em * 2) #f6f8fb"
+                    : "0.4em 0.4em calc(0.4em * 2) #191c1e, calc(0.4em * -1) calc(0.4em * -1) calc(0.4em * 2) #242a2d",
+                // border: "1px solid rgba(0, 0, 0, 0.1)",
                 borderRadius: "0.5rem",
                 textAlign: "left",
                 padding: "1.25rem 1.25rem 0.75rem 1.25rem",
@@ -48,14 +48,13 @@ export default function Experience() {
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255)",
+                    ? "0.4rem solid #e3eaf4"
+                    : "0.4rem solid #1f2427",
               }}
               date={experience.date}
               icon={experience.icon}
               iconStyle={{
-                background:
-                  theme === "light" ? "white " : "rgba(255, 255, 255, 0.15)",
+                background: theme === "light" ? "#e3eaf4 " : "#1f2427",
                 fontSize: "1.5rem",
               }}
             >

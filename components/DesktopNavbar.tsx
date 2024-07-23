@@ -33,7 +33,7 @@ export default function DesktopNavbar() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-800 transition dark:text-white/60 dark:hover:text-white/75",
+                  "flex w-full items-center justify-center px-3 py-3 hover:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb]",
                   {
                     "text-gray-950 font-semibold dark:text-white/90":
                       activeSection === link.name,
@@ -49,7 +49,7 @@ export default function DesktopNavbar() {
 
                 {link.name === activeSection && (
                   <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                    className="nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",

@@ -201,29 +201,23 @@ export default function Footer() {
           </span>
         </small>
 
-        <div className="flex gap-x-3.5 items-center">
-          <a
-            className="hover:text-gray-950 dark:hover:text-white/75 transition-colors"
-            href="https://www.linkedin.com/in/seanpstanley/"
-          >
-            <LiaLinkedin className="text-3xl" />
-          </a>
-
+        <div className="flex gap-x-3 items-center">
           {/* <LinkIconButton
             link="https://www.linkedin.com/in/seanpstanley/"
             accessibilityText="LinkedIn"
             icon={<FaGithub />}
           /> */}
-          {/* <LinkIconButton
-            link="https://github.com/seanpstanley"
-            accessibilityText="GitHub"
-            icon={<LiaLinkedin />}
-            className="size-10"
-            size="10"
-          /> */}
           <a
-            className="hover:text-gray-950 dark:hover:text-white/75 transition-colors"
+            className="bg-white w-14 h-14 nm-convex-pattens-blue dark:nm-convex-cinder hover:nm-convex-pattens-blue-sm dark:hover:nm-convex-cinder-sm active:nm-concave-pattens-blue-sm dark:active:nm-concave-cinder-sm text-gray-700 hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] flex items-center justify-center rounded-full focus:scale-105 hover:scale-105 active:scale-100 transition cursor-pointer dark:text-white/85"
+            href="https://www.linkedin.com/in/seanpstanley/"
+            aria-label="My LinkedIn page"
+          >
+            <LiaLinkedin className="text-3xl" />
+          </a>
+          <a
+            className="bg-white w-14 h-14 nm-convex-pattens-blue dark:nm-convex-cinder hover:nm-convex-pattens-blue-sm dark:hover:nm-convex-cinder-sm active:nm-concave-pattens-blue-sm dark:active:nm-concave-cinder-sm text-gray-700 hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] flex items-center justify-center rounded-full focus:scale-110 hover:scale-110 active:scale-100 transition cursor-pointer dark:text-white/85"
             href="https://github.com/seanpstanley"
+            aria-label="My GitHub page"
           >
             <FaGithub className="text-2xl" />
           </a>

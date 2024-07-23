@@ -57,7 +57,7 @@ export default function MobileNavbar() {
                     {link.name}
 
                     {link.name === activeSection && (
-                      <span className="absolute inset-0 -z-10 bg-gray-100 rounded-2xl dark:bg-gray-800"></span>
+                      <span className="absolute inset-0 -z-10 nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-2xl"></span>
                     )}
                   </Link>
                 </motion.li>

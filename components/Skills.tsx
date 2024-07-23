@@ -10,7 +10,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { fadeUpAnimationVariants } from "@/lib/utils";
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills", 0.9);
+  const { ref } = useSectionInView("Skills", 0.8);
 
   return (
     <section

@@ -57,9 +57,9 @@ export default function Project({
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}
                 quality={95}
-                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full nm-flat-gray-50 dark:nm-flat-gray-900 transition"
+                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full nm-flat-pattens-blue dark:nm-flat-cinder-lg transition"
               />
-              <div className="hidden sm:flex sm:gap-2">
+              <div className="hidden sm:flex sm:gap-3">
                 {deployment && (
                   <LinkIconButton
                     link={deployment.link}
@@ -79,7 +79,7 @@ export default function Project({
           </div>
           <div className="flex justify-between items-end gap-2 mt-2 sm:mt-auto">
             <TechTags tags={tags} />
-            <div className="sm:hidden flex flex-col items-end	gap-2">
+            <div className="sm:hidden flex flex-col items-end	gap-3">
               {deployment && (
                 <LinkIconButton
                   link={deployment.link}
