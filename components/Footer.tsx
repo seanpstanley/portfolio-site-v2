@@ -191,8 +191,8 @@ export default function Footer() {
     //     </div>
     //   </div>
     // </footer>
-    <footer className="mb-10 sm:mb-20 text-gray-500 text-center lg:text-start w-full px-6">
-      <div className="border-t border-gray-400 dark:border-gray-400/20 pt-8" />
+    <footer className="mb-12 sm:mb-24 text-gray-500 text-center lg:text-start w-full px-6">
+      <div className="border-t border-gray-400 dark:border-gray-400/20 pt-6" />
       <div className="flex flex-col lg:flex-row items-center gap-y-1 md:gap-y-0 md:justify-between">
         <small className="mb-2 block text-xs leading-relaxed">
           &copy; {romanYear} | "{`${quote}`}" -

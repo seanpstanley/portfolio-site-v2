@@ -26,13 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="lowercase !scroll-smooth">
       <body
-        className={`${nunito.className} bg-[#e3eaf4] text-gray-950 relative pt-20 dark:bg-cinder dark:text-gray-50/90 transition-colors max-w-screen-xl mx-auto`}
+        className={`${nunito.className} bg-[#e3eaf4] text-gray-950 relative pt-12 md:pt-24 dark:bg-cinder dark:text-gray-50/90 transition-colors max-w-screen-xl mx-auto`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <div className="flex">
               <Sidebar />
-              <div className="w-28"></div>
+              <div className="md:ml-6 md:w-36 md:flex-none md:mr-6"></div>
               <div className="flex flex-col items-center max-w-screen-lg mx-auto">
                 <Header />
                 {children}

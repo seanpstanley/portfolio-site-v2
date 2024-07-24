@@ -57,7 +57,7 @@ export default function Project({
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}
                 quality={95}
-                className="hidden sm:block h-36 w-36 mb-3.5 object-cover rounded-full nm-flat-pattens-blue dark:nm-flat-cinder-lg transition"
+                className="hidden sm:block h-36 w-36 mb-3.5 object-cover rounded-full nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl transition"
               />
               <div className="hidden sm:flex sm:gap-3">
                 {deployment && (

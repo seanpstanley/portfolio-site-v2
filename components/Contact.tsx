@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-import { BiMailSend } from "react-icons/bi";
+import { IoSend } from "react-icons/io5";
 
 import { sendEmail } from "@/actions/sendEmail";
 import SectionHeading from "@/components/SectionHeading";
@@ -29,7 +29,10 @@ export default function Contact() {
       <SectionHeading>Contact</SectionHeading>
       <p className="text-gray-700 dark:text-white/80 -mt-2.5">
         use the form below, or contact me directly at{" "}
-        <a className="underline" href="mailto:seans09comp@gmail.com">
+        <a
+          className="underline hover:text-[#6c5cfb]"
+          href="mailto:seans09comp@gmail.com"
+        >
           seans09comp@gmail.com
         </a>
       </p>
@@ -99,7 +102,7 @@ export default function Contact() {
         />
         <SubmitButton className="self-end mt-1">
           Submit
-          <BiMailSend className="ml-2 text-lg transition-transform group-hover:translate-x-1" />
+          <IoSend className="ml-2 transition-transform group-hover:translate-x-1" />
         </SubmitButton>
       </form>
     </motion.section>

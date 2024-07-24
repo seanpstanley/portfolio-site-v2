@@ -15,25 +15,25 @@ export default function Sidebar() {
     useActiveSectionContext();
 
   return (
-    <aside className="hidden md:flex md:flex-col sm:justify-center sm:gap-6 h-screen top-0 fixed">
+    <aside className="hidden md:flex md:flex-col md:justify-center md:gap-6 h-screen top-0 fixed ml-6">
       {/* <motion.div
         className="h-16 w-28 rounded-xl nm-flat-pattens-blue-lg relative"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div> */}
 
-      <nav className="flex flex-col w-28 nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl rounded-xl py-4">
-        <ul className="flex flex-col items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-3">
+      <nav className="flex flex-col w-36 nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl rounded-xl py-4">
+        <ul className="flex flex-col items-start mx-auto justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-3">
           {links.map((link) => (
             <motion.li
-              className="h-3/4 flex items-center justify-center relative"
+              className="flex items-center justify-center relative"
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb] z-10",
+                  "flex w-full items-center justify-center gap-1.5 px-3 py-3 hover:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb] z-10",
                   {
                     "text-gray-950 font-semibold dark:text-white/90":
                       activeSection === link.name,
@@ -45,6 +45,7 @@ export default function Sidebar() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
+                {link.icon}
                 {link.name}
 
                 {link.name === activeSection && (

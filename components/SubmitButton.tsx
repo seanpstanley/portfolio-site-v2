@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useFormStatus } from "react-dom";
-import { BiMailSend } from "react-icons/bi";
 
 import { cn } from "@/lib/utils";
 

@@ -1,7 +1,11 @@
 import React from "react";
 
-import { CgWorkAlt } from "react-icons/cg";
-import { LuGraduationCap } from "react-icons/lu";
+import { FaReact } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa";
+import { GiClassicalKnowledge } from "react-icons/gi";
+import { IoHome } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { MdWork } from "react-icons/md";
 
 import { FooterQuotesInterface } from "@/lib/types";
 import brewdLogo from "@/public/logos/brewd-logo.png";
@@ -15,6 +19,7 @@ export const links = [
   {
     name: "Home",
     hash: "#home",
+    icon: React.createElement(IoHome),
   },
   // {
   //   name: "About",
@@ -23,18 +28,22 @@ export const links = [
   {
     name: "Experience",
     hash: "#experience",
+    icon: React.createElement(MdWork),
   },
   {
     name: "Projects",
     hash: "#projects",
+    icon: React.createElement(FaReact),
   },
   {
     name: "Skills",
     hash: "#skills",
+    icon: React.createElement(GiClassicalKnowledge),
   },
   {
     name: "Contact",
     hash: "#contact",
+    icon: React.createElement(MdEmail),
   },
 ];
 
@@ -44,7 +53,7 @@ export const experiencesData = [
     location: "Burnley Consulting",
     description:
       "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(MdWork),
     date: "May 2018 - August 2018",
     tags: ["Java", "OpenCV"],
   },
@@ -53,7 +62,7 @@ export const experiencesData = [
     location: "University of Florida",
     description:
       "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality (AR) interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(FaGraduationCap),
     date: "December 2020 – October 2021",
     tags: [
       "Unity",
@@ -69,7 +78,7 @@ export const experiencesData = [
     location: "CAE USA",
     description:
       "Worked on bleeding-edge products for use on classified network environments. Wore multiple hats as a Developer, Tester, and Product Owner while holding Top Secret security clearance.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(MdWork),
     date: "June 2021 - Present",
     tags: [
       "Sprint Planning",
