@@ -191,9 +191,9 @@ export default function Footer() {
     //     </div>
     //   </div>
     // </footer>
-    <footer className="px-4 mb-10 sm:mb-20 text-gray-500 mx-auto text-center md:text-start">
-      <div className="border-t border-gray-300 dark:border-gray-300/20 pt-8" />
-      <div className="flex flex-col md:flex-row items-center gap-y-1 md:gap-y-0 md:justify-between">
+    <footer className="mb-10 sm:mb-20 text-gray-500 text-center lg:text-start w-full px-6">
+      <div className="border-t border-gray-400 dark:border-gray-400/20 pt-8" />
+      <div className="flex flex-col lg:flex-row items-center gap-y-1 md:gap-y-0 md:justify-between">
         <small className="mb-2 block text-xs leading-relaxed">
           &copy; {romanYear} | "{`${quote}`}" -
           <span className="italic">
@@ -201,7 +201,7 @@ export default function Footer() {
           </span>
         </small>
 
-        <div className="flex gap-x-3 items-center">
+        <div className="flex gap-x-3 items-center mt-1 lg:mt-0">
           {/* <LinkIconButton
             link="https://www.linkedin.com/in/seanpstanley/"
             accessibilityText="LinkedIn"

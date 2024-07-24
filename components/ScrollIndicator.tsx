@@ -52,7 +52,7 @@ export default function ScrollIndicator() {
         Scroll
       </motion.p>
       <motion.div
-        className="bg-gray-300 w-1 h-72 rounded-full dark:bg-opacity-20"
+        className="bg-gray-400 w-px h-72 dark:bg-opacity-20"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{

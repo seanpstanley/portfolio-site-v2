@@ -23,7 +23,7 @@ export default function Experience() {
     <motion.section
       ref={ref}
       id="experience"
-      className="scroll-mt-10 sm:scroll-mt-28 mb-20 sm:mb-28"
+      className="scroll-mt-10 sm:scroll-mt-20 mb-20 sm:mb-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -56,14 +56,17 @@ export default function Experience() {
               iconStyle={{
                 background: theme === "light" ? "#e3eaf4 " : "#1f2427",
                 fontSize: "1.5rem",
+                color: theme === "light" ? "" : "",
+                border: "black",
               }}
+              iconClassName={""}
             >
               <h3 className="font-bold">{experience.title}</h3>
               <p className="font-semibold !mt-0">{experience.location}</p>
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
-              <div className="flex mt-3 mb:1 sm:mt-4 justify-between items-end gap-2">
+              <div className="flex mt-3 mb:1 justify-between items-end gap-2">
                 <TechTags tags={experience.tags} />
               </div>
             </VerticalTimelineElement>

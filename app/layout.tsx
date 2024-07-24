@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
 import ThemeContextProvider from "@/context/ThemeContextProvider";
@@ -25,15 +26,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="lowercase !scroll-smooth">
       <body
-        className={`${nunito.className} bg-[#e3eaf4] text-gray-950 relative pt-20 sm:pt-32 dark:bg-cinder dark:text-gray-50/90 transition-colors max-w-screen-xl mx-auto`}
+        className={`${nunito.className} bg-[#e3eaf4] text-gray-950 relative pt-20 dark:bg-cinder dark:text-gray-50/90 transition-colors max-w-screen-xl mx-auto`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-            <Toaster position="top-right" />
-            <ThemeSwitchButton />
+            <div className="flex">
+              <Sidebar />
+              <div className="w-28"></div>
+              <div className="flex flex-col items-center max-w-screen-lg mx-auto">
+                <Header />
+                {children}
+                <Footer />
+                <Toaster position="top-right" />
+                <ThemeSwitchButton />
+              </div>
+            </div>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

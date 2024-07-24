@@ -20,7 +20,7 @@ export default function Contact() {
     <motion.section
       ref={ref}
       id="contact"
-      className="scroll-mt-10 sm:scroll-mt-28 mb-20 w-[min(100%,38rem)] text-center px-2"
+      className="scroll-mt-10 sm:scroll-mt-20 mb-20 w-[min(100%,38rem)] text-center px-2"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -97,7 +97,7 @@ export default function Contact() {
           maxLength={5000}
           id="message"
         />
-        <SubmitButton className="self-end">
+        <SubmitButton className="self-end mt-1">
           Submit
           <BiMailSend className="ml-2 text-lg transition-transform group-hover:translate-x-1" />
         </SubmitButton>

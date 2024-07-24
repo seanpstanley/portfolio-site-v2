@@ -25,7 +25,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-20 lg:mt-20 text-center scroll-mt-20 sm:scroll-mt-[100rem]"
+      className="mb-20 lg:mt-20 text-center scroll-mt-20 sm:scroll-mt-[100rem] px-2"
     >
       <div className="flex lg:flex-row flex-col items-center lg:gap-10">
         <motion.div
@@ -39,7 +39,7 @@ export default function Intro() {
             alt="A portrait of me."
             quality="95"
             priority
-            className="size-36 lg:size-80 lg:ml-4 rounded-full object-cover nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl transition-colors"
+            className="size-36 lg:size-80 rounded-full object-cover nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl transition-colors"
           />
           <Image
             src={alienDance}
@@ -52,7 +52,7 @@ export default function Intro() {
         </motion.div>
         <div className="flex flex-col items-center lg:items-start">
           <motion.div
-            className="flex items-start w-[12rem] sm:w-[23.84rem] -ml-0.5 mt-8 lg:mt-0 mb-2.5 font-thin text-4xl sm:text-7xl"
+            className="flex items-start w-[12rem] sm:w-[23.84rem] mt-8 lg:mt-0 mb-3.5 font-thin text-4xl sm:text-7xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{

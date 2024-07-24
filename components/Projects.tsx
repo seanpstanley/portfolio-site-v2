@@ -14,7 +14,7 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-10 sm:scroll-mt-28 mb-28 px-2"
+      className="scroll-mt-10 sm:scroll-mt-20 mb-28 px-2"
     >
       <SectionHeading>Projects</SectionHeading>
       <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
