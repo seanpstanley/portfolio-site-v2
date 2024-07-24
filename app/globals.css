@@ -31,5 +31,5 @@ html.dark {
 }
 
 .hamburger-line {
-  @apply absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-gray-800 transition-colors dark:bg-gray-400 dark:group-hover:bg-gray-300;
+  @apply absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-[#6c5cfb] transition-colors dark:bg-gray-400 dark:group-hover:bg-[#6c5cfb];
 }

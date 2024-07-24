@@ -22,7 +22,7 @@ export default function SubmitButton({
   return (
     <button
       className={cn(
-        "relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder-lg inline-flex items-center justify-center h-12 w-28 overflow-hidden font-medium transition duration-300 ease-out rounded-full group hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder active:nm-inset-pattens-blue dark:active:nm-inset-cinder disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder dark:border-none hover:text-[#6c5cfb] hover:scale-105 active:scale-100 text-gray-700 dark:text-white/85 dark:hover:text-[#6c5cfb]",
+        "relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder-lg inline-flex items-center justify-center h-12 w-28 overflow-hidden font-medium transition rounded-full focus:nm-flat-pattens-blue-sm dark:focus:nm-flat-cinder- hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder active:nm-inset-pattens-blue dark:active:nm-inset-cinder disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder dark:border-none hover:text-[#6c5cfb] hover:scale-105 focus:scale-105 focus:text-[#6c5cfb] active:scale-100 text-gray-700 dark:text-white/85 dark:hover:text-[#6c5cfb]",
         className
       )}
       type={pending ? "button" : "submit"}

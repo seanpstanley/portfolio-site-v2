@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 import DateAndTime from "@/components/DateAndTime";
+import ThemeSwitchToggle from "@/components/ThemeSwitchToggle";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 import { links } from "@/lib/data";
 
@@ -15,25 +16,37 @@ export default function Sidebar() {
     useActiveSectionContext();
 
   return (
-    <aside className="hidden md:flex md:flex-col md:justify-center md:gap-6 h-screen top-0 fixed ml-6">
+    <aside className="hidden md:flex md:flex-col md:justify-center md:items-center md:gap-6 h-screen top-0 fixed ml-6">
       {/* <motion.div
         className="h-16 w-28 rounded-xl nm-flat-pattens-blue-lg relative"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div> */}
 
-      <nav className="flex flex-col w-36 nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl rounded-xl py-4">
+      <motion.nav
+        className="flex flex-col w-36 nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl rounded-xl py-4"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
         <ul className="flex flex-col items-start mx-auto justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-3">
           {links.map((link) => (
             <motion.li
               className="flex items-center justify-center relative"
               key={link.hash}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              // initial={{ y: -100, opacity: 0 }}
+              // animate={{ y: 0, opacity: 1 }}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.15,
+              }}
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center gap-1.5 px-3 py-3 hover:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb] z-10",
+                  "flex w-full items-center justify-center gap-1.5 px-3 py-3 hover:text-[#6c5cfb] focus:text-[#6c5cfb] dark:focus:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb] z-10",
                   {
                     "text-gray-950 font-semibold dark:text-white/90":
                       activeSection === link.name,
@@ -63,9 +76,10 @@ export default function Sidebar() {
             </motion.li>
           ))}
         </ul>
-      </nav>
+      </motion.nav>
 
       <DateAndTime />
+      <ThemeSwitchToggle />
     </aside>
   );
 }
