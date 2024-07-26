@@ -19,7 +19,7 @@ export default function ScrollIndicator() {
     }
 
     const range = 300;
-    const offset = scrollHeight * 2;
+    const offset = scrollHeight * 3;
 
     const didScrollPage = (e: Event) => {
       let calc = 1 - (window.scrollY - offset + range) / range;
@@ -40,7 +40,10 @@ export default function ScrollIndicator() {
   }, []);
 
   return (
-    <div ref={ref} className="flex-col gap-4 items-center my-28 hidden lg:flex">
+    <div
+      ref={ref}
+      className="flex-col gap-4 items-center lg:my-16 hidden lg:flex"
+    >
       <motion.p
         className="text-xl font-light tracking-widest"
         initial={{ opacity: 0 }}

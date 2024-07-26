@@ -3,12 +3,17 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
+import Disclaimer from "@/components/Disclaimer";
 import SectionHeading from "@/components/SectionHeading";
+import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
   const { ref } = useSectionInView("About");
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <motion.section
@@ -20,154 +25,103 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About</SectionHeading>
-      {/* <p className="mb-3">
-        Back in 2012, I decided to try my hand at creating custom Tumblr themes
-        and tumbled head first into the rabbit hole of coding and web
-        development. Fast-forward to today, and I’ve had the privilege of
-        building software for an{" "}
+      <p className="mb-3">
+        My first brush with coding was back in 2015. My Programming 1 teacher
+        introduced basic programming concepts using MIT's{" "}
         <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://us.mullenlowe.com/"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://scratch.mit.edu/"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="advertising agency (opens in a new tab)"
+          aria-label="Scratch (opens in a new tab)"
         >
-          advertising agency
+          Scratch
         </a>
-        ,{" "}
+        . I was blown away. Combining my one true love&mdash;Lego&mdash;with
+        computer software, something that was, in my 16 year-old mind at least,
+        intrinsicly linked to video games? A stroke of genius. However, to my
+        shock and horror, Scratch was not all there was. No, the truth was there
+        was far, far more to programming than I had initially considered:
+        languages. Not gonna lie, I was pretty bummed when I found out
+        programming was mostly... words. And writing. I've mostly come around on
+        it these days, but I sitll find myself longing for the tactile snap of
+        block-based programming&mdash;something that partially inspired my{" "}
         <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://starry.com/"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://ieeexplore.ieee.org/document/9576344"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="start-up (opens in a new tab)"
+          aria-label="honor's thesis (opens in a new tab)"
         >
-          start-up
-        </a>
-        , a{" "}
-        <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://www.apple.com/apple-music/"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="huge corporation (opens in a new tab)"
-        >
-          huge corporation
-        </a>
-        , and a
-        <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://upstatement.com/"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="digital product studio (opens in a new tab)"
-        >
-          digital product studio
-        </a>
-        .
+          honor's thesis
+        </a>{" "}
+        in 2021.
       </p>
       <p className="mb-3">
-        Currently, I'm main focus these days is building accessible user
-        interfaces for our customers at{" "}
+        Nowadays, I try to keep the spirit of Scratch alive by building
+        interfaces that emulate that satisfying feeling of playing with blocks,
+        keeping a focus on UX and accessibility. My current project is{" "}
         <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://www.klaviyo.com/"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://brewd.org/"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Klaviyo (opens in a new tab)"
+          aria-label="Brewd (opens in a new tab)"
         >
-          Klaviyo
+          Brewd
         </a>
-        . I most enjoy building software in the sweet spot where design and
-        engineering meet — things that look good but are also built well under
-        the hood. In my free time, I've also released an{" "}
+        , a coffee-rating application with a vintage flair, inspired by
+        platforms like Letterboxd, Backloggd, and Untappd.
+      </p>
+      <p className="mb-3">
+        You may also find me at my home away from home, the cinema. With the
+        power of AMC's{" "}
         <a
-          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
-          href="https://www.newline.co/courses/build-a-spotify-connected-app"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://www.amctheatres.com/amcstubs/alist"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="online video course (opens in a new tab)"
+          aria-label="AMC Stubs A-List&trade; (opens in a new tab)"
         >
-          online video course
+          AMC Stubs A-List&trade;
+        </a>
+        , I'm able to see up to three movies every week, with no blackout dates.
+        Other benefits include free size upgrades on concessions, free online
+        ticket reservations, and priority lanes, all for the low-low price
+        $19.95 per month (plus applicable local taxes). If you love movies, you
+        can't go wrong with AMC's{" "}
+        <a
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://www.amctheatres.com/amcstubs/alist"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="AMC Stubs A-List&trade; (opens in a new tab)"
+        >
+          AMC Stubs A-List&trade;
+        </a>
+        . Join AMC's{" "}
+        <a
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://www.amctheatres.com/amcstubs/alist"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="AMC Stubs A-List&trade; (opens in a new tab)"
+        >
+          AMC Stubs A-List&trade;
         </a>{" "}
-        that covers everything you need to know to build a web app with the
-        Spotify API.
+        today!
+        <Link
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href={"#disclaimer"}
+          onClick={() => {
+            setActiveSection("Disclaimer");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          *
+        </Link>
       </p>
-      <p>
-        Outside of I’m not at the computer, I’m usually rock climbing, reading,
-        hanging out with my wife and two cats, or running around Hyrule
-        searching for{" "}
-        <span className="group/korok inline-flex lg:cursor-[url('/images/koroks/Elma.png'),_pointer] lg:font-medium lg:text-slate-200">
-          <span className="sr-only">Korok seeds</span>
-          <span
-            className="group-hover/korok:text-red-400 transition duration-75 group-hover/korok:-translate-y-px delay-[50ms]"
-            aria-hidden="true"
-          >
-            K
-          </span>
-          <span
-            className="group-hover/korok:text-orange-400 transition duration-75 group-hover/korok:-translate-y-px delay-[75ms]"
-            aria-hidden="true"
-          >
-            o
-          </span>
-          <span
-            className="group-hover/korok:text-yellow-400 transition duration-75 group-hover/korok:-translate-y-px delay-[100ms]"
-            aria-hidden="true"
-          >
-            r
-          </span>
-          <span
-            className="group-hover/korok:text-lime-400 transition duration-75 group-hover/korok:-translate-y-px delay-[125ms]"
-            aria-hidden="true"
-          >
-            o
-          </span>
-          <span
-            className="group-hover/korok:text-green-400 transition duration-75 group-hover/korok:-translate-y-px delay-[150ms]"
-            aria-hidden="true"
-          >
-            k
-          </span>
-          <span
-            className="group-hover/korok:text-teal-400 transition duration-75 group-hover/korok:-translate-y-px delay-[175ms]"
-            aria-hidden="true"
-          >
-            &nbsp;
-          </span>
-          <span
-            className="group-hover/korok:text-cyan-400 transition duration-75 group-hover/korok:-translate-y-px delay-[200ms]"
-            aria-hidden="true"
-          >
-            s
-          </span>
-          <span
-            className="group-hover/korok:text-sky-400 transition duration-75 group-hover/korok:-translate-y-px delay-[225ms]"
-            aria-hidden="true"
-          >
-            e
-          </span>
-          <span
-            className="group-hover/korok:text-blue-400 transition duration-75 group-hover/korok:-translate-y-px delay-[250ms]"
-            aria-hidden="true"
-          >
-            e
-          </span>
-          <span
-            className="group-hover/korok:text-indigo-400 transition duration-75 group-hover/korok:-translate-y-px delay-[275ms]"
-            aria-hidden="true"
-          >
-            d
-          </span>
-          <span
-            className="group-hover/korok:text-violet-400 transition duration-75 group-hover/korok:-translate-y-px delay-[300ms]"
-            aria-hidden="true"
-          >
-            s
-          </span>
-        </span>
-        .
-      </p> */}
+      <Disclaimer />
     </motion.section>
   );
 }
