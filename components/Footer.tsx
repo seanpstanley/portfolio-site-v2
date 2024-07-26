@@ -20,7 +20,7 @@ export default function Footer() {
   const romanYear = romanize(curYear);
 
   return (
-    <footer className="pb-12 md:pb-16 lg:pb-20 text-gray-500 dark:text-white/40 text-start w-full md:pt-4 px-2 md:px-0">
+    <footer className="pb-12 md:pb-16 lg:pb-20 text-gray-500 dark:text-white/40 text-start w-full px-2 lg:px-0">
       <motion.div
         className="border-t border-gray-400 dark:border-gray-400/20 pt-6"
         initial={{ opacity: 0, y: 100 }}

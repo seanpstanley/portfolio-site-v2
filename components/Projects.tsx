@@ -14,10 +14,10 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-10 lg:scroll-mt-24 mb-20 md:mb-28 px-2 md:px-0"
+      className="scroll-mt-12 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0"
     >
       <SectionHeading>Projects</SectionHeading>
-      <ol className="flex flex-wrap justify-center gap-6 sm:gap-8 group">
+      <ol className="flex flex-wrap justify-center gap-6 group">
         {projectsData.map((project, index) => (
           <li key={index}>
             <Project {...project} />
