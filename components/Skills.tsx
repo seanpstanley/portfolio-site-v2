@@ -16,10 +16,10 @@ export default function Skills() {
     <section
       ref={ref}
       id="skills"
-      className="mb-28 px-2 max-w-5xl text-center scroll-mt-10 sm:scroll-mt-20"
+      className="scroll-mt-10 lg:scroll-mt-24 mb-20 md:mb-28 px-2 md:px-0 max-w-4xl text-center"
     >
       <SectionHeading>skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2.5 text-lg text-gray-800">
+      <ul className="flex flex-wrap justify-center lg:justify-start gap-2.5 text-lg text-gray-800 dark:text-white/80">
         {skillsData.map((skill, index) => (
           <motion.li
             className="inset-card px-5 py-3 rounded-xl"

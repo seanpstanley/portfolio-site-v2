@@ -9,7 +9,7 @@ export default function AnalogClock() {
     <div className="absolute flex justify-center items-center w-full h-full">
       <div className="absolute w-2.5 h-2.5 z-20 rounded-full bg-gray-800 dark:bg-gray-50" />
       <div className="absolute w-1.5 h-1.5 z-30 rounded-full bg-orange-400" />
-      <div className="absolute w-[0.175rem] h-[0.175rem] z-40  rounded-full bg-black" />
+      <div className="absolute w-[0.175rem] h-[0.175rem] z-40  rounded-full bg-gray-900" />
       <div className="flex justify-center">
         <motion.div
           className="absolute origin-top flex items-center justify-center w-[0.225rem] h-2.5 rounded-full shadow-md bg-gray-900 dark:bg-gray-50"

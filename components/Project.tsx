@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { FaGithub } from "react-icons/fa";
-import { LuExternalLink } from "react-icons/lu";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 import LinkIconButton from "@/components/LinkIconButton";
 import TechTags from "@/components/TechTags";
@@ -43,16 +43,16 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-xl sm:h-[24rem] rounded-lg overflow-hidden">
+      <section className="card pt-5 pb-6 px-6 rounded-lg overflow-hidden max-w-xl">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">
               <h3 className="text-2xl font-semibold leading-tight">{title}</h3>
-              <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+              <p className="mt-2 leading-relaxed text-gray-600 dark:text-white/60">
                 {description}
               </p>
             </div>
-            <div className="flex flex-col flex-shrink-0 sm:items-center sm:ml-6">
+            <div className="flex flex-col flex-shrink-0 sm:items-center sm:ml-10">
               <Image
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}
@@ -64,7 +64,7 @@ export default function Project({
                   <LinkIconButton
                     link={deployment.link}
                     accessibilityText={deployment.accessibilityText}
-                    icon={<LuExternalLink />}
+                    icon={<FaExternalLinkSquareAlt />}
                   />
                 )}
                 {github && (
@@ -77,14 +77,14 @@ export default function Project({
               </div>
             </div>
           </div>
-          <div className="flex justify-between items-end gap-2 mt-2 sm:mt-auto">
+          <div className="flex justify-between items-end gap-2 mt-4">
             <TechTags tags={tags} />
             <div className="sm:hidden flex flex-col items-end	gap-3">
               {deployment && (
                 <LinkIconButton
                   link={deployment.link}
                   accessibilityText={deployment.accessibilityText}
-                  icon={<LuExternalLink />}
+                  icon={<FaExternalLinkSquareAlt />}
                 />
               )}
               {github && (

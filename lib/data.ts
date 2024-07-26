@@ -17,8 +17,8 @@ import xdgLogo from "@/public/logos/xdg-logo.png";
 
 export const links = [
   {
-    name: "Home",
-    hash: "#home",
+    name: "About",
+    hash: "#about",
     icon: React.createElement(IoHome),
   },
   // {
@@ -216,7 +216,7 @@ export const projectsData = [
   {
     title: "This Website, Portfolio Website v2",
     description:
-      "Used Tailwind + Framer to implement flashier stuff, faster. Heavily focused on accessibility--including full compat. with screen readers and keyboard navigation. Used axe DevTools/WCAG 2.1 to verify compliance.",
+      "Used Tailwind + Framer to implement flashier stuff, faster. Heavily focused on accessibility--including full compatibility with screen readers and keyboard navigation. Used axe DevTools + WCAG 2.1 to verify compliance.",
     tags: [
       "Next.js",
       "Server Actions",

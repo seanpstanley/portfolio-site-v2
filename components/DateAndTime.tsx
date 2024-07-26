@@ -8,7 +8,7 @@ import Time from "@/components/Time";
 export default function DateAndTime() {
   return (
     <motion.div
-      className="hidden md:flex md:flex-col gap-3 text-gray-500 items-center"
+      className="flex gap-3 text-gray-500"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

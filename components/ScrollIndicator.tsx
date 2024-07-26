@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function ScrollIndicator() {
-  const { ref } = useSectionInView("Home", 1);
+  const { ref } = useSectionInView("About", 1);
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [opacity, setOpacity] = useState(1);
@@ -40,7 +40,7 @@ export default function ScrollIndicator() {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col gap-4 items-center mb-20">
+    <div ref={ref} className="flex-col gap-4 items-center my-28 hidden lg:flex">
       <motion.p
         className="text-xl font-light tracking-widest"
         initial={{ opacity: 0 }}
