@@ -1,7 +1,7 @@
 "use client";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import Intro from "@/components/Intro";
 import LinkIconButton from "@/components/LinkIconButton";

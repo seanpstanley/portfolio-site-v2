@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { links } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
+import { links } from "@/lib/data";
 
 export default function SidebarNavbar() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
