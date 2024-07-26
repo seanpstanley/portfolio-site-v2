@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 
+import DateAndTime from "@/components/DateAndTime";
 import { footerQuotes } from "@/lib/data";
 import { romanize } from "@/lib/utils";
-import DateAndTime from "@/components/DateAndTime";
 
 export default function Footer() {
   const date = new Date();

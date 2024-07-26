@@ -1,13 +1,12 @@
 "use client";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-import ThemeSwitchToggle from "@/components/ThemeSwitchToggle";
 import Intro from "@/components/Intro";
-import LinkIconButton from "./LinkIconButton";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-
+import LinkIconButton from "@/components/LinkIconButton";
 import SidebarNavbar from "@/components/SidebarNavbar";
+import ThemeSwitchToggle from "@/components/ThemeSwitchToggle";
 
 export default function Sidebar() {
   return (
@@ -18,7 +17,7 @@ export default function Sidebar() {
         <SidebarNavbar />
       </div>
       <motion.div
-        className="flex justify-start px-2 md:px-0 lg:justify-between lg:max-w-sm"
+        className="flex justify-start px-2 md:px-0 lg:justify-between lg:max-w-xs"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.175 }}

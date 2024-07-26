@@ -1,11 +1,11 @@
 "use client";
 
-import { links } from "@/lib/data";
 import clsx from "clsx";
-import Link from "next/link";
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+import { links } from "@/lib/data";
+import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 
 export default function SidebarNavbar() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =

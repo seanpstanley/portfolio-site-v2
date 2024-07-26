@@ -3,19 +3,18 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { HiDownload } from "react-icons/hi";
 
 import SectionHeading from "@/components/SectionHeading";
-import "react-vertical-timeline-component/style.min.css";
+// import "react-vertical-timeline-component/style.min.css";
 import TechTags from "@/components/TechTags";
 import { useTheme } from "@/context/ThemeContextProvider";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.35);
@@ -42,7 +41,6 @@ export default function Experience() {
                   theme === "light"
                     ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
                     : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
-                // border: "1px solid rgba(0, 0, 0, 0.1)",
                 borderRadius: "0.5rem",
                 textAlign: "left",
                 padding: "1.25rem 1.25rem 0.75rem 1.25rem",

@@ -13,7 +13,7 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="mb-20 lg:mb-0 text-start text-gray-700 dark:text-white/70 leading-relaxted scroll-mt-10 lg:scroll-mt-[100rem] px-2 flex flex-col"
+      className="mb-20 lg:mb-0 text-start text-gray-700 dark:text-white/70 leading-relaxted scroll-mt-10 lg:scroll-mt-[100rem] px-2 lg:px-0 flex flex-col"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.125 }}
@@ -67,8 +67,8 @@ export default function About() {
         .
       </p>
       <p className="mb-4">
-        My main focus these days is building accessible user interfaces for our
-        customers at{" "}
+        Currently, I'm main focus these days is building accessible user
+        interfaces for our customers at{" "}
         <a
           className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://www.klaviyo.com/"
@@ -94,7 +94,7 @@ export default function About() {
         Spotify API.
       </p>
       <p>
-        When I’m not at the computer, I’m usually rock climbing, reading,
+        Outside of I’m not at the computer, I’m usually rock climbing, reading,
         hanging out with my wife and two cats, or running around Hyrule
         searching for{" "}
         <span className="group/korok inline-flex lg:cursor-[url('/images/koroks/Elma.png'),_pointer] lg:font-medium lg:text-slate-200">

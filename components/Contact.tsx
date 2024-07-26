@@ -30,7 +30,7 @@ export default function Contact() {
       <p className="text-gray-600 dark:text-white/60 text-start">
         use the form below, or contact me directly at{" "}
         <a
-          className="underline text-gray-700 dark:text-white/70 hover:text-[#6c5cfb] focus-visible::text-[#6c5cfb]"
+          className="underline text-gray-700 dark:text-white/70 hover:text-[#6c5cfb] focus-visible::text-[#6c5cfb] transition-colors motion-reduce:transition-none"
           href="mailto:seans09comp@gmail.com"
         >
           seans09comp@gmail.com
