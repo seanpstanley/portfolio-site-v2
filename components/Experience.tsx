@@ -8,9 +8,9 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 import SectionHeading from "@/components/SectionHeading";
-// import "react-vertical-timeline-component/style.min.css";
 import TechTags from "@/components/TechTags";
 import { useTheme } from "@/context/ThemeContextProvider";
 import { experiencesData } from "@/lib/data";
