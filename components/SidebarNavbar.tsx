@@ -13,7 +13,7 @@ export default function SidebarNavbar() {
 
   return (
     <motion.nav
-      className="flex-col w-fit hidden lg:flex"
+      className="flex-col w-fit hidden lg:flex mt-14"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -33,9 +33,9 @@ export default function SidebarNavbar() {
           >
             <Link
               className={clsx(
-                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-[#6c5cfb] transition dark:text-white/60 dark:hover:text-[#6c5cfb] z-10",
+                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] z-10 focus-visible:text-[#6c5cfb]",
                 {
-                  "text-gray-900 font-semibold text-base dark:text-white/90 transition":
+                  "text-gray-900 font-semibold text-base dark:text-white/90":
                     activeSection === link.name,
                 }
               )}
@@ -50,7 +50,7 @@ export default function SidebarNavbar() {
 
               {link.name === activeSection && (
                 <motion.span
-                  className="nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-full absolute -inset-x-1 inset-y-1 -z-10"
+                  className="nm-flat-pattens-blue dark:nm-flat-cinder rounded-full absolute -inset-x-1 inset-y-1 -z-10"
                   layoutId="activeSection"
                   transition={{
                     type: "spring",

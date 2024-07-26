@@ -13,10 +13,10 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="mb-20 lg:mb-0 text-start leading-relaxted scroll-mt-10 lg:scroll-mt-[100rem] px-2 flex flex-col"
+      className="mb-20 lg:mb-0 text-start text-gray-700 dark:text-white/70 leading-relaxted scroll-mt-10 lg:scroll-mt-[100rem] px-2 flex flex-col"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.165 }}
+      transition={{ delay: 0.125 }}
       id="about"
     >
       <SectionHeading>About</SectionHeading>
@@ -24,9 +24,9 @@ export default function About() {
         Back in 2012, I decided to try my hand at creating custom Tumblr themes
         and tumbled head first into the rabbit hole of coding and web
         development. Fast-forward to today, and I’ve had the privilege of
-        building software for an
+        building software for an{" "}
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://us.mullenlowe.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -36,7 +36,7 @@ export default function About() {
         </a>
         ,{" "}
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://starry.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -46,7 +46,7 @@ export default function About() {
         </a>
         , a{" "}
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://www.apple.com/apple-music/"
           target="_blank"
           rel="noreferrer noopener"
@@ -56,7 +56,7 @@ export default function About() {
         </a>
         , and a
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://upstatement.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -70,7 +70,7 @@ export default function About() {
         My main focus these days is building accessible user interfaces for our
         customers at{" "}
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://www.klaviyo.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -82,7 +82,7 @@ export default function About() {
         engineering meet — things that look good but are also built well under
         the hood. In my free time, I've also released an{" "}
         <a
-          className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+          className="font-medium text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]"
           href="https://www.newline.co/courses/build-a-spotify-connected-app"
           target="_blank"
           rel="noreferrer noopener"

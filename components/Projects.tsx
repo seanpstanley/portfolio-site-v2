@@ -17,13 +17,13 @@ export default function Projects() {
       className="scroll-mt-10 lg:scroll-mt-24 mb-20 md:mb-28 px-2 md:px-0"
     >
       <SectionHeading>Projects</SectionHeading>
-      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+      <ol className="flex flex-wrap justify-center gap-6 sm:gap-8 group">
         {projectsData.map((project, index) => (
-          // <React.Fragment key={index}>
-          <Project {...project} key={index} />
-          // </React.Fragment>
+          <li key={index}>
+            <Project {...project} />
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

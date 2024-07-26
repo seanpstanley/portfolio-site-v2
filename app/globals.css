@@ -23,11 +23,11 @@ html.dark {
 } */
 
 .card {
-  @apply bg-white/90 hover:nm-flat-pattens-blue-xl transition dark:text-white/80 dark:hover:nm-flat-cinder-xl nm-flat-pattens-blue-lg dark:nm-flat-cinder-lg;
+  @apply bg-white/90 hover:!nm-flat-pattens-blue-lg group-hover:nm-flat-pattens-blue-sm dark:group-hover:nm-flat-cinder-sm transition motion-reduce:transition-none dark:text-white/80 dark:hover:!nm-flat-cinder-lg nm-flat-pattens-blue dark:nm-flat-cinder;
 }
 
 .inset-card {
-  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition  dark:text-white/80 dark:hover:nm-concave-cinder nm-concave-pattens-blue-sm dark:nm-concave-cinder-sm;
+  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition-colors duration-700 motion-reduce:transition-none  dark:text-white/80 dark:hover:nm-concave-cinder nm-concave-pattens-blue-sm dark:nm-concave-cinder-sm;
 }
 
 .hamburger-line {

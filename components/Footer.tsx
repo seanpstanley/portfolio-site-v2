@@ -1,8 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { footerQuotes } from "@/lib/data";
 import { romanize } from "@/lib/utils";
-import DateAndTime from "./DateAndTime";
+import DateAndTime from "@/components/DateAndTime";
 
 export default function Footer() {
   const date = new Date();
@@ -19,8 +21,22 @@ export default function Footer() {
 
   return (
     <footer className="pb-12 md:pb-16 lg:pb-20 text-gray-500 dark:text-white/40 text-start w-full md:pt-4 px-2 md:px-0">
-      <div className="border-t border-gray-400 dark:border-gray-400/20 pt-6" />
-      <div className="flex flex-col lg:flex-row items-center gap-y-1.5 md:gap-x-6 md:justify-between">
+      <motion.div
+        className="border-t border-gray-400 dark:border-gray-400/20 pt-6"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.165,
+        }}
+      />
+      <motion.div
+        className="flex flex-col lg:flex-row items-center gap-y-1.5 md:gap-x-6 md:justify-between"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.175,
+        }}
+      >
         <small className="mb-2 block text-xs leading-relaxed">
           &copy; {romanYear} | "{`${quote}`}" -
           <span className="italic">
@@ -29,7 +45,7 @@ export default function Footer() {
         </small>
 
         <DateAndTime />
-      </div>
+      </motion.div>
     </footer>
   );
 }

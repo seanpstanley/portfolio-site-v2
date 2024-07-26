@@ -43,7 +43,7 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="card pt-5 pb-6 px-6 rounded-lg overflow-hidden max-w-xl">
+      <section className="card pt-5 pb-6 px-6 rounded-lg overflow-hidden max-w-xl ">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">

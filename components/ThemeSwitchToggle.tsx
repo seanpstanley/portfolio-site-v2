@@ -8,11 +8,11 @@ export default function ThemeSwitchButton() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <label className="relative cursor-pointer items-center w-fit rounded-full text-gray-700 hover:text-[#6c5cfb] focus:text-[#6c5cfb] dark:focus:text-[#6c5cfb] dark:text-white/70 dark:hover:text-[#6c5cfb] transition-colors hidden lg:inline-flex">
+    <label className="relative cursor-pointer items-center w-fit rounded-full text-gray-700 hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] dark:text-white/70 dark:hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none hidden lg:inline-flex">
       <input
         id="dark-toggle"
         type="checkbox"
-        onClick={toggleTheme}
+        onChange={toggleTheme}
         checked={theme === "light" ? false : true}
         className="peer sr-only"
       />
@@ -25,9 +25,7 @@ export default function ThemeSwitchButton() {
       <span className="absolute right-2 text-lg text-gray-">
         <IoSunny />
       </span>
-      <div className="peer h-9 w-16 rounded-full nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm after:absolute after:left-1 after:top-1 after:size-7 after:rounded-full after:nm-flat-pattens-blue-sm after:dark:nm-flat-cinder after:transition-all after:content-[''] peer-checked:after:translate-x-full after:duration-300 after:ease-in-out">
-        {/* <IoMoon /> */}
-      </div>
+      <div className="peer h-9 w-16 rounded-full nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm after:absolute after:left-1 after:top-3.5 after:size-7 after:rounded-full after:nm-flat-pattens-blue-sm after:dark:nm-flat-cinder-sm after:transition-all after:motion-reduce:transition-none after:content-[''] peer-checked:after:translate-x-full after:duration-300 after:ease-in-out" />
     </label>
   );
 }

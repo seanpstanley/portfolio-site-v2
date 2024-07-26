@@ -40,8 +40,8 @@ export default function Experience() {
                 background: theme === "light" ? "#e3eaf4" : "#1f2427",
                 boxShadow:
                   theme === "light"
-                    ? "0.4em 0.4em calc(0.4em * 2) #a2bbdb, calc(0.4em * -1) calc(0.4em * -1) calc(0.4em * 2) #f6f8fb"
-                    : "0.4em 0.4em calc(0.4em * 2) #191c1e, calc(0.4em * -1) calc(0.4em * -1) calc(0.4em * 2) #242a2d",
+                    ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
+                    : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
                 // border: "1px solid rgba(0, 0, 0, 0.1)",
                 borderRadius: "0.5rem",
                 textAlign: "left",
@@ -76,9 +76,11 @@ export default function Experience() {
         ))}
       </VerticalTimeline>
       <a
-        className="mt-8 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder-lg inline-flex items-center justify-center px-5 py-3 overflow-hidden font-medium transition rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder active:nm-inset-pattens-blue dark:active:nm-inset-cinder disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder dark:border-none hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] hover:scale-[1.025] active:scale-100 focus:scale-[1.025] focus:text-[#6c5cfb] dark:focus:text-[#6c5cfb] text-gray-700 dark:text-white/85"
+        className="ml-2 md:ml-0 mt-8 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center px-5 py-3 font-medium transition motion-reduce:transition-none rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] hover:scale-[1.025] active:scale-100 focus-visible:scale-[1.025] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] text-gray-700 dark:text-white/85"
         href="/sean-stanley-resume.pdf"
-        download
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="View Full Résumé (opens in a new tab)"
       >
         View Full Résumé
         <FaExternalLinkSquareAlt className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ml-2" />

@@ -3,7 +3,6 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-// import { PiSun, PiMoon } from "react-icons/pi";
 import { IoSunny, IoMoon } from "react-icons/io5";
 
 import { useTheme } from "@/context/ThemeContextProvider";
@@ -13,7 +12,7 @@ export default function ThemeSwitchButton() {
 
   return (
     <motion.button
-      className="flex nav fixed bottom-5 right-5 size-12 lg:hidden justify-center sm:justify-between sm:py-2 sm:px-4 text-xl items-center rounded-full text-gray-700 hover:text-[#6c5cfb] focus:text-[#6c5cfb] dark:focus:text-[#6c5cfb] dark:text-white/60 dark:hover:text-[#6c5cfb] transition-colors"
+      className="flex nav fixed bottom-5 right-5 size-12 lg:hidden justify-center sm:justify-between sm:py-2 sm:px-4 text-xl items-center rounded-full text-gray-700 hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] dark:text-white/60 dark:hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
       onClick={toggleTheme}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -23,15 +22,9 @@ export default function ThemeSwitchButton() {
       aria-pressed={theme === "light" ? "false" : "true"}
     >
       {theme === "light" ? (
-        <>
-          {/* <span className="hidden sm:block text-sm">Toggle Light Mode</span> */}
-          <IoMoon className="sm:text-lg" />
-        </>
+        <IoMoon className="sm:text-2xl" />
       ) : (
-        <>
-          {/* <span className="hidden sm:block text-sm">Toggle Dark Mode</span> */}
-          <IoSunny className="sm:text-lg" />
-        </>
+        <IoSunny className="sm:text-2xl" />
       )}
     </motion.button>
   );

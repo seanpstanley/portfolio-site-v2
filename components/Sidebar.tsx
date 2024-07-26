@@ -12,9 +12,11 @@ import SidebarNavbar from "@/components/SidebarNavbar";
 export default function Sidebar() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col gap-y-4 lg:justify-between py-12 md:py-16 lg:py-20">
-      <Intro />
+      <div>
+        <Intro />
 
-      <SidebarNavbar />
+        <SidebarNavbar />
+      </div>
       <motion.div
         className="flex justify-start px-2 md:px-0 lg:justify-between lg:max-w-sm"
         initial={{ opacity: 0, y: 100 }}
