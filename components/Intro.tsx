@@ -23,8 +23,7 @@ export default function Intro() {
             }}
           >
             <TypeAnimation
-              sequence={["Hi,", 850, "Hi, I'm Sean."]}
-              preRenderFirstString
+              sequence={[700, "Hi,", 800, "Hi, I'm Sean."]}
               wrapper="h1"
               speed={1}
             />
