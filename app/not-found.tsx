@@ -1,8 +1,7 @@
 "use client";
 
-import { TypeAnimation } from "react-type-animation";
-
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 export default function NotFound() {
   return (

@@ -1,8 +1,9 @@
 "use client";
 
-import SkillsPolarChart from "@/components/SkillsPolarChart";
 import SectionHeading from "@/components/SectionHeading";
 import SkillsList from "@/components/SkillsList";
+import SkillsPolarChart from "@/components/SkillsPolarChart";
+
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Skills() {
