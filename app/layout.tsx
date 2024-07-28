@@ -3,7 +3,6 @@ import { Inter, Nunito_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
@@ -33,7 +32,6 @@ export default function RootLayout({
             <div className="lg:flex lg:justify-between gap-6">
               <Sidebar />
               <div className="flex flex-col items-center lg:w-1/2">
-                <Header />
                 {children}
                 <Footer />
                 <Toaster position="top-right" />

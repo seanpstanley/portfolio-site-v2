@@ -19,14 +19,14 @@ export default function MobileNavbar() {
     useActiveSectionContext();
 
   return (
-    <nav className="z-[999] lg:hidden fixed top-3 right-3" ref={ref}>
+    <nav className="z-[999] lg:hidden fixed h-16 top-0 right-3" ref={ref}>
       <AnimatePresence>
         {isOpen && (
           <motion.ul
             layout="size"
             className={`${
               isOpen ? "" : "w-0 h-0"
-            } fixed left-0 border border-black right-0 pr-[5.5rem] flex flex-col gap-3 mb-0 p-3 nav`}
+            } fixed left-0 right-0 pr-20 flex flex-col nav`}
             exit={{ opacity: 0 }}
           >
             {links.map((link, index) => (
@@ -40,7 +40,7 @@ export default function MobileNavbar() {
               >
                 <Link
                   className={clsx(
-                    "flex justify-center items-center w-full py-5 hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]",
+                    "flex justify-center items-center w-full py-6 hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]",
                     {
                       "text-gray-950 font-semibold dark:text-white/90":
                         activeSection === link.name,
@@ -56,7 +56,7 @@ export default function MobileNavbar() {
                   {link.name}
 
                   {link.name === activeSection && (
-                    <span className="absolute inset-0 -z-10 nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-2xl"></span>
+                    <span className="absolute inset-x-4 inset-y-4 -z-10 nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-full"></span>
                   )}
                 </Link>
               </motion.li>
@@ -78,7 +78,7 @@ export default function MobileNavbar() {
             initial={false}
             animate={isOpen ? "open" : "closed"}
             onClick={() => setIsOpen((prev) => !prev)}
-            className="group relative size-16 rounded-full nav"
+            className="group relative size-16"
             aria-label="Nav menu toggle"
             aria-pressed={isOpen ? "true" : "false"}
           >
