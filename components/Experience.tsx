@@ -3,6 +3,7 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import {
   VerticalTimeline,
@@ -73,43 +74,17 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </VerticalTimeline>
-      <a
+      <Link
         className="ml-2 md:ml-0 mt-6 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center px-5 py-3 font-medium transition motion-reduce:transition-none rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] hover:scale-[1.025] active:scale-100 focus-visible:scale-[1.025] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] text-gray-700 dark:text-white/85"
-        href="./sean-stanley-resume.pdf"
+        href="/files/sean-stanley-resume.pdf"
         target="_blank"
         rel="noreferrer noopener"
+        locale={false}
         aria-label="View Full Résumé (opens in a new tab)"
       >
         View Full Résumé
         <FaExternalLinkSquareAlt className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ml-2" />
-      </a>
-      <a
-        className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-slate-200 group/link text-base"
-        href="/sean-stanley-resume.pdf"
-        target="_blank"
-        rel="noreferrer noopener"
-        aria-label="View Full Résumé (opens in a new tab)"
-      >
-        <span>
-          View Full{" "}
-          <span className="inline-block">
-            Résumé
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </span>
-      </a>
+      </Link>
     </motion.section>
   );
 }

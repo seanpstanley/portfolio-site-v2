@@ -44,7 +44,7 @@ export default function SkillsPolarChart() {
   }, []);
 
   return (
-    <div className="mb-6 w-full mx-auto" style={{ width: "100%" }}>
+    <div className="mb-8 w-full mx-auto" style={{ width: "100%" }}>
       <canvas id="chart" ref={chartRef}></canvas>
     </div>
     // <div className="mb-6 w-full mx-auto">
