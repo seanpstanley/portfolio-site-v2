@@ -3,12 +3,15 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+// import Image from "next/image";
 import Link from "next/link";
 
 import Disclaimer from "@/components/Disclaimer";
 import SectionHeading from "@/components/SectionHeading";
 import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
 import { useSectionInView } from "@/lib/hooks";
+// import alienDance from "@/public/alien-dance-transparent.gif";
+// import seanPortrait from "@/public/sean-portrait.png";
 
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -25,6 +28,28 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About</SectionHeading>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: "tween", duration: 0.3 }}
+        className="relative group shrink-0"
+      >
+        {/* <Image
+          src={seanPortrait}
+          alt="A portrait of me."
+          quality="95"
+          priority
+          className="size-20 rounded-full object-cover nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl transition-colors"
+        />
+        <Image
+          src={alienDance}
+          alt="A small, animated, green alien dancing near the bottom right corner of my portrait photo."
+          unoptimized
+          quality="95"
+          priority
+          className="hidden group-hover:block absolute -bottom-0.5 lg:-bottom-1.5 right-1.5 lg:right-2.5 h-10 w-10 lg:h-20 lg:w-20 object-cover text-4xl"
+        /> */}
+      </motion.div>
       <p className="mb-3">
         My first brush with coding was back in 2015. My Programming 1 teacher
         introduced basic programming concepts using MIT's{" "}
@@ -43,9 +68,10 @@ export default function About() {
         shock and horror, Scratch was not all there was. No, the truth was there
         was far, far more to programming than I had initially considered:
         languages. Not gonna lie, I was pretty bummed when I found out
-        programming was mostly... words. And writing. I've mostly come around on
-        it these days, but I sitll find myself longing for the tactile snap of
-        block-based programming&mdash;something that partially inspired my{" "}
+        programming was mostly... words. And writing. I've more or less come
+        around on it these days, but I sitll find myself longing for the tactile
+        snap of block-based programming&mdash;something that partially inspired
+        my{" "}
         <a
           className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
           href="https://ieeexplore.ieee.org/document/9576344"
@@ -71,10 +97,40 @@ export default function About() {
           Brewd
         </a>
         , a coffee-rating application with a vintage flair, inspired by
-        platforms like Letterboxd, Backloggd, and Untappd.
+        platforms like{" "}
+        <a
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://letterboxd.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Letterboxd (opens in a new tab)"
+        >
+          Letterboxd
+        </a>
+        ,{" "}
+        <a
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://backloggd.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Backloggd (opens in a new tab)"
+        >
+          Backloggd
+        </a>
+        , and{" "}
+        <a
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          href="https://untappd.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Untappd (opens in a new tab)"
+        >
+          Untapped
+        </a>
+        .
       </p>
       <p className="mb-3">
-        You may also find me at my home away from home, the cinema. With the
+        You may also find me at my home away from home: the cinema. With the
         power of AMC's{" "}
         <a
           className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"

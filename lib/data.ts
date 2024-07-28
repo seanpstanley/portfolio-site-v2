@@ -52,7 +52,7 @@ export const experiencesData = [
     title: "Software Engineer Intern",
     location: "Burnley Consulting",
     description:
-      "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks (DNN) module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
+      "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
     icon: React.createElement(MdWork),
     date: "May 2018 - August 2018",
     tags: ["Java", "OpenCV"],
@@ -61,7 +61,7 @@ export const experiencesData = [
     title: "Undergraduate Researcher",
     location: "University of Florida",
     description:
-      "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality (AR) interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
+      "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
     icon: React.createElement(FaGraduationCap),
     date: "December 2020 – October 2021",
     tags: [

@@ -1,13 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-// import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
 // import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 // import { useSectionInView } from "@/lib/hooks";
-// import alienDance from "@/public/alien-dance-transparent.gif";
-// import seanPortrait from "@/public/sean-portrait.png";
 
 export default function Intro() {
   // const { ref } = useSectionInView("About");
@@ -16,28 +13,6 @@ export default function Intro() {
   return (
     <section className="text-center px-2 md:px-0 ">
       <div className="flex lg:flex-row flex-col items-start lg:items-center lg:gap-7">
-        {/* <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "tween", duration: 0.3 }}
-          className="relative group shrink-0"
-        >
-          <Image
-            src={seanPortrait}
-            alt="A portrait of me."
-            quality="95"
-            priority
-            className="size-20 rounded-full object-cover nm-flat-pattens-blue-lg dark:nm-flat-cinder-xl transition-colors"
-          />
-          <Image
-            src={alienDance}
-            alt="A small, animated, green alien dancing near the bottom right corner of my portrait photo."
-            unoptimized
-            quality="95"
-            priority
-            className="hidden group-hover:block absolute -bottom-0.5 lg:-bottom-1.5 right-1.5 lg:right-2.5 h-10 w-10 lg:h-20 lg:w-20 object-cover text-4xl"
-          />
-        </motion.div> */}
         <div className="flex flex-col items-start">
           <motion.div
             className="flex items-start w-[15.85rem] lg:mt-0 mb-3.5 font-thin text-5xl dark:text-white/90"
