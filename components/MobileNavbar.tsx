@@ -19,14 +19,14 @@ export default function MobileNavbar() {
     useActiveSectionContext();
 
   return (
-    <nav className="z-[999] lg:hidden fixed h-16 top-0 right-3" ref={ref}>
+    <nav className="z-[999] lg:hidden fixed h-16 top-0 right-0" ref={ref}>
       <AnimatePresence>
         {isOpen && (
           <motion.ul
             layout="size"
             className={`${
               isOpen ? "" : "w-0 h-0"
-            } fixed left-0 right-0 pr-20 flex flex-col nav`}
+            } fixed left-0 right-0 pr-16 flex flex-col nav`}
             exit={{ opacity: 0 }}
           >
             {links.map((link, index) => (

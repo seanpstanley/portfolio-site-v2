@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IoSunny, IoMoon } from "react-icons/io5";
 
 import { useTheme } from "@/context/ThemeContextProvider";
@@ -22,7 +20,7 @@ export default function ThemeSwitchButton() {
       <span className="absolute left-2.5">
         <IoMoon />
       </span>
-      <span className="absolute right-2 text-lg text-gray-">
+      <span className="absolute right-2 text-lg">
         <IoSunny />
       </span>
       <div className="peer h-9 w-16 rounded-full nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm after:absolute after:left-1 after:top-3.5 after:size-7 after:rounded-full after:nm-flat-pattens-blue-sm after:dark:nm-flat-cinder-sm after:transition-all after:motion-reduce:transition-none after:content-[''] peer-checked:after:translate-x-full after:duration-300 after:ease-in-out" />
