@@ -14,7 +14,7 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="scroll-mt-12 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0"
+      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0"
     >
       <SectionHeading>Projects</SectionHeading>
       <ol className="flex flex-wrap justify-center gap-6 group">

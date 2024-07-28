@@ -16,7 +16,7 @@ export default function Skills() {
     <section
       ref={ref}
       id="skills"
-      className="scroll-mt-10 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0 max-w-4xl text-center"
+      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0 max-w-4xl text-center"
     >
       <SectionHeading>skills</SectionHeading>
       <ul className="flex flex-wrap justify-start gap-2 text-lg text-gray-800 dark:text-white/80">

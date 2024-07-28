@@ -24,7 +24,7 @@ export default function Experience() {
     <motion.section
       ref={ref}
       id="experience"
-      className="scroll-mt-12 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32"
+      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}

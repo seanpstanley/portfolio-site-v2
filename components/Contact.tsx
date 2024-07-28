@@ -20,7 +20,7 @@ export default function Contact() {
     <motion.section
       ref={ref}
       id="contact"
-      className="scroll-mt-12 lg:scroll-mt-24 w-full text-start px-2 lg:px-0 mb-4 md:mb-8 lg:mb-12"
+      className="scroll-mt-0 lg:scroll-mt-24 w-full text-start px-2 lg:px-0 mb-4 md:mb-8 lg:mb-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -30,7 +30,7 @@ export default function Contact() {
       <p className="text-gray-600 dark:text-white/60 text-start">
         use the form below, or contact me directly at{" "}
         <a
-          className="underline text-gray-700 dark:text-white/70 hover:text-[#6c5cfb] focus-visible::text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="underline text-gray-700 dark:text-white/70 hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible::text-[#6c5cfb] transition-colors motion-reduce:transition-none"
           href="mailto:seans09comp@gmail.com"
         >
           seans09comp@gmail.com

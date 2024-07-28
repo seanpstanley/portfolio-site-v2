@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="lowercase !scroll-smooth">
       <body
-        className={`${nunito.className} bg-[#e3eaf4] text-gray-900 relative min-h-screen px-2 md:px-12 lg:px-24 dark:bg-cinder dark:text-white/90 transition-colors mx-auto max-w-screen-xl`}
+        className={`${nunito.className} bg-[#e3eaf4] text-gray-900 relative min-h-screen px-2 md:px-12 lg:px-24 dark:bg-cinder dark:text-white/90 transition-colors mx-auto max-w-screen-xl antialiased selection:bg-[#6c5cfb] selection:text-white/90`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

@@ -19,14 +19,14 @@ export default function MobileNavbar() {
     useActiveSectionContext();
 
   return (
-    <nav className="z-[999] lg:hidden fixed top-4 right-4" ref={ref}>
+    <nav className="z-[999] lg:hidden fixed top-3 right-3" ref={ref}>
       <AnimatePresence>
         {isOpen && (
           <motion.ul
             layout="size"
             className={`${
               isOpen ? "" : "w-0 h-0"
-            } fixed left-4 right-24 flex flex-col gap-3 mb-0 p-3 rounded-3xl nav`}
+            } fixed left-0 border border-black right-0 pr-[5.5rem] flex flex-col gap-3 mb-0 p-3 nav`}
             exit={{ opacity: 0 }}
           >
             {links.map((link, index) => (
@@ -78,7 +78,7 @@ export default function MobileNavbar() {
             initial={false}
             animate={isOpen ? "open" : "closed"}
             onClick={() => setIsOpen((prev) => !prev)}
-            className="group relative h-16 w-16 rounded-full nav"
+            className="group relative size-16 rounded-full nav"
             aria-label="Nav menu toggle"
             aria-pressed={isOpen ? "true" : "false"}
           >

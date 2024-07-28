@@ -12,7 +12,7 @@ export default function ThemeSwitchButton() {
 
   return (
     <motion.button
-      className="flex nav fixed bottom-4 right-4 size-12 lg:hidden justify-center sm:justify-between sm:py-2 sm:px-4 text-xl items-center rounded-full text-gray-700 hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] dark:text-white/60 dark:hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+      className="z-[999] flex nav fixed bottom-3 right-3 shadow-xl border border-white/70 size-12 lg:hidden justify-center text-xl items-center rounded-full text-gray-700 hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] dark:text-white/60 dark:hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
       onClick={toggleTheme}
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -21,11 +21,7 @@ export default function ThemeSwitchButton() {
       aria-description="Default is light mode, or user's system preference if there is one."
       aria-pressed={theme === "light" ? "false" : "true"}
     >
-      {theme === "light" ? (
-        <IoMoon className="sm:text-2xl" />
-      ) : (
-        <IoSunny className="sm:text-2xl" />
-      )}
+      {theme === "light" ? <IoMoon /> : <IoSunny />}
     </motion.button>
   );
 }

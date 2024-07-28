@@ -19,7 +19,7 @@ export default function ScrollIndicator() {
     }
 
     const range = 300;
-    const offset = scrollHeight * 3;
+    const offset = scrollHeight * 2.75;
 
     const didScrollPage = (e: Event) => {
       let calc = 1 - (window.scrollY - offset + range) / range;
