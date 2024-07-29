@@ -26,12 +26,12 @@ export default function MobileNavbar() {
             layout="size"
             className={`${
               isOpen ? "" : "w-0 h-0"
-            } fixed left-0 right-0 pr-16 flex flex-col nav`}
+            } fixed left-0 right-0 pr-16 flex flex-col nav items-center border border-red-500 text-[0.9rem] justify-center flex-nowrap text-gray-600 font-medium`}
             exit={{ opacity: 0 }}
           >
             {links.map((link, index) => (
               <motion.li
-                className="relative flex items-center justify-center"
+                className="relative flex items-center justify-center w-full"
                 key={link.hash}
                 variants={fadeUpAnimationVariants}
                 initial="initial"
@@ -40,9 +40,9 @@ export default function MobileNavbar() {
               >
                 <Link
                   className={clsx(
-                    "flex justify-center items-center w-full py-6 hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb]",
+                    "flex justify-center gap-6 tracking-wider border border-white items-center w-full py-6 hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] z-10",
                     {
-                      "text-gray-950 font-semibold dark:text-white/90":
+                      "text-gray-900 font-semibold scale-110 dark:text-white/90":
                         activeSection === link.name,
                     }
                   )}
@@ -53,10 +53,11 @@ export default function MobileNavbar() {
                     setIsOpen((prev) => !prev);
                   }}
                 >
+                  {link.icon}
                   {link.name}
 
                   {link.name === activeSection && (
-                    <span className="absolute inset-x-4 inset-y-4 -z-10 nm-flat-pattens-blue dark:nm-flat-cinder-lg rounded-full"></span>
+                    <span className="absolute inset-x-14 inset-y-4 -z-10 nm-flat-pattens-blue dark:nm-flat-cinder rounded-full"></span>
                   )}
                 </Link>
               </motion.li>

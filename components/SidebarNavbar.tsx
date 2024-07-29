@@ -20,7 +20,7 @@ export default function SidebarNavbar() {
         delay: 0.1,
       }}
     >
-      <ul className="flex flex-col items-start mx-auto justify-center text-[0.9rem] font-medium text-gray-600 sm:w-[initial] sm:flex-nowrap gap-1.5">
+      <ul className="flex flex-col items-start mx-auto justify-center text-[0.9rem] font-medium text-gray-600 w-[initial] flex-nowrap gap-1.5">
         {links.map((link) => (
           <motion.li
             className="flex items-center justify-center relative"
@@ -33,9 +33,9 @@ export default function SidebarNavbar() {
           >
             <Link
               className={clsx(
-                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-[#6c5cfb] transition-colors motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] z-10 focus-visible:text-[#6c5cfb] rounded-full",
+                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] z-10 focus-visible:text-[#6c5cfb] rounded-full",
                 {
-                  "text-gray-900 font-semibold text-base dark:text-white/90":
+                  "text-gray-900 font-semibold scale-110 dark:text-white/90":
                     activeSection === link.name,
                 }
               )}

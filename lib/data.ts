@@ -228,6 +228,7 @@ export const projectsData = [
       "React Hot Toast",
       "Vercel",
       "axe DevTools",
+      "Chart.js",
     ],
     image: seanPixelPortrait,
     links: {
