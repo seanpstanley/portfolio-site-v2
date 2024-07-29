@@ -5,11 +5,11 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function NotFound() {
   return (
-    <div className="m-auto">
+    <div className="w-full h-full flex flex-col justify-center items-center my-12 md:my-16 ">
       <div className="flex items-start w-fit lg:mt-0 mb-3.5 font-thin text-5xl dark:text-white/90">
         <TypeAnimation
           sequence={[1000, "404", 500, "404."]}
-          wrapper="h1"
+          wrapper="h3"
           speed={1}
         />
       </div>
