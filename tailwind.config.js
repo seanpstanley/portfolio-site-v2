@@ -17,12 +17,7 @@ module.exports = {
         cinder: "#1f2427",
       },
     },
-    // neumorphismColor: {
-    //   pattens: {
-    //     100: "#e3eaf4",
-    //   },
-    // },
   },
-  plugins: [require("tw-neumorphism")],
+  plugins: [require("tw-neumorphism"), ["prettier-plugin-tailwindcss"]],
   darkMode: "class",
 };
