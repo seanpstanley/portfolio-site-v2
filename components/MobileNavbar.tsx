@@ -26,7 +26,7 @@ export default function MobileNavbar() {
             layout="size"
             className={`${
               isOpen ? "" : "w-0 h-0"
-            } fixed left-0 right-0 pr-16 flex flex-col nav items-center border border-red-500 text-[0.9rem] justify-center flex-nowrap text-gray-600 font-medium`}
+            } fixed left-0 right-0 pr-16 flex flex-col nav items-center text-[0.9rem] justify-center flex-nowrap text-gray-600 font-medium`}
             exit={{ opacity: 0 }}
           >
             {links.map((link, index) => (
@@ -40,7 +40,7 @@ export default function MobileNavbar() {
               >
                 <Link
                   className={clsx(
-                    "flex justify-center gap-6 tracking-wider border border-white items-center w-full py-6 hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] z-10",
+                    "flex justify-center gap-6 tracking-wider items-center w-full py-6 hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] z-10",
                     {
                       "text-gray-900 font-semibold scale-110 dark:text-white/90":
                         activeSection === link.name,

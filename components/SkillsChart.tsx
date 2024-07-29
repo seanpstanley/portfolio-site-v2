@@ -127,13 +127,15 @@ export default function SkillsPolarChart() {
   };
 
   return (
-    <div className="rounded-lg w-full h-96 px-6 py-4 relative mb-8 m-auto">
-      <Doughnut
-        id="doughnutChart"
-        data={data}
-        options={options}
-        plugins={[myPlugin] as any}
-      />
+    <div className="w-full border border-black mb-8 m-auto">
+      <div className="rounded-lg w-full h-auto px-6 py-4 relative">
+        <Doughnut
+          id="doughnutChart"
+          data={data}
+          options={options}
+          // plugins={[myPlugin] as any}
+        />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeading from "@/components/SectionHeading";
-import SkillsChart from "@/components/SkillsChart";
+// import SkillsChart from "@/components/SkillsChart";
 import SkillsList from "@/components/SkillsList";
 import { useSectionInView } from "@/lib/hooks";
 

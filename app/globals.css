@@ -27,7 +27,7 @@ html.dark {
 }
 
 .inset-card {
-  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition-colors duration-700 motion-reduce:transition-none  dark:text-white/80 dark:hover:nm-concave-cinder nm-concave-pattens-blue-sm dark:nm-concave-cinder-sm;
+  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition motion-reduce:transition-none dark:text-white/80 dark:hover:nm-concave-cinder nm-concave-pattens-blue-sm dark:nm-concave-cinder-sm;
 }
 
 .hamburger-line {
