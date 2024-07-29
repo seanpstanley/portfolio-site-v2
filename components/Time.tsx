@@ -20,7 +20,7 @@ export default function Time() {
         {(hours24to12(date) < 10 ? "0" : "") + hours24to12(date)}
       </p>
       <p className="mr-3 -mt-1 self-end text-sm">{amPm(date)}</p>
-      <AnalogClock />
+      {/* <AnalogClock /> */}
     </div>
   );
 }
