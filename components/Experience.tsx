@@ -31,7 +31,7 @@ export default function Experience() {
       transition={{ delay: 0.175 }}
     >
       <SectionHeading>Experience</SectionHeading>
-      <VerticalTimeline lineColor="" layout={"1-column-left"}>
+      <VerticalTimeline lineColor="#9ca3af" layout={"1-column-left"}>
         {experiencesData.map((experience, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
@@ -40,8 +40,8 @@ export default function Experience() {
                 background: theme === "light" ? "#e3eaf4" : "#1f2427",
                 boxShadow:
                   theme === "light"
-                    ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
-                    : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
+                    ? "0.2em 0.2em calc(0.2em * 2) #8EABD3, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #FFFFFF"
+                    : "0.2em 0.2em calc(0.2em * 2) #16191B, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #272D31",
                 borderRadius: "0.5rem",
                 textAlign: "left",
                 padding: "1.25rem 1.25rem 0.75rem 1.25rem",
@@ -57,8 +57,11 @@ export default function Experience() {
               iconStyle={{
                 background: theme === "light" ? "#e3eaf4 " : "#1f2427",
                 fontSize: "1.5rem",
-                color: theme === "light" ? "" : "",
-                border: "black",
+                color: theme === "light" ? "#374151" : "rgba(255,255,255,0.7)",
+                boxShadow:
+                  theme === "light"
+                    ? "inset 0.05em 0.05em calc(0.05em * 2) #8EABD3, inset calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #FFFFFF;"
+                    : "inset 0.05em 0.05em calc(0.05em * 2) #16191B, inset calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #272D31",
               }}
               iconClassName={""}
             >

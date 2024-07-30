@@ -39,9 +39,7 @@ export default function Footer() {
       >
         <small className="mb-2 block text-xs leading-relaxed">
           &copy; {romanYear} | "{`${quote}`}" -
-          <span className="italic">
-            {source}, {year}
-          </span>
+          <span className="italic">{source}</span>, {year}
         </small>
 
         <DateAndTime />

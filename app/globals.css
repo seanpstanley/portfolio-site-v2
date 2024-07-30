@@ -2,25 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #9ca3af;
-}
-
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
-}
-
-.borderBlack {
-  @apply border border-black/10;
 }
 
 .nav {
   @apply bg-pattens-blue/70 backdrop-blur-md dark:bg-cinder/70;
 }
-
-/* .card {
-  @apply bg-white/90 borderBlack hover:bg-gray-100 transition-colors dark:text-white/80 dark:bg-white/5 dark:hover:bg-white/10;
-} */
 
 .card {
   @apply bg-white/90 hover:!nm-flat-pattens-blue-lg group-hover:nm-flat-pattens-blue-sm dark:group-hover:nm-flat-cinder-sm transition motion-reduce:transition-none dark:text-white/80 dark:hover:!nm-flat-cinder-lg nm-flat-pattens-blue dark:nm-flat-cinder;

@@ -64,7 +64,7 @@ export default function About() {
         </a>
         . I was blown away. Combining my one true love&mdash;Lego&mdash;with
         computer software, something that was, in my 16 year-old mind at least,
-        intrinsicly linked to video games? A stroke of genius. However, to my
+        intrinsically linked to video games? A stroke of genius. However, to my
         shock and horror, Scratch was not all there was. No, the truth was there
         was far, far more to programming than I had initially considered:
         languages. Not gonna lie, I was pretty bummed when I found out

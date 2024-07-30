@@ -9,12 +9,15 @@ import { IoSend } from "react-icons/io5";
 import { sendEmail } from "@/actions/sendEmail";
 import SectionHeading from "@/components/SectionHeading";
 import SubmitButton from "@/components/SubmitButton";
+import { useTheme } from "@/context/ThemeContextProvider";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.85);
 
   const formRef = useRef<HTMLFormElement>(null);
+
+  const { theme } = useTheme();
 
   return (
     <motion.section
@@ -46,7 +49,20 @@ export default function Contact() {
           if (error) {
             toast.error(error, {
               style: {
-                border: "1px solid #ff5733",
+                background: theme === "light" ? "#e3eaf4" : "#1f2427",
+                boxShadow:
+                  theme === "light"
+                    ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
+                    : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
+                color: theme === "light" ? "#374151" : "rgba(255,255,255,0.7)",
+              },
+              iconTheme: {
+                primary: "#6c5cfb",
+                secondary: "#fff",
+              },
+              ariaProps: {
+                role: "status",
+                "aria-live": "polite",
               },
             });
             return;
@@ -57,7 +73,20 @@ export default function Contact() {
 
           toast.success("Your message is on its way!", {
             style: {
-              border: "1px solid #c1e1c1",
+              background: theme === "light" ? "#e3eaf4" : "#1f2427",
+              boxShadow:
+                theme === "light"
+                  ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
+                  : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
+              color: theme === "light" ? "#374151" : "rgba(255,255,255,0.7)",
+            },
+            iconTheme: {
+              primary: "#6c5cfb",
+              secondary: "#fff",
+            },
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
             },
           });
         }}
