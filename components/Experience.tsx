@@ -60,8 +60,8 @@ export default function Experience() {
                 color: theme === "light" ? "#374151" : "rgba(255,255,255,0.7)",
                 boxShadow:
                   theme === "light"
-                    ? "inset 0.05em 0.05em calc(0.05em * 2) #8EABD3, inset calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #FFFFFF;"
-                    : "inset 0.05em 0.05em calc(0.05em * 2) #16191B, inset calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #272D31",
+                    ? "0.05em 0.05em calc(0.05em * 2) #8EABD3, calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #FFFFFF"
+                    : "0.05em 0.05em calc(0.05em * 2) #16191B, calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #272D31",
               }}
               iconClassName={""}
             >
