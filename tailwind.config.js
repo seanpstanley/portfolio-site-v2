@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         "pattens-blue": "#e3eaf4",
         cinder: "#1f2427",
+        "blue-genie": "#6c5cfb",
       },
     },
   },

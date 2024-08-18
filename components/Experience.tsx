@@ -78,7 +78,7 @@ export default function Experience() {
         ))}
       </VerticalTimeline>
       <Link
-        className="ml-2 md:ml-0 mt-6 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center px-5 py-3 font-medium transition motion-reduce:transition-none rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] hover:scale-[1.025] active:scale-100 focus-visible:scale-[1.025] focus-visible:text-[#6c5cfb] dark:focus-visible:text-[#6c5cfb] text-gray-700 dark:text-white/85"
+        className="ml-2 md:ml-0 mt-6 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center px-5 py-3 font-medium transition motion-reduce:transition-none rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-blue-genie dark:hover:text-blue-genie hover:scale-[1.025] active:scale-100 focus-visible:scale-[1.025] focus-visible:text-blue-genie dark:focus-visible:text-blue-genie focus text-gray-700 dark:text-white/85"
         href="/files/sean-stanley-resume.pdf"
         target="_blank"
         rel="noreferrer noopener"

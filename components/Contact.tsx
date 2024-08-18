@@ -33,7 +33,7 @@ export default function Contact() {
       <p className="text-gray-600 dark:text-white/60 text-start">
         use the form below, or contact me directly at{" "}
         <a
-          className="underline text-gray-700 dark:text-white/70 hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible::text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="underline text-gray-700 dark:text-white/70 hover:text-blue-genie dark:hover:text-blue-genie focus focus-visible:text-blue-genie dark:focus-visible:text-blue-genie rounded-sm transition-colors motion-reduce:transition-none"
           href="mailto:seans09comp@gmail.com"
         >
           seans09comp@gmail.com
@@ -95,7 +95,7 @@ export default function Contact() {
           Name
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm dark:placeholder:text-white/50 transition dark:text-white/90"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm dark:placeholder:text-white/50 transition dark:text-white/90 focus motion-reduce:transition-none"
           name="senderName"
           placeholder="what's your name?"
           required
@@ -109,7 +109,7 @@ export default function Contact() {
           Email Address
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm dark:placeholder:text-white/50 transition dark:text-white/90"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm dark:placeholder:text-white/50 transition dark:text-white/90 focus motion-reduce:transition-none"
           name="senderEmail"
           type="email"
           placeholder="where can i reach you?"
@@ -122,7 +122,7 @@ export default function Contact() {
           Message
         </label>
         <textarea
-          className="h-60 mt-1 mb-4 min-h-14 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm p-4 dark:placeholder:text-white/50 transition dark:text-white/90"
+          className="h-60 mt-1 mb-4 min-h-14 rounded-lg nm-inset-pattens-blue-sm dark:nm-inset-cinder-sm p-4 dark:placeholder:text-white/50 transition dark:text-white/90 focus motion-reduce:transition-none"
           name="message"
           placeholder="what would you like to say?"
           required

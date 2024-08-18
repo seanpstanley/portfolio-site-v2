@@ -22,7 +22,7 @@ export default function SubmitButton({
   return (
     <button
       className={cn(
-        "group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center h-12 w-28 font-medium transition rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-[#6c5cfb] hover:scale-105 focus-visible:scale-105 focus-visible:text-[#6c5cfb] active:scale-100 text-gray-800 dark:text-white/80 dark:hover:text-[#6c5cfb] motion-reduce:transition-none",
+        "group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center h-12 w-28 font-medium transition rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-blue-genie hover:scale-105 focus-visible:scale-105 focus-visible:text-blue-genie focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-genie active:scale-100 text-gray-800 dark:text-white/80 dark:hover:text-blue-genie motion-reduce:transition-none",
         className
       )}
       type={pending ? "button" : "submit"}

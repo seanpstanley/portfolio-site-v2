@@ -54,7 +54,7 @@ export default function About() {
         My first brush with coding was back in 2015. My Programming 1 teacher
         introduced basic programming concepts using MIT's{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://scratch.mit.edu/"
           target="_blank"
           rel="noreferrer noopener"
@@ -73,7 +73,7 @@ export default function About() {
         snap of block-based programming&mdash;something that partially inspired
         my{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://ieeexplore.ieee.org/document/9576344"
           target="_blank"
           rel="noreferrer noopener"
@@ -88,7 +88,7 @@ export default function About() {
         interfaces that emulate that satisfying feeling of playing with blocks,
         keeping a focus on UX and accessibility. My current project is{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://brewd.org/"
           target="_blank"
           rel="noreferrer noopener"
@@ -99,7 +99,7 @@ export default function About() {
         , a coffee-rating application with a vintage flair, inspired by
         platforms like{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://letterboxd.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -109,7 +109,7 @@ export default function About() {
         </a>
         ,{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://backloggd.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -119,7 +119,7 @@ export default function About() {
         </a>
         , and{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://untappd.com/"
           target="_blank"
           rel="noreferrer noopener"
@@ -133,7 +133,7 @@ export default function About() {
         You may also find me at my home away from home: the cinema. With the
         power of AMC's{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://www.amctheatres.com/amcstubs/alist"
           target="_blank"
           rel="noreferrer noopener"
@@ -147,7 +147,7 @@ export default function About() {
         $19.95 per month (plus applicable local taxes). If you love movies, you
         can't go wrong with AMC's{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://www.amctheatres.com/amcstubs/alist"
           target="_blank"
           rel="noreferrer noopener"
@@ -157,7 +157,7 @@ export default function About() {
         </a>
         . Join AMC's{" "}
         <a
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href="https://www.amctheatres.com/amcstubs/alist"
           target="_blank"
           rel="noreferrer noopener"
@@ -167,7 +167,7 @@ export default function About() {
         </a>{" "}
         today!
         <Link
-          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+          className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none focus rounded-sm"
           href={"#disclaimer"}
           onClick={() => {
             setActiveSection("Disclaimer");

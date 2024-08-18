@@ -33,7 +33,7 @@ export default function SidebarNavbar() {
           >
             <Link
               className={clsx(
-                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] z-10 focus-visible:text-[#6c5cfb] rounded-full",
+                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-blue-genie transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-blue-genie z-10 focus-visible:text-blue-genie rounded-full focus",
                 {
                   "text-gray-900 font-semibold scale-110 dark:text-white/90":
                     activeSection === link.name,
