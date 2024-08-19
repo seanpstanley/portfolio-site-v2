@@ -79,7 +79,7 @@ export default function MobileNavbar() {
             initial={false}
             animate={isOpen ? "open" : "closed"}
             onClick={() => setIsOpen((prev) => !prev)}
-            className="group relative size-16"
+            className="group relative size-16 focus rounded-full transition-colors motion-reduce:transition-none"
             aria-label="Nav menu toggle"
             aria-pressed={isOpen ? "true" : "false"}
           >
