@@ -63,13 +63,13 @@ export default function About() {
           Scratch
         </a>
         . I was blown away. Combining my one true love&mdash;Lego&mdash;with
-        computer software, something that was, in my 16 year-old mind at least,
-        intrinsically linked to video games? A stroke of genius. However, to my
+        computers? The very same computers that, in my 16 year-old mind at least,
+        were mainly used for video games? A stroke of genius. However, to my
         shock and horror, Scratch was not all there was. No, the truth was there
         was far, far more to programming than I had initially considered:
         languages. Not gonna lie, I was pretty bummed when I found out
         programming was mostly... words. And writing. I've more or less come
-        around on it these days, but I sitll find myself longing for the tactile
+        around on it these days, but I still find myself longing for the tactile
         snap of block-based programming&mdash;something that partially inspired
         my{" "}
         <a
@@ -125,7 +125,7 @@ export default function About() {
           rel="noreferrer noopener"
           aria-label="Untappd (opens in a new tab)"
         >
-          Untapped
+          Untappd
         </a>
         .
       </p>
