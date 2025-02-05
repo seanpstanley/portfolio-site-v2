@@ -71,6 +71,7 @@ export const experiencesData = [
       "Open Sound Control",
       "3D Design/Printing",
       "Augmented Reality",
+      "A/B Testing",
     ],
   },
   {
@@ -79,18 +80,20 @@ export const experiencesData = [
     description:
       "Worked on bleeding-edge products for use on classified network environments. Wore multiple hats as a Developer, Tester, and Product Owner while holding Top Secret security clearance.",
     icon: React.createElement(MdWork),
-    date: "June 2021 - Present",
+    date: "June 2021 - August 2024",
     tags: [
-      "Sprint Planning",
+      "Agile Sprint Planning",
       "Test-Driven Development",
+      "Confluence",
+      "Jira",
       "xUnit.net",
       ".NET Core",
       "Java",
-      "JavaScript",
+      "TypeScript",
       "React",
       "Postman",
       "Swagger",
-      "Selenium",
+      "Selenium WebDriver",
     ],
   },
 ];
@@ -149,7 +152,10 @@ export const projectsData = [
     ],
     image: rollForInitLogo,
     links: {
-      deployment: null,
+      deployment: {
+        link: "https://xd.adobe.com/view/e345a295-5deb-44fb-a0ef-53cb63277d70-b616/?fullscreen",
+        accessibilityText: "Adobe XD prototype for Roll for Init.",
+      },
       github: {
         link: "https://github.com/Roll-For-Init",
         accessibilityText: "GitHub project page for Roll for Init.",
@@ -254,7 +260,10 @@ export const projectsData = [
       "Radix UI",
       "Dynamic Routes",
       "Google Places API",
-      "Postgres",
+      "PostgreSQL",
+      "SWR",
+      "AWS S3",
+      "NextAuth",
       "Drizzle ORM",
       "Vercel",
     ],
@@ -270,6 +279,52 @@ export const projectsData = [
       },
     },
   },
+  {
+    title: "Hue Dat Boy",
+    description:
+      "A contrast checker for both WCAG & APCA standards, a font picker, a contrast enhancer, and a colorblindness simulator walk into a bar. Built with a focus on documentation, optimization, internationalization, accessibility, testability, and simplicity. Currently supported languages: English, Spanish, and Lithuanian.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Google Fonts API",
+      "SWR",
+      "Vitest",
+      "next-intl",
+      "Vercel",
+    ],
+    image: seanPixelPortrait,
+    links: {
+      deployment: {
+        link: "https://huedatboy.com/",
+        accessibilityText: "Hue Dat Boy contrast checker.",
+      },
+      github: {
+        link: "https://github.com/seanpstanley/hue-dat-boy",
+        accessibilityText: "GitHub project page for Hue Dat Boy.",
+      },
+    },
+  },
+  {
+    title: "Reel of Fortune (Or NexStub? TBD)",
+    description:
+      "The hero of your next movie night. Takes a user's Letterboxd watchlist and serves them a random suggestion based on filters. Meant to help alleviate choice fatigue.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "SWR",
+      "Vitest",
+      "Vercel",
+    ],
+    image: seanPixelPortrait,
+    links: {
+      deployment: null,
+      github: null,
+    },
+  },
 ];
 
 export const skillsData = [
@@ -279,13 +334,23 @@ export const skillsData = [
   "TypeScript",
   "React.js",
   "Next.js",
+  "Radix UI",
   "Accessible Design",
+  "axe DevTools",
+  "Google Lighthouse",
   "Git",
   "Tailwind CSS",
   "Framer Motion",
   "Responsive Design",
   "REST APIs",
   "React Redux",
+  "Vitest",
+  "Cypress",
+  "React Testing Library",
+  "AWS S3",
+  "Vercel",
+  "Drizzle ORM",
+  "PostgreSQL",
   "SQL",
   "Unity",
   "Python",
