@@ -12,7 +12,7 @@ export default function Skills() {
     <section
       ref={ref}
       id="skills"
-      className="scroll-mt-0 flex flex-col gap-y-12 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0 max-w-4xl text-center"
+      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0 max-w-4xl text-center"
     >
       <SectionHeading>Skills</SectionHeading>
       <SkillsList />
