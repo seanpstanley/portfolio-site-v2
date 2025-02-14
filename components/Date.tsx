@@ -7,7 +7,7 @@ export default function Date() {
   const { date } = useDate();
 
   return (
-    <div className="flex flex-col items-center justify-center size-20 text-2xl rounded-xl nm-flat-pattens-blue dark:nm-flat-cinder dark:hover:text-[#6c5cfb] hover:text-[#6c5cfb] bg-white/80 dark:text-white/60 transition-colors motion-reduce:transition-none">
+    <div className="flex flex-col items-center justify-center size-20 text-2xl rounded-xl nm-flat-pattens-blue dark:nm-flat-cinder dark:hover:text-[#6c5cfb] hover:text-[#6c5cfb] bg-white/80 text-gray-600 dark:text-white/70 transition-colors motion-reduce:transition-none">
       <p className="-mb-1.5 text-sm">
         {weekdays[date.getDay()]} {months[date.getMonth()]}
       </p>

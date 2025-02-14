@@ -83,10 +83,9 @@ export default function SkillsChart() {
   };
 
   return (
-    <div className="w-full h-96 px-2">
+    <div className="w-full h-96 px-2 mb-8">
       <motion.h3
         ref={ref}
-        id="contact"
         className="text-xl mb-4 font-medium"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
