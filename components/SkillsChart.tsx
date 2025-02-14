@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { motion } from "framer-motion";
@@ -16,7 +16,10 @@ export default function SkillsChart() {
 
   const isLightMode = theme === "light";
 
-  const { ref } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
 
   const shadowPlugin = {
     id: "shadowEffect",
@@ -78,12 +81,14 @@ export default function SkillsChart() {
     responsive: true,
     maintainAspectRatio: false,
     animation: {
-      duration: 150,
+      animateRotate: true,
+      animateScale: true,
+      duration: 1000,
     },
   };
 
   return (
-    <div className="mb-4 mt-8 h-96 w-full px-2 lg:mb-8 lg:mt-12">
+    <div ref={ref} className="mb-4 mt-8 h-96 w-full px-2 lg:mb-8 lg:mt-12">
       <motion.h3
         ref={ref}
         className="mb-4 text-start text-xl font-medium"
@@ -94,9 +99,7 @@ export default function SkillsChart() {
       >
         skill distribution
       </motion.h3>
-      {/* <h3 className="text-xl mb-4 font-medium"></h3> */}
-
-      <Doughnut data={data} options={options} />
+      {inView && <Doughnut data={data} options={options} />}
     </div>
   );
 }
