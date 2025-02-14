@@ -1,141 +1,103 @@
-// import React, { useEffect, useRef } from "react";
+"use client";
 
-// import Chart from "chart.js/auto";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
+import { useEffect } from "react";
+
+import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
+import { motion } from "framer-motion";
 import { Doughnut } from "react-chartjs-2";
-// import type { ChartData, ChartOptions } from "chart.js";
 
 import { useTheme } from "@/context/ThemeContextProvider";
+import { useInView } from "react-intersection-observer";
 
-export default function SkillsPolarChart() {
-  // const chartRef = useRef(null) as any;
-  // const chartInstance = useRef(null) as any;
+ChartJS.register(ArcElement, Tooltip);
 
+export default function SkillsChart() {
   const { theme } = useTheme();
 
-  // useEffect(() => {
-  //   if (chartInstance.current) {
-  //     chartInstance.current.destroy();
-  //   }
+  const isLightMode = theme === "light";
 
-  //   const myChartRef = chartRef.current?.getContext("2d");
+  const { ref } = useInView();
 
-  //   chartInstance.current = new Chart(myChartRef, {
-  //     type: "doughnut",
-  // options: {
-  //   maintainAspectRatio: false,
-  //   cutout: 80,
-  // },
-  // data: {
-  //   labels: ["Web Development", "UI Design", "Charm & Wit"],
-  //   datasets: [
-  //     {
-  //       label: "Skill",
-  //       data: [55, 30, 15],
-  //       backgroundColor: ["#1f2427", "#6c5cfb", "#e3eaf4"],
-  //       hoverBackgroundColor: ["#1f2427", "#6c5cfb", "#e3eaf4"],
-  //       borderColor: theme === "light" ? "#e3eaf4 " : "#1f2427",
-  //       hoverBorderColor: theme === "light" ? "#e3eaf4 " : "#1f2427",
-  //       borderRadius: 100,
-  //       // spacing: 16,
-  //       borderWidth: 4,
-  //       hoverOffset: 16,
-  //     },
-  //   ],
-  // },
-  //   });
-  //   return () => {
-  //     if (chartInstance.current) {
-  //       chartInstance.current.destroy();
-  //     }
-  //   };
-  // }, []);
+  const shadowPlugin = {
+    id: "shadowEffect",
+    beforeDraw: (chart: any) => {
+      const ctx = chart.ctx;
+      chart.data.datasets.forEach((dataset: any, datasetIndex: number) => {
+        const meta = chart.getDatasetMeta(datasetIndex);
+        meta.data.forEach((arc: any) => {
+          ctx.save();
+          ctx.shadowColor = isLightMode ? "#a2bbdb" : "191c1e";
+          ctx.shadowBlur = 0.8 * 16;
+          ctx.shadowOffsetX = 0.4 * 16;
+          ctx.shadowOffsetY = 0.4 * 16;
+          arc.draw(ctx);
+          ctx.restore();
 
-  ChartJS.register(ArcElement, Tooltip, Legend, Title);
+          ctx.save();
+          ctx.shadowColor = isLightMode ? "#f6f8fb" : "242a2d";
+          ctx.shadowBlur = 0.8 * 16;
+          ctx.shadowOffsetX = -0.4 * 16;
+          ctx.shadowOffsetY = -0.4 * 16;
+
+          arc.draw(ctx);
+          ctx.restore();
+        });
+      });
+    },
+  };
+
+  useEffect(() => {
+    ChartJS.register(shadowPlugin);
+  }, [theme]);
 
   const data = {
-    labels: ["Web Development", "UI Design", "Charm & Wit"],
+    labels: [
+      "html & css",
+      "typescript",
+      "react",
+      "ui/ux design",
+      "testing & debugging",
+      "rest apis",
+      "good personality :)",
+    ],
     datasets: [
       {
-        label: "Skill",
-        data: [55, 30, 15],
-        backgroundColor: [
-          "rgba(0,0,0,0.75)",
-          "#6c5cfb",
-          "rgba(255,255,255,0.75)",
-        ],
-        hoverBackgroundColor: [
-          "rgba(0,0,0,0.75)",
-          "#6c5cfb",
-          "rgba(255,255,255,0.75)",
-        ],
-        borderColor: theme === "light" ? "#e3eaf4 " : "#1f2427",
-        hoverBorderColor: theme === "light" ? "#e3eaf4 " : "#1f2427",
-        borderRadius: 100,
-        spacing: 8,
+        label: " skill",
+        data: [15, 20, 18, 10, 8, 7, 22],
+        backgroundColor: isLightMode ? "#e3eaf4" : "#1f2427",
+        hoverBackgroundColor: "#6c5cfb",
+        borderRadius: 12,
+        spacing: 24,
         borderWidth: 0,
-        hoverOffset: 16,
+        hoverOffset: 8,
       },
     ],
   };
 
-  // const ShadowPlugin = {
-  //   beforeDraw: (chart: any) => {
-  //     const { ctx } = chart;
-  //     ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
-  //     ctx.shadowBlur = 10;
-  //     ctx.shadowOffsetX = 5;
-  //     ctx.shadowOffsetY = 5;
-  //   },
-  // };
-
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    cutout: 99,
-  };
-
-  const plugins = [
-    {
-      beforeDraw: function (chart: any) {
-        const { ctx } = chart;
-        ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
-        ctx.shadowBlur = 10;
-        ctx.shadowOffsetX = 5;
-        ctx.shadowOffsetY = 5;
-      },
-    },
-  ];
-
-  const myPlugin = {
-    id: "customShadow",
-    beforeDraw: (chart: any) => {
-      const ctx = chart.ctx;
-      ctx.save();
-
-      const originalLineDraw = ctx.stroke;
-      ctx.stroke = function () {
-        ctx.save();
-        ctx.shadowColor = "rgba(0, 0, 0, 0.2)";
-        ctx.shadowBlur = 10;
-        ctx.shadowOffsetX = 4;
-        ctx.shadowOffsetY = 4;
-        originalLineDraw.apply(this, arguments);
-        ctx.restore();
-      };
+    animation: {
+      duration: 150,
     },
   };
 
   return (
-    <div className="w-full border border-black mb-8 m-auto">
-      <div className="rounded-lg w-full h-auto px-6 py-4 relative">
-        <Doughnut
-          id="doughnutChart"
-          data={data}
-          options={options}
-          // plugins={[myPlugin] as any}
-        />
-      </div>
+    <div className="w-full h-96 mb-12">
+      <motion.h3
+        ref={ref}
+        id="contact"
+        className="text-xl mb-4 font-medium"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        skill distribution
+      </motion.h3>
+      {/* <h3 className="text-xl mb-4 font-medium"></h3> */}
+
+      <Doughnut data={data} options={options} />
     </div>
   );
 }

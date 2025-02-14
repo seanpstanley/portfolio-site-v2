@@ -77,7 +77,7 @@ html.dark {
 }
 
 .focus {
-  @apply focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-2 focus-visible:ring-blue-genie dark:focus-visible:ring-blue-genie;
+  @apply focus-visible:outline-none focus-within:ring-2 dark:focus-within:ring-2 focus-within:ring-blue-genie dark:focus-within:ring-blue-genie focus-visible:ring-2 dark:focus-visible:ring-2 focus-visible:ring-blue-genie dark:focus-visible:ring-blue-genie;
 }
 
 .card {

@@ -40,15 +40,14 @@ export default function Intro() {
             <span className="font-medium text-gray-900 dark:text-white/90">
               frontend developer
             </span>{" "}
-            who likes stuff that looks good. currently doing{" "}
-            <span className="italic text-gray-900 dark:text-white/90">
+            who likes stuff that looks good.
+            {/* <span className="italic text-gray-900 dark:text-white/90">
               top secret
             </span>{" "}
             software engineering at{" "}
             <span className="font-medium text-gray-900 dark:text-white/90">
               CAE USA
-            </span>
-            .
+            </span> */}
           </motion.h2>
         </div>
       </div>
