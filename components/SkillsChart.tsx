@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { motion } from "framer-motion";
 import { Doughnut } from "react-chartjs-2";
+import { useInView } from "react-intersection-observer";
 
 import { useTheme } from "@/context/ThemeContextProvider";
-import { useInView } from "react-intersection-observer";
 
 ChartJS.register(ArcElement, Tooltip);
 
