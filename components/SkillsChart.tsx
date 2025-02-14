@@ -83,10 +83,10 @@ export default function SkillsChart() {
   };
 
   return (
-    <div className="w-full h-96 px-2 mt-8 lg:mt-12 mb-4 lg:mb-8">
+    <div className="mb-4 mt-8 h-96 w-full px-2 lg:mb-8 lg:mt-12">
       <motion.h3
         ref={ref}
-        className="text-xl mb-4 font-medium"
+        className="mb-4 text-start text-xl font-medium"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
