@@ -83,7 +83,7 @@ export default function SkillsChart() {
   };
 
   return (
-    <div className="w-full h-96 mb-12">
+    <div className="w-full h-96 px-2">
       <motion.h3
         ref={ref}
         id="contact"
