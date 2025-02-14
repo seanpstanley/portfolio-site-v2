@@ -252,7 +252,7 @@ export const projectsData = [
   {
     title: "Brewd - A Social Coffee Experience",
     description:
-      "Currently brewing. Brewd is a coffee-rating webapp that helps users discover, rate, and share their coffee experiences, inspired by platforms like Letterboxd, Untappd, and Backloggd.",
+      "Currently brewing. Brewd is a coffee-rating webapp that helps users discover, rate, and share their coffee experiences, inspired by platforms like Letterboxd, Untappd, and Backloggd. Note: Brewd is currently in development and is not yet feature-complete. THe GitHub repo is private.",
     tags: [
       "Next.js",
       "TypeScript",
