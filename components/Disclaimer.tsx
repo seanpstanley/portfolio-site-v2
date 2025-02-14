@@ -7,7 +7,7 @@ export default function Disclaimer() {
     <small
       id="disclaimer"
       ref={ref}
-      className="block text-xs leading-relaxed text-gray-500 scroll-mt-12 lg:scroll-mt-24"
+      className="block text-xs leading-relaxed text-gray-600 dark:text-white/60 scroll-mt-12 lg:scroll-mt-24"
     >
       <span className="font-bold text-gray-900 dark:text-white/90">*</span> The
       use of brand names and/or any mention or listing of specific commercial

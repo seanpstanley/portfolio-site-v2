@@ -9,7 +9,7 @@ export default function SkillsList() {
   return (
     <ul className="flex flex-wrap justify-start gap-2 text-lg text-gray-800 dark:text-white/80">
       {skillsData.map((skill, index) => (
-        <motion.div
+        <motion.li
           key={index}
           variants={fadeUpAnimationVariants}
           initial="initial"
@@ -19,8 +19,8 @@ export default function SkillsList() {
           }}
           custom={index}
         >
-          <li className="inset-card px-5 py-3 rounded-xl">{skill}</li>
-        </motion.div>
+          <div className="fix inset-card px-5 py-3 rounded-xl">{skill}</div>
+        </motion.li>
       ))}
     </ul>
   );
