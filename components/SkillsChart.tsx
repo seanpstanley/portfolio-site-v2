@@ -78,23 +78,34 @@ export default function SkillsChart() {
   };
 
   const options = {
+    layout: {
+      padding: {
+        top: 12,
+        bottom: 12,
+        left: 12,
+        right: 12,
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     animation: {
       animateRotate: true,
       animateScale: true,
-      duration: 1000,
+      duration: 1500,
     },
   };
 
   return (
-    <div ref={ref} className="mb-4 mt-8 h-96 w-full px-2 lg:mb-8 lg:mt-12">
+    <div
+      ref={ref}
+      className="mb-8 mt-8 max-h-64 w-full lg:mb-8 lg:mt-12 lg:max-h-96"
+    >
       <motion.h3
         ref={ref}
         className="mb-4 text-start text-xl font-medium"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
         skill distribution

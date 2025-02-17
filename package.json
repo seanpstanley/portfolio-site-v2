@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-accessible-icon": "^1.1.2",
     "@react-email/components": "^0.0.15",
     "@react-email/tailwind": "^0.0.14",
     "@types/node": "20.11.25",
