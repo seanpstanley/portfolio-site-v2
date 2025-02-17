@@ -91,15 +91,12 @@ export default function SkillsChart() {
     animation: {
       animateRotate: true,
       animateScale: true,
-      duration: 1500,
+      duration: 2000,
     },
   };
 
   return (
-    <div
-      ref={ref}
-      className="mb-8 mt-8 max-h-64 w-full lg:mb-8 lg:mt-12 lg:max-h-96"
-    >
+    <div ref={ref} className="mb-8 mt-8 h-64 w-full lg:mb-8 lg:mt-12 lg:h-96">
       <motion.h3
         ref={ref}
         className="mb-4 text-start text-xl font-medium"
