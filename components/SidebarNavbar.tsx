@@ -13,17 +13,17 @@ export default function SidebarNavbar() {
 
   return (
     <motion.nav
-      className="flex-col w-fit hidden lg:flex mt-14"
+      className="mt-14 hidden w-fit flex-col lg:flex"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         delay: 0.1,
       }}
     >
-      <ul className="flex flex-col items-start mx-auto justify-center text-[0.9rem] font-medium text-gray-600 w-[initial] flex-nowrap gap-1.5">
+      <ul className="mx-auto flex w-[initial] flex-col flex-nowrap items-start justify-center gap-1.5 text-[0.9rem] font-medium text-gray-600">
         {links.map((link) => (
           <motion.li
-            className="flex items-center justify-center relative"
+            className="relative flex items-center justify-center"
             key={link.hash}
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,11 +33,11 @@ export default function SidebarNavbar() {
           >
             <Link
               className={clsx(
-                "flex w-full items-center justify-center gap-6 px-3 py-3 tracking-wider hover:text-blue-genie transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-blue-genie z-10 focus-visible:text-blue-genie rounded-full focus",
+                "focus z-10 flex w-full items-center justify-center gap-6 rounded-full px-3 py-3 tracking-wider ring-offset-0 ring-offset-pattens-blue transition hover:text-blue-genie focus-visible:text-blue-genie motion-reduce:transition-none dark:text-white/60 dark:ring-offset-cinder dark:hover:text-blue-genie",
                 {
-                  "text-gray-900 font-semibold scale-110 dark:text-white/90":
+                  "scale-110 font-semibold text-gray-900 dark:text-white/90":
                     activeSection === link.name,
-                }
+                },
               )}
               href={link.hash}
               onClick={() => {
@@ -50,7 +50,7 @@ export default function SidebarNavbar() {
 
               {link.name === activeSection && (
                 <motion.span
-                  className="nm-flat-pattens-blue dark:nm-flat-cinder rounded-full absolute -inset-x-1 inset-y-1 -z-10"
+                  className="absolute -inset-x-1 inset-y-1 -z-10 rounded-full nm-flat-pattens-blue dark:nm-flat-cinder"
                   layoutId="activeSection"
                   transition={{
                     type: "spring",

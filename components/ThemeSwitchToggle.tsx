@@ -7,7 +7,7 @@ export default function ThemeSwitchButton() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <label className="focus relative hidden w-fit cursor-pointer items-center rounded-full text-gray-700 transition-colors focus-within:text-[#6c5cfb] hover:text-[#6c5cfb] motion-reduce:transition-none dark:text-white/70 dark:focus-within:text-[#6c5cfb] dark:hover:text-[#6c5cfb] lg:inline-flex">
+    <label className="group relative hidden w-fit cursor-pointer items-center rounded-full text-gray-700 transition-colors focus-within:text-[#6c5cfb] hover:text-[#6c5cfb] motion-reduce:transition-none dark:text-white/70 dark:focus-within:text-[#6c5cfb] dark:hover:text-[#6c5cfb] lg:inline-flex">
       <input
         id="dark-toggle"
         type="checkbox"
@@ -28,7 +28,7 @@ export default function ThemeSwitchButton() {
           <IoSunny />
         </AccessibleIcon>
       </span>
-      <div className="h-9 w-16 rounded-full nm-inset-pattens-blue-sm after:absolute after:left-1 after:top-3.5 after:size-7 after:rounded-full after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:nm-flat-pattens-blue-sm peer-checked:after:translate-x-full after:motion-reduce:transition-none dark:nm-inset-cinder-sm after:dark:nm-flat-cinder-sm" />
+      <div className="h-9 w-16 rounded-full nm-inset-pattens-blue-sm after:absolute after:left-1 after:top-3.5 after:size-7 after:rounded-full after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:nm-flat-pattens-blue-sm group-focus-within:ring-2 group-focus-within:ring-blue-genie peer-checked:after:translate-x-full after:motion-reduce:transition-none dark:nm-inset-cinder-sm after:dark:nm-flat-cinder-sm dark:group-focus-within:ring-blue-genie" />
     </label>
   );
 }
