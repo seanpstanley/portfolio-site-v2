@@ -32,6 +32,7 @@ export default function Contact() {
       viewport={{ once: true }}
     >
       <SectionHeading>Contact</SectionHeading>
+
       <p className="text-start text-gray-600 dark:text-white/60">
         use the form below, or contact me directly at{" "}
         <a
@@ -52,10 +53,12 @@ export default function Contact() {
             toast.error(error, {
               style: {
                 background: isLightMode ? "#e3eaf4" : "#1f2427",
-                boxShadow: isLightMode
-                  ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
-                  : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
+                boxShadow:
+                  "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
                 color: isLightMode ? "#374151" : "rgba(255,255,255,0.7)",
+                border: isLightMode
+                  ? "1px solid rgba(17,24,39,0.5)"
+                  : "1px solid rgba(255,255,255,0.5)",
               },
               iconTheme: {
                 primary: "#6c5cfb",
@@ -75,10 +78,12 @@ export default function Contact() {
           toast.success("Your message is on its way!", {
             style: {
               background: isLightMode ? "#e3eaf4" : "#1f2427",
-              boxShadow: isLightMode
-                ? "0.2em 0.2em calc(0.2em * 2) #a2bbdb, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #f6f8fb"
-                : "0.2em 0.2em calc(0.2em * 2) #191c1e, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #242a2d",
+              boxShadow:
+                "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
               color: isLightMode ? "#374151" : "rgba(255,255,255,0.7)",
+              border: isLightMode
+                ? "1px solid rgba(17,24,39,0.5)"
+                : "1px solid rgba(255,255,255,0.5)",
             },
             iconTheme: {
               primary: "#6c5cfb",
