@@ -3,7 +3,7 @@
 import React from "react";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { IoSunny, IoMoon } from "react-icons/io5";
 
 import { useTheme } from "@/context/ThemeContextProvider";
@@ -15,7 +15,7 @@ export default function ThemeSwitchButton() {
 
   return (
     <motion.div
-      className="fixed bottom-3 right-3 z-[999]"
+      className="fixed bottom-3 right-3 z-999"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}

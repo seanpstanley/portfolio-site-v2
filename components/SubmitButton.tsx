@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 interface ButtonProps {
   children: React.ReactNode;
-  ref?: string;
+  ref?: React.Ref<HTMLButtonElement>;
   className?: string;
 }
 
@@ -35,7 +35,7 @@ export default function SubmitButton({
         <div role="status">
           <svg
             aria-hidden="true"
-            className="size-5 text-gray-400 animate-spin dark:text-white/50 fill-[#6c5cfb]"
+            className="size-5 text-gray-400 animate-spin dark:text-white/50 fill-blue-genie"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function SubmitButton({
     //   >
     //     <span
     //       className={cn(
-    //         "absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#6c5cfb] group-hover:translate-x-0 ease text-xl",
+    //         "absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-genie group-hover:translate-x-0 ease text-xl",
     //         pending && "hidden"
     //       )}
     //     >
@@ -79,7 +79,7 @@ export default function SubmitButton({
     // <div role="status">
     //   <svg
     //     aria-hidden="true"
-    //     className="size-5 text-gray-400 animate-spin dark:text-white/50 dark:fill-white fill-[#6c5cfb]"
+    //     className="size-5 text-gray-400 animate-spin dark:text-white/50 dark:fill-white fill-blue-genie"
     //     viewBox="0 0 100 101"
     //     fill="none"
     //     xmlns="http://www.w3.org/2000/svg"

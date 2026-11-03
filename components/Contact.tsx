@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import toast from "react-hot-toast";
 import { IoSend } from "react-icons/io5";
 
@@ -47,7 +47,7 @@ export default function Contact() {
         ref={formRef}
         className="mt-3 flex flex-col text-start"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
 
           if (error) {
             toast.error(error, {

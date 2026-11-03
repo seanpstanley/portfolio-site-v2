@@ -31,19 +31,18 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  let data;
-  try {
-    data = await resend.emails.send({
-      from: `${senderName} from Portfolio Contact Form <contact@seanpstanley.dev>`,
-      to: "seans09comp@gmail.com",
-      subject: "Someone reached out to you!",
-      reply_to: senderEmail as string,
-      react: React.createElement(ContactFormEmail, {
-        message: message as string,
-        senderEmail: senderEmail as string,
-      }),
-    });
-  } catch (error: unknown) {
+  const { data, error } = await resend.emails.send({
+    from: `${senderName} from Portfolio Contact Form <contact@seanpstanley.dev>`,
+    to: "seans09comp@gmail.com",
+    subject: "Someone reached out to you!",
+    replyTo: senderEmail,
+    react: React.createElement(ContactFormEmail, {
+      message,
+      senderEmail,
+    }),
+  });
+
+  if (error) {
     return {
       error: getErrorMessage(error),
     };

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import {
@@ -66,8 +66,8 @@ export default function Experience() {
               iconClassName={""}
             >
               <h3 className="font-bold">{experience.title}</h3>
-              <p className="font-semibold !mt-0">{experience.location}</p>
-              <p className="!mt-1 !font-normal text-gray-600 dark:text-white/60">
+              <p className="font-semibold mt-0!">{experience.location}</p>
+              <p className="mt-1! font-normal! text-gray-600 dark:text-white/60">
                 {experience.description}
               </p>
               <div className="flex mt-3 mb:1 justify-between items-end gap-2">
