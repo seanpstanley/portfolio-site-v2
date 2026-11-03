@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { useSectionInView } from "@/lib/hooks";
 
@@ -21,7 +21,7 @@ export default function ScrollIndicator() {
     const range = 300;
     const offset = scrollHeight * 2.75;
 
-    const didScrollPage = (e: Event) => {
+    const didScrollPage = () => {
       let calc = 1 - (window.scrollY - offset + range) / range;
       if (calc > 1) {
         calc = 1;
@@ -35,7 +35,7 @@ export default function ScrollIndicator() {
     window.addEventListener("scroll", didScrollPage);
 
     return () => {
-      window.removeEventListener("keydown", didScrollPage);
+      window.removeEventListener("scroll", didScrollPage);
     };
   }, []);
 
@@ -55,7 +55,7 @@ export default function ScrollIndicator() {
         Scroll
       </motion.p>
       <motion.div
-        className="bg-gray-400 w-px h-72 dark:bg-opacity-20"
+        className="bg-gray-400 w-px h-72 dark:bg-gray-400/20"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{

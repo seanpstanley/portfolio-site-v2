@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import { Inter, Nunito_Sans } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 import Footer from "@/components/Footer";
@@ -8,7 +8,6 @@ import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
 import ThemeContextProvider from "@/context/ThemeContextProvider";
 
-const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata = {
@@ -23,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="lowercase !scroll-smooth">
+    <html lang="en" className="lowercase scroll-smooth!">
       <body
-        className={`${nunito.className} bg-pattens-blue text-gray-900 relative min-h-screen px-2 md:px-12 lg:px-24 dark:bg-cinder dark:text-white/90 transition-colors mx-auto max-w-screen-xl antialiased selection:bg-[#6c5cfb] selection:text-white/90`}
+        className={`${nunito.className} bg-pattens-blue text-gray-900 relative min-h-screen px-2 md:px-12 lg:px-24 dark:bg-cinder dark:text-white/90 transition-colors mx-auto max-w-(--breakpoint-xl) antialiased selection:bg-blue-genie selection:text-white/90`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

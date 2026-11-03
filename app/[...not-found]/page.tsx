@@ -13,12 +13,12 @@ export default function NotFound() {
           speed={1}
         />
       </div>
-      <p className="!leading-normal text-lg text-start text-gray-700 dark:text-white/70 lg:max-w-sm mb-7 lg:mb-0">
+      <p className="leading-normal! text-lg text-start text-gray-700 dark:text-white/70 lg:max-w-sm mb-7 lg:mb-0">
         Nothing to see here!
       </p>
 
       <Link
-        className="font-bold text-gray-900 dark:text-white/90  hover:text-[#6c5cfb] dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] transition-colors motion-reduce:transition-none"
+        className="font-bold text-gray-900 dark:text-white/90  hover:text-blue-genie dark:hover:text-blue-genie focus-visible:text-blue-genie transition-colors motion-reduce:transition-none"
         href="/"
       >
         Go back home.

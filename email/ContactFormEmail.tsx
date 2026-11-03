@@ -10,8 +10,8 @@ import {
   Preview,
   Section,
   Text,
-} from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
+  Tailwind,
+} from "react-email";
 
 interface ContactFormEmailProps {
   message: string;
@@ -30,7 +30,7 @@ ContactFormEmailProps) {
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
-            <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
+            <Section className="bg-white border border-solid border-black/10 my-10 px-10 py-4 rounded-md">
               <Heading className="leading-tight">
                 A new message for you from your contact form.
               </Heading>

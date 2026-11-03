@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
@@ -52,7 +52,7 @@ export default function Project({
                 {description}
               </p>
             </div>
-            <div className="flex flex-col flex-shrink-0 sm:items-center sm:ml-10">
+            <div className="flex flex-col shrink-0 sm:items-center sm:ml-10">
               <Image
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}

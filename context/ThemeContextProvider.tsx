@@ -37,6 +37,8 @@ export default function ThemeContextProvider({
     const localTheme = localStorage.getItem("theme") as Theme | null;
 
     if (localTheme) {
+      // TODO: revisit theme init (also causes a flash of light theme on load)
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(localTheme);
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");

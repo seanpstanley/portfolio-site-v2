@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 import clsx from "clsx";
-import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import Link from "next/link";
 import { useClickAway } from "react-use";
 
@@ -19,7 +19,7 @@ export default function MobileNavbar() {
     useActiveSectionContext();
 
   return (
-    <nav className="z-[999] lg:hidden fixed h-16 top-0 right-0" ref={ref}>
+    <nav className="z-999 lg:hidden fixed h-16 top-0 right-0" ref={ref}>
       <AnimatePresence>
         {isOpen && (
           <motion.ul
@@ -40,7 +40,7 @@ export default function MobileNavbar() {
               >
                 <Link
                   className={clsx(
-                    "flex justify-center gap-6 tracking-wider items-center w-full py-6 hover:text-[#6c5cfb] transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-[#6c5cfb] focus-visible:text-[#6c5cfb] z-10",
+                    "flex justify-center gap-6 tracking-wider items-center w-full py-6 hover:text-blue-genie transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-blue-genie focus-visible:text-blue-genie z-10",
                     {
                       "text-gray-900 font-semibold scale-110 dark:text-white/90":
                         activeSection === link.name,

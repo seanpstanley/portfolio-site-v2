@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import DateAndTime from "@/components/DateAndTime";
 import { footerQuotes } from "@/lib/data";
@@ -11,7 +11,6 @@ export default function Footer() {
 
   const dayToQuote = () => {
     const quoteObj = footerQuotes[date.getDate()];
-    console.log(date);
     return quoteObj;
   };
   const { quote, source, year } = dayToQuote();

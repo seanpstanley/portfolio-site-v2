@@ -7,7 +7,7 @@ export default function ThemeSwitchButton() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <label className="group relative hidden w-fit cursor-pointer items-center rounded-full text-gray-700 transition-colors focus-within:text-[#6c5cfb] hover:text-[#6c5cfb] motion-reduce:transition-none dark:text-white/70 dark:focus-within:text-[#6c5cfb] dark:hover:text-[#6c5cfb] lg:inline-flex">
+    <label className="group relative hidden w-fit cursor-pointer items-center rounded-full text-gray-700 transition-colors focus-within:text-blue-genie hover:text-blue-genie motion-reduce:transition-none dark:text-white/70 dark:focus-within:text-blue-genie dark:hover:text-blue-genie lg:inline-flex">
       <input
         id="dark-toggle"
         type="checkbox"

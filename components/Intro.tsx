@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
 
 // import { useActiveSectionContext } from "@/context/ActiveSectionContext";
@@ -29,7 +29,7 @@ export default function Intro() {
             />
           </motion.div>
           <motion.h2
-            className="!leading-normal text-lg text-start text-gray-700 dark:text-white/70 lg:max-w-sm mb-7 lg:mb-0"
+            className="leading-normal! text-lg text-start text-gray-700 dark:text-white/70 lg:max-w-sm mb-7 lg:mb-0"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{

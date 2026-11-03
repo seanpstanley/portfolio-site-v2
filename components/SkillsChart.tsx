@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
-import { motion } from "framer-motion";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  type Chart,
+  type Plugin,
+} from "chart.js";
+import { motion } from "motion/react";
 import { Doughnut } from "react-chartjs-2";
 import { useInView } from "react-intersection-observer";
 
@@ -21,19 +27,19 @@ export default function SkillsChart() {
     threshold: 0.4,
   });
 
-  const shadowPlugin = {
+  const shadowPlugin: Plugin<"doughnut"> = {
     id: "shadowEffect",
-    beforeDraw: (chart: any) => {
+    beforeDraw: (chart: Chart<"doughnut">) => {
       const ctx = chart.ctx;
-      chart.data.datasets.forEach((dataset: any, datasetIndex: number) => {
+      chart.data.datasets.forEach((_dataset, datasetIndex) => {
         const meta = chart.getDatasetMeta(datasetIndex);
-        meta.data.forEach((arc: any) => {
+        meta.data.forEach((arc) => {
           ctx.save();
           ctx.shadowColor = isLightMode ? "#a2bbdb" : "191c1e";
           ctx.shadowBlur = 0.8 * 16;
           ctx.shadowOffsetX = 0.4 * 16;
           ctx.shadowOffsetY = 0.4 * 16;
-          arc.draw(ctx);
+          (arc as ArcElement).draw(ctx);
           ctx.restore();
 
           ctx.save();
@@ -42,7 +48,7 @@ export default function SkillsChart() {
           ctx.shadowOffsetX = -0.4 * 16;
           ctx.shadowOffsetY = -0.4 * 16;
 
-          arc.draw(ctx);
+          (arc as ArcElement).draw(ctx);
           ctx.restore();
         });
       });
