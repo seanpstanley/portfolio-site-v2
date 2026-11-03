@@ -81,14 +81,14 @@ export const romanize = (num: number) => {
 
 // takes in a url and returns just what's between the www. and the .com (host name)
 export const getHostName = (url: string) => {
-  var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+  const match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
   if (
     match != null &&
     match.length > 2 &&
     typeof match[2] === "string" &&
     match[2].length > 0
   ) {
-    var hostname = match[2].split(".");
+    const hostname = match[2].split(".");
     return hostname[0];
   } else {
     return null;
@@ -96,7 +96,10 @@ export const getHostName = (url: string) => {
 };
 
 // server-side validation for email contents in contact
-export const validateString = (value: unknown, maxLength: number) => {
+export const validateString = (
+  value: unknown,
+  maxLength: number
+): value is string => {
   if (!value || typeof value !== "string" || value.length > maxLength) {
     return false;
   }

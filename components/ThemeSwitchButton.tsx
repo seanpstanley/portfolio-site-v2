@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { PiSun, PiMoon } from "react-icons/pi";
 
 import { useTheme } from "@/context/ThemeContextProvider";

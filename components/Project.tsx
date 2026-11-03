@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
@@ -43,7 +43,7 @@ export default function Project({
         once: true,
       }}
     >
-      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-[34rem] sm:h-[24rem] rounded-lg overflow-hidden">
+      <section className="card pt-5 pb-6 px-5 sm:px-10 sm:pt-10 max-w-136 sm:h-96 rounded-lg overflow-hidden">
         <div className="flex flex-col h-full">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col mb-4 sm:mb-0">
@@ -52,12 +52,12 @@ export default function Project({
                 {description}
               </p>
             </div>
-            <div className="flex flex-col flex-shrink-0 sm:items-center sm:ml-6">
+            <div className="flex flex-col shrink-0 sm:items-center sm:ml-6">
               <Image
                 src={image}
                 alt={`Logo for ${title}, a project that I worked on.`}
                 quality={95}
-                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full border-2 border-black/10 dark:border-white dark:border-opacity-40"
+                className="hidden sm:block h-36 w-36 mb-3 object-cover rounded-full border-2 border-black/10 dark:border-white/40"
               />
               <div className="hidden sm:flex sm:gap-2">
                 {deployment && (

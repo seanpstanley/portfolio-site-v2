@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import toast from "react-hot-toast";
 
 import { sendEmail } from "@/actions/sendEmail";
@@ -38,7 +38,7 @@ export default function Contact() {
         ref={formRef}
         className="mt-4 flex flex-col text-start"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
 
           if (error) {
             toast.error(error, {
@@ -63,7 +63,7 @@ export default function Contact() {
           Name
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white/80 dark:focus:bg-white transition dark:text-black"
           name="senderName"
           placeholder="what's your name?"
           required
@@ -77,7 +77,7 @@ export default function Contact() {
           Email Address
         </label>
         <input
-          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-14 px-4 mt-1 mb-4 rounded-lg borderBlack dark:bg-white/80 dark:focus:bg-white transition dark:text-black"
           name="senderEmail"
           type="email"
           placeholder="where can i reach you?"
@@ -90,7 +90,7 @@ export default function Contact() {
           Message
         </label>
         <textarea
-          className="h-60 mt-1 mb-4 min-h-14 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition dark:text-black"
+          className="h-60 mt-1 mb-4 min-h-14 rounded-lg borderBlack p-4 dark:bg-white/80 dark:focus:bg-white transition dark:text-black"
           name="message"
           placeholder="what would you like to say?"
           required

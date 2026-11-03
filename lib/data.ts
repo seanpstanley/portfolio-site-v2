@@ -254,7 +254,7 @@ export const projectsData = [
         accessibilityText: "Brewd homepage.",
       },
       github: {
-        link: "hhttps://github.com/Brewd-Co/Brewd",
+        link: "https://github.com/Brewd-Co/Brewd",
         accessibilityText: "GitHub project page for Brewd.",
       },
     },

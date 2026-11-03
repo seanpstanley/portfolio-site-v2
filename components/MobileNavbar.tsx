@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 import clsx from "clsx";
-import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import Link from "next/link";
 import { useClickAway } from "react-use";
 
@@ -20,7 +20,7 @@ export default function MobileNavbar() {
 
   return (
     <header>
-      <nav className="z-[999] sm:hidden fixed top-6 left-6" ref={ref}>
+      <nav className="z-999 sm:hidden fixed top-6 left-6" ref={ref}>
         <AnimatePresence>
           {isOpen && (
             <motion.ul

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -60,8 +60,8 @@ export default function Experience() {
               }}
             >
               <h3 className="font-bold">{experience.title}</h3>
-              <p className="font-semibold !mt-0">{experience.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="font-semibold mt-0!">{experience.location}</p>
+              <p className="mt-1! font-normal! text-gray-700 dark:text-white/75">
                 {experience.description}
               </p>
               <div className="flex mt-3 mb:1 sm:mt-4 justify-between items-end gap-2">

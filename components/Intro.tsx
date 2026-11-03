@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 // import Link from "next/link";
 // import { BsArrowRight } from "react-icons/bs";
@@ -25,7 +25,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-20 lg:mt-20 max-w-[72rem] text-center scroll-mt-20 sm:scroll-mt-[100rem]"
+      className="mb-20 lg:mt-20 max-w-6xl text-center scroll-mt-20 sm:scroll-mt-[100rem]"
     >
       <div className="flex lg:flex-row flex-col items-center lg:gap-6">
         <motion.div
@@ -39,7 +39,7 @@ export default function Intro() {
             alt="A portrait of me."
             quality="95"
             priority
-            className="h-36 w-36 lg:w-72 lg:h-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-opacity-40 shadow-xl"
+            className="h-36 w-36 lg:w-72 lg:h-72 lg:ml-4 rounded-full object-cover border-4 border-white dark:border-white/40 shadow-xl"
           />
           <Image
             src={alienDance}
@@ -67,7 +67,7 @@ export default function Intro() {
             />
           </motion.div>
           <motion.h2
-            className="mb-10 px-4 font-medium !leading-[1.5] text-2xl sm:text-4xl"
+            className="mb-10 px-4 font-medium leading-normal! text-2xl sm:text-4xl"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -104,7 +104,7 @@ export default function Intro() {
         </a> */}
             <a
               className="group flex items-center gap-2 px-7 py-3 rounded-full text-white bg-gray-900 dark:bg-white/10 focus:scale-105 hover:scale-105 hover:bg-gray-900 active:scale-100 transition"
-              href="/sean-stanley-resume.pdf"
+              href="/Sean-Stanley-Resume.pdf"
               download
             >
               Download Resume

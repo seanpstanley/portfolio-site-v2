@@ -8,7 +8,6 @@ export default function Footer() {
 
   const dayToQuote = () => {
     const quoteObj = footerQuotes[date.getDate()];
-    console.log(date);
     return quoteObj;
   };
   const { quote, source, year } = dayToQuote();
