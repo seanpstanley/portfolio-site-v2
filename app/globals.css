@@ -376,17 +376,18 @@
   transition:
     background 0.2s,
     box-shadow 0.2s;
-  &[data-on="false"] {
-    background: var(--well);
-    box-shadow:
-      inset 1px 1px 2px var(--amb),
-      inset -1px -1px 1px var(--hi);
-  }
   &[data-tone="ok"] {
     background: var(--ok);
     box-shadow:
       0 0 0 2px rgb(60 207 122 / 0.16),
       0 0 10px rgb(60 207 122 / 0.7);
+  }
+  /* last, so "off" beats any tone */
+  &[data-on="false"] {
+    background: var(--well);
+    box-shadow:
+      inset 1px 1px 2px var(--amb),
+      inset -1px -1px 1px var(--hi);
   }
 }
 
