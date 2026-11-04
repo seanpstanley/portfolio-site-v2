@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 
 // [text to type, pause after it (ms)] — each step continues from the last
 const steps: [string, number][] = [
-  ["hi,", 850],
-  [" i'm\nsean.", 0],
+  ["sean", 500],
+  ["\nstanley", 0],
 ];
 const FULL_TEXT = steps.map(([text]) => text).join("");
 const START_DELAY = 400;
@@ -20,7 +20,7 @@ interface TypedHeadingProps {
 }
 
 /*
-  Types the greeting out on the dot-matrix display.
+  Types the name out on the dot-matrix display.
   - Screen readers get the whole heading once (the typed text is aria-hidden).
   - The final text is rendered invisibly underneath, so nothing shifts while
     typing.
@@ -57,7 +57,7 @@ export default function TypedHeading({ className }: TypedHeadingProps) {
 
   return (
     <h1 className={cn("dot relative m-0 whitespace-pre-line", className)}>
-      <span className="sr-only">Hi, I'm Sean.</span>
+      <span className="sr-only">Sean Stanley</span>
       {/* reserves the final size so the layout never moves */}
       <span aria-hidden="true" className="invisible">
         {FULL_TEXT}
