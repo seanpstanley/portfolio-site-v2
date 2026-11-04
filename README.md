@@ -1,6 +1,6 @@
 # seanpstanley.dev
 
-My portfolio site. One sheet of rubber: seamed tiles, domed keys that press in, a little screen that follows you down the page, and some bubble wrap.
+My portfolio site. Meant to evoke a single "membrane": seamed tiles, domed buttons that press in, a little screen that follows you down the page, and some bubble wrap.
 
 Live at [seanpstanley.dev](https://seanpstanley.dev).
 
