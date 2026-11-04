@@ -61,8 +61,8 @@ export default function ControlPanel() {
           </div>
           <TypedHeading className="text-[44px] sm:text-[50px]" />
           <p className="m-0 text-[17px] leading-normal text-pretty text-ink-2">
-            I'm a <span className="font-semibold text-ink">frontend developer</span>{" "}
-            who likes stuff that looks good.
+            <span className="font-semibold text-ink">Frontend developer</span> who
+            likes stuff that looks good.
           </p>
         </div>
 

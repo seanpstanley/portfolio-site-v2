@@ -78,7 +78,7 @@ export default function OpenGraphImage() {
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <span style={{ fontSize: 32, color: "#46464e" }}>
-              frontend developer who likes stuff that looks good.
+              Frontend developer who likes stuff that looks good.
             </span>
             <div style={{ display: "flex", gap: 14 }}>
               {[0, 1, 2, 3].map((i) => (
