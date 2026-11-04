@@ -18,9 +18,8 @@ const themeLabel = { light: "light", system: "auto", dark: "dark" } as const;
 
 /*
   The left-hand control surface: one sheet of seamed tiles.
-  Phones get the name plate and utility row; the readout, nav keys, clock
-  are desktop-only (phones use MobileReadout + MobileDock); phones get a
-  collapsible bubble wrap instead.
+  Phones get the name plate, utility row, and bubble wrap; the readout, nav
+  keys, and clock are desktop-only (phones use MobileReadout + MobileDock).
 */
 const GAP = 40;
 
@@ -127,13 +126,7 @@ export default function ControlPanel() {
           <ClockModule />
         </div>
 
-        <div className="hidden lg:block">
-          <BubbleWrap />
-        </div>
-
-        <div className="lg:hidden">
-          <BubbleWrap collapsible />
-        </div>
+        <BubbleWrap />
       </div>
     </header>
   );
