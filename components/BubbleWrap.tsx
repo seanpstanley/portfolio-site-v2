@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { LuVolume2, LuVolumeX } from "react-icons/lu";
+import { LuChevronDown, LuVolume2, LuVolumeX } from "react-icons/lu";
 
 import { playPop, useSoundEnabled } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -21,8 +21,15 @@ const ALIEN_MS = 6000;
   A strip of poppable bubbles. It's a toy, not a control: the bubbles are
   hidden from assistive tech and skipped by Tab. The sound toggle is a real,
   labelled button. Once every bubble is popped, the sheet refills.
+  On phones it's collapsible (closed by default) so it doesn't push the
+  content down.
 */
-export default function BubbleWrap() {
+interface BubbleWrapProps {
+  collapsible?: boolean;
+}
+
+export default function BubbleWrap({ collapsible = false }: BubbleWrapProps) {
+  const [open, setOpen] = useState(!collapsible);
   const [popped, setPopped] = useState<Set<number>>(() => new Set());
   const [progress, setProgress] = useState(0);
   const [alien, setAlien] = useState(false);
@@ -53,38 +60,77 @@ export default function BubbleWrap() {
   };
 
   return (
-    <div className="cell relative flex flex-col gap-3.5 px-[18px] pt-3.5 pb-[18px]">
-      <div className="flex items-center justify-between">
+    <div
+      className={cn(
+        "relative flex flex-col px-[18px] pt-3.5 cell",
+        open ? "pb-[18px]" : "pb-3.5",
+      )}
+    >
+      <div className="flex min-h-8 items-center justify-between gap-3">
         <span className="label">bubble wrap</span>
-        <button
-          type="button"
-          onClick={toggleSound}
-          aria-pressed={soundOn}
-          aria-label="Pop sound"
-          className="bubble size-8 rounded-full"
-        >
-          {soundOn ? (
-            <LuVolume2 className="size-3.5" aria-hidden="true" />
-          ) : (
-            <LuVolumeX className="size-3.5" aria-hidden="true" />
+        <div className="flex items-center gap-2">
+          {open && (
+            <button
+              type="button"
+              onClick={toggleSound}
+              aria-pressed={soundOn}
+              aria-label="Pop sound"
+              className="bubble size-8 rounded-full"
+            >
+              {soundOn ? (
+                <LuVolume2 className="size-3.5" aria-hidden="true" />
+              ) : (
+                <LuVolumeX className="size-3.5" aria-hidden="true" />
+              )}
+            </button>
           )}
-        </button>
+          {collapsible && (
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              className="bubble h-8 gap-1 rounded-full px-3 font-mono text-[11px] font-semibold tracking-wider uppercase"
+            >
+              {open ? "hide" : "show"}
+              <span className="sr-only"> bubble wrap</span>
+              <LuChevronDown
+                className={cn(
+                  "size-3.5 transition-transform motion-reduce:transition-none",
+                  open && "rotate-180",
+                )}
+                aria-hidden="true"
+              />
+            </button>
+          )}
+        </div>
       </div>
-      <div
-        aria-hidden="true"
-        className="grid grid-cols-[repeat(12,22px)] justify-between gap-y-2.5"
-      >
-        {Array.from({ length: COUNT }, (_, i) => (
-          <span
-            key={i}
-            onPointerDown={() => pop(i)}
-            className={cn(
-              "size-[22px] rounded-full transition-all duration-100 motion-reduce:transition-none",
-              popped.has(i) ? "well scale-90" : "keycap cursor-pointer hover:scale-105",
-            )}
-          />
-        ))}
-      </div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            aria-hidden="true"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+            className="-mx-3 -mb-3 overflow-hidden px-3 pb-3"
+          >
+            <div className="grid grid-cols-[repeat(12,minmax(0,22px))] justify-between gap-y-2.5 pt-3.5">
+              {Array.from({ length: COUNT }, (_, i) => (
+                <span
+                  key={i}
+                  onPointerDown={() => pop(i)}
+                  className={cn(
+                    "aspect-square w-full rounded-full transition-all duration-100 motion-reduce:transition-none",
+                    popped.has(i)
+                      ? "scale-90 well"
+                      : "keycap cursor-pointer hover:scale-105",
+                  )}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <AnimatePresence>
         {alien && (
           <motion.div
