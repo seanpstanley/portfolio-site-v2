@@ -1,19 +1,30 @@
 import "@/app/globals.css";
-import { Nunito_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Doto, Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
+import ControlPanel from "@/components/ControlPanel";
 import Footer from "@/components/Footer";
-import Sidebar from "@/components/Sidebar";
-import ThemeSwitchButton from "@/components/ThemeSwitchButton";
-import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
-import ThemeContextProvider from "@/context/ThemeContextProvider";
+import MobileDock from "@/components/MobileDock";
+import MobileReadout from "@/components/MobileReadout";
+import Providers from "@/components/Providers";
+import { themeInitScript } from "@/lib/theme-script";
 
-const nunito = Nunito_Sans({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const doto = Doto({ subsets: ["latin"], variable: "--font-doto" });
 
-export const metadata = {
-  title: "Sean | Project Portfolio",
+export const metadata: Metadata = {
+  title: "Sean Stanley | Portfolio",
   description:
     "A responsive portfolio website showcasing my experience and a few of my personal projects",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#e4e3df" },
+    { media: "(prefers-color-scheme: dark)", color: "#1d1d20" },
+  ],
 };
 
 export default function RootLayout({
@@ -22,23 +33,49 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="lowercase scroll-smooth!">
-      <body
-        className={`${nunito.className} bg-pattens-blue text-gray-900 relative min-h-screen px-2 md:px-12 lg:px-24 dark:bg-cinder dark:text-white/90 transition-colors mx-auto max-w-(--breakpoint-xl) antialiased selection:bg-blue-genie selection:text-white/90`}
-      >
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <div className="lg:flex lg:justify-between gap-6">
-              <Sidebar />
-              <div className="flex flex-col items-center lg:w-1/2">
-                {children}
-                <Footer />
-                <Toaster position="top-right" />
-                <ThemeSwitchButton />
-              </div>
+    <html
+      lang="en"
+      // the theme script adds .dark before hydration
+      suppressHydrationWarning
+      className={`${geist.variable} ${geistMono.variable} ${doto.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-screen font-sans antialiased">
+        <a
+          href="#main"
+          className="label sr-only rounded-full bg-tile px-4 py-3 text-ink focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50"
+        >
+          Skip to content
+        </a>
+        <Providers>
+          <MobileReadout />
+          <div className="mx-auto max-w-[1240px] px-4 pt-5 pb-36 sm:px-8 lg:flex lg:items-start lg:gap-14 lg:px-10 lg:pt-14 lg:pb-16">
+            <ControlPanel />
+            <div className="mt-12 min-w-0 flex-1 lg:mt-2">
+              {children}
+              <Footer />
             </div>
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+          </div>
+          <MobileDock />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: "var(--tile)",
+                color: "var(--ink)",
+                boxShadow:
+                  "inset 0 1px 0 var(--rim), -7px -7px 18px var(--hi), 9px 12px 26px var(--amb-soft), 1px 2px 3px var(--contact)",
+                borderRadius: "18px",
+                padding: "12px 16px",
+                fontWeight: 500,
+              },
+              success: { icon: <span className="led" data-tone="ok" /> },
+              error: { icon: <span className="led" /> },
+            }}
+          />
+        </Providers>
       </body>
     </html>
   );

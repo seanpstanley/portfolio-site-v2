@@ -1,86 +1,36 @@
-import React from "react";
-
-import { FaReact } from "react-icons/fa";
-import { FaGraduationCap } from "react-icons/fa";
-import { GiClassicalKnowledge } from "react-icons/gi";
-import { IoHome } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
-import { MdWork } from "react-icons/md";
-
-import { FooterQuotesInterface } from "@/lib/types";
-import brewdLogo from "@/public/logos/brewd-logo.png";
-import rollForInitLogo from "@/public/logos/roll-for-init-logo.png";
-import seanPixelPortrait from "@/public/logos/sean-pixelated-512.png";
-import ufSeal from "@/public/logos/uf-seal.png";
-import ufVergLogo from "@/public/logos/uf-verg-logo.jpeg";
-import xdgLogo from "@/public/logos/xdg-logo.png";
+import type {
+  Experience,
+  FeaturedProject,
+  FooterQuotesInterface,
+  Project,
+  SkillGroup,
+} from "@/lib/types";
 
 export const links = [
-  {
-    name: "About",
-    hash: "#about",
-    icon: React.createElement(IoHome),
-  },
-  // {
-  //   name: "About",
-  //   hash: "#about",
-  // },
-  {
-    name: "Experience",
-    hash: "#experience",
-    icon: React.createElement(MdWork),
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-    icon: React.createElement(FaReact),
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-    icon: React.createElement(GiClassicalKnowledge),
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-    icon: React.createElement(MdEmail),
-  },
-];
+  { name: "About", short: "about", hash: "#about" },
+  { name: "Experience", short: "work", hash: "#experience" },
+  { name: "Projects", short: "projects", hash: "#projects" },
+  { name: "Skills", short: "skills", hash: "#skills" },
+  { name: "Contact", short: "contact", hash: "#contact" },
+] as const;
 
-export const experiencesData = [
+export const resumeHref = "/files/sean-stanley-resume.pdf";
+
+export const socials = {
+  github: "https://github.com/seanpstanley",
+  linkedin: "https://www.linkedin.com/in/seanpstanley/",
+  email: "seans09comp@gmail.com",
+};
+
+// newest first
+export const experiencesData: Experience[] = [
   {
-    title: "Software Engineer Intern",
-    location: "Burnley Consulting",
-    description:
-      "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
-    icon: React.createElement(MdWork),
-    date: "May 2018 - August 2018",
-    tags: ["Java", "OpenCV"],
-  },
-  {
-    title: "Undergraduate Researcher",
-    location: "University of Florida",
-    description:
-      "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
-    icon: React.createElement(FaGraduationCap),
-    date: "December 2020 – October 2021",
-    tags: [
-      "Unity",
-      "Python",
-      "OpenCV",
-      "Open Sound Control",
-      "3D Design/Printing",
-      "Augmented Reality",
-      "A/B Testing",
-    ],
-  },
-  {
+    kind: "work",
     title: "Software Engineer I",
-    location: "CAE USA",
+    org: "CAE USA",
+    date: "Jun 2021 — Aug 2024",
     description:
       "Worked on bleeding-edge products for use on classified network environments. Wore multiple hats as a Developer, Tester, and Product Owner while holding Top Secret security clearance.",
-    icon: React.createElement(MdWork),
-    date: "June 2021 - August 2024",
     tags: [
       "Agile Sprint Planning",
       "Test-Driven Development",
@@ -96,268 +46,282 @@ export const experiencesData = [
       "Selenium WebDriver",
     ],
   },
+  {
+    kind: "research",
+    title: "Undergraduate Researcher",
+    org: "University of Florida",
+    date: "Dec 2020 — Oct 2021",
+    description:
+      "Worked in UF's Human-Centered Computing Lab on two projects, PPCards and BlockXR. Both projects centered on augmented reality interfaces designed to incorporate AR into tangible circuit-building and coding tutorials. Incorporated real-time feedback projected onto the workspace to alert users to mistakes, and provided contextual suggestions to correct errors. Co-authored published research papers on both projects.",
+    tags: [
+      "Unity",
+      "Python",
+      "OpenCV",
+      "Open Sound Control",
+      "3D Design/Printing",
+      "Augmented Reality",
+      "A/B Testing",
+    ],
+  },
+  {
+    kind: "work",
+    title: "Software Engineer Intern",
+    org: "Burnley Consulting",
+    date: "May 2018 — Aug 2018",
+    description:
+      "Developed computer vision software using open-source machine-learning libraries for autonomous robotics. Used OpenCV's pre-trained deep neural networks module with Java to facilitate recognition of several kinds of objects that the robot interacted with contextually.",
+    tags: ["Java", "OpenCV"],
+  },
 ];
 
-export const projectsData = [
+export const featuredProject: FeaturedProject = {
+  title: "Brewd",
+  subtitle: "A social coffee experience",
+  status: "in active development",
+  description:
+    "Currently brewing. Brewd is a coffee-rating web app that helps users discover, rate, and share their coffee experiences, inspired by platforms like Letterboxd, Untappd, and Backloggd.",
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Radix UI",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "NextAuth",
+    "SWR",
+    "AWS S3",
+    "Google Places API",
+    "Dynamic Routes",
+    "Vercel",
+  ],
+  live: { href: "https://brewd.org/", label: "Open Brewd (opens in a new tab)" },
+};
+
+export const projectsData: Project[] = [
   {
-    title: "XDG Technologies Website",
-    description:
-      "Worked with XDG to replace their outdated Wordpress site with a responsive React web app. Used Figma to mock up high-fidelity prototypes of modular components. Included order and payment processing functionality via Stripe.",
-    tags: ["React.js", "React-Router", "Basic-Auth", "Heroku", "MongoDB"],
-    image: xdgLogo,
-    links: {
-      deployment: null,
-      github: {
-        link: "https://github.com/CEN30315A/Site/",
-        accessibilityText:
-          "GitHub project page for the XDG Technologies Website.",
-      },
-    },
-  },
-  {
-    title: "Gator Trader, University of Florida",
-    description:
-      "Worked with UF faculty to develop a responsive React replacement for UF's Textbook Exchange web service with goals of modernizing the site's look and reducing load times by at least 50%.",
-    tags: [
-      "React.js",
-      "React-Router",
-      "Bootstrap",
-      "Material UI",
-      "Basic-Auth",
-      "Express",
-    ],
-    image: ufSeal,
-    links: {
-      deployment: null,
-      github: {
-        link: "https://github.com/seanpstanley/react-gator-trader",
-        accessibilityText: "GitHub project page for Gator Trader.",
-      },
-    },
-  },
-  {
-    title: "Roll for Init, 5E Tabletop RPG Aide",
-    description:
-      "Created an Open Gaming License-compliant alternative to sites like D&D Beyond. Used React with Redux to manage the state of each player's character. Included multiplayer party functionality.",
-    tags: [
-      "React.js",
-      "Redux",
-      "React-Router",
-      "Bootstrap",
-      "Sass",
-      "Express",
-      "OAuth",
-      "Heroku",
-      "Webpack",
-    ],
-    image: rollForInitLogo,
-    links: {
-      deployment: {
-        link: "https://xd.adobe.com/view/e345a295-5deb-44fb-a0ef-53cb63277d70-b616/?fullscreen",
-        accessibilityText: "Adobe XD prototype for Roll for Init.",
-      },
-      github: {
-        link: "https://github.com/Roll-For-Init",
-        accessibilityText: "GitHub project page for Roll for Init.",
-      },
-    },
-  },
-  {
-    title: "PPCards",
-    description:
-      "Designed and built prototypes of PPCards, a card-based augmented reality learning platform for prototyping electronic circuits. Presented a prototype at the ACM TEI2021 conference in February 2021.",
-    tags: [
-      "Unity",
-      "Python",
-      "OpenCV",
-      "Open Sound Control",
-      "3D Design/Printing",
-      "Augmented Reality",
-    ],
-    image: ufVergLogo,
-    links: {
-      deployment: {
-        link: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
-        accessibilityText: "ACM Digital Library page for PPCards publication.",
-      },
-      github: null,
-    },
-  },
-  {
-    title: "BlockXR",
-    description:
-      "Used technology and lessons learned while working on the previous project, PPCards, to create blockXR, a tangible version of Google’s Blockly. Conducted user studies on campus, and presented a showpiece at VL/HCC in October 2021.",
-    tags: [
-      "Unity",
-      "Python",
-      "OpenCV",
-      "Open Sound Control",
-      "3D Design/Printing",
-      "Augmented Reality",
-    ],
-    image: ufVergLogo,
-    links: {
-      deployment: {
-        link: "https://ieeexplore.ieee.org/document/9576344",
-        accessibilityText: "IEEE Xplore page for BlockXR publication.",
-      },
-      github: null,
-    },
-  },
-  {
-    title: "Portfolio Website v1",
-    description:
-      "I wanted to test my skills by creating a React app using React-Router and React Hooks without using any template. I also wanted to avoid using Bootstrap or any other CSS libraries. This experience reminded me that those tools exist for a reason. The website turned out okay, if a little clunky.",
-    tags: ["React.js", "React-Router", "Netlify"],
-    image: seanPixelPortrait,
-    links: {
-      deployment: null,
-      github: {
-        link: "https://github.com/seanpstanley/personal-website",
-        accessibilityText:
-          "GitHub project page for my first portfolio website.",
-      },
-    },
-  },
-  {
-    title: "This Website, Portfolio Website v2",
-    description:
-      "Used Tailwind + Framer to implement flashier stuff, faster. Heavily focused on accessibility, including full compatibility with screen readers and keyboard navigation. Used axe DevTools + WCAG 2.1 to verify compliance.",
-    tags: [
-      "Next.js",
-      "Server Actions",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "React Context API",
-      "Resend",
-      "React Hot Toast",
-      "Vercel",
-      "axe DevTools",
-      "Chart.js",
-    ],
-    image: seanPixelPortrait,
-    links: {
-      deployment: {
-        link: "https://www.seanpstanley.dev/",
-        accessibilityText: "My current portfolio website.",
-      },
-      github: {
-        link: "https://github.com/seanpstanley/personal-website-v2",
-        accessibilityText:
-          "GitHub project page for my current portfolio website.",
-      },
-    },
-  },
-  {
-    title: "Brewd - A Social Coffee Experience",
-    description:
-      "Currently brewing. Brewd is a coffee-rating webapp that helps users discover, rate, and share their coffee experiences, inspired by platforms like Letterboxd, Untappd, and Backloggd. Note: Brewd is currently in development and is not yet feature-complete. THe GitHub repo is private.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Radix UI",
-      "Dynamic Routes",
-      "Google Places API",
-      "PostgreSQL",
-      "SWR",
-      "AWS S3",
-      "NextAuth",
-      "Drizzle ORM",
-      "Vercel",
-    ],
-    image: brewdLogo,
-    links: {
-      deployment: {
-        link: "https://brewd.org/",
-        accessibilityText: "Brewd homepage.",
-      },
-      github: {
-        link: "https://github.com/Brewd-Co/Brewd",
-        accessibilityText: "GitHub project page for Brewd.",
-      },
-    },
-  },
-  {
+    mono: "hd",
+    kind: "web app",
+    category: "web",
     title: "Hue Dat Boy",
     description:
-      "A contrast checker for both WCAG & APCA standards, a font picker, a contrast enhancer, and a colorblindness simulator walk into a bar. Built with a focus on documentation, optimization, internationalization, accessibility, testability, and simplicity. Currently supported languages: English, Spanish, and Lithuanian.",
+      "A contrast checker for WCAG & APCA, a font picker, a contrast enhancer, and a colorblindness simulator walk into a bar. Available in English, Spanish, and Lithuanian.",
     tags: [
       "Next.js",
       "TypeScript",
+      "next-intl",
       "Tailwind CSS",
       "Shadcn UI",
       "Google Fonts API",
       "SWR",
       "Vitest",
-      "next-intl",
       "Vercel",
     ],
-    image: seanPixelPortrait,
-    links: {
-      deployment: {
-        link: "https://huedatboy.com/",
-        accessibilityText: "Hue Dat Boy contrast checker.",
-      },
-      github: {
-        link: "https://github.com/seanpstanley/hue-dat-boy",
-        accessibilityText: "GitHub project page for Hue Dat Boy.",
-      },
+    live: { href: "https://huedatboy.com/", label: "Open Hue Dat Boy (opens in a new tab)" },
+    code: {
+      href: "https://github.com/seanpstanley/hue-dat-boy",
+      label: "Hue Dat Boy source on GitHub (opens in a new tab)",
     },
   },
   {
-    title: "Reel of Fortune (Or NexStub? TBD)",
+    mono: "v2",
+    kind: "this site",
+    category: "web",
+    title: "Portfolio v2",
     description:
-      "The hero of your next movie night. Takes a user's Letterboxd watchlist and serves them a random suggestion based on filters. Meant to help alleviate choice fatigue.",
+      "Built with a heavy focus on accessibility, including full screen-reader and keyboard support, verified with axe DevTools against WCAG 2.1.",
     tags: [
       "Next.js",
-      "TypeScript",
       "Tailwind CSS",
-      "Shadcn UI",
-      "SWR",
-      "Vitest",
+      "Server Actions",
+      "TypeScript",
+      "Motion",
+      "React Context API",
+      "Resend",
+      "React Hot Toast",
       "Vercel",
+      "axe DevTools",
     ],
-    image: seanPixelPortrait,
-    links: {
-      deployment: null,
-      github: null,
+    code: {
+      href: "https://github.com/seanpstanley/portfolio-site-v2",
+      label: "Portfolio v2 source on GitHub (opens in a new tab)",
+    },
+  },
+  {
+    mono: "bx",
+    kind: "research · ieee",
+    category: "research",
+    title: "BlockXR",
+    description:
+      "A tangible version of Google's Blockly, built on lessons from PPCards. Ran user studies on campus and presented a showpiece at VL/HCC in October 2021.",
+    tags: [
+      "Unity",
+      "OpenCV",
+      "Augmented Reality",
+      "Python",
+      "Open Sound Control",
+      "3D Design/Printing",
+    ],
+    live: {
+      href: "https://ieeexplore.ieee.org/document/9576344",
+      label: "BlockXR paper on IEEE Xplore (opens in a new tab)",
+    },
+  },
+  {
+    mono: "pp",
+    kind: "research · acm",
+    category: "research",
+    title: "PPCards",
+    description:
+      "A card-based augmented reality learning platform for prototyping electronic circuits. Presented a prototype at ACM TEI 2021.",
+    tags: [
+      "Unity",
+      "Python",
+      "Augmented Reality",
+      "OpenCV",
+      "Open Sound Control",
+      "3D Design/Printing",
+    ],
+    live: {
+      href: "https://dl.acm.org/doi/abs/10.1145/3430524.3440643",
+      label: "PPCards paper in the ACM Digital Library (opens in a new tab)",
+    },
+  },
+  {
+    mono: "r4",
+    kind: "web app",
+    category: "web",
+    title: "Roll for Init",
+    description:
+      "An Open Gaming License-compliant alternative to sites like D&D Beyond, using React and Redux to manage each player's character, with multiplayer parties.",
+    tags: [
+      "React",
+      "Redux",
+      "Express",
+      "React Router",
+      "Bootstrap",
+      "Sass",
+      "OAuth",
+      "Heroku",
+      "Webpack",
+    ],
+    live: {
+      href: "https://xd.adobe.com/view/e345a295-5deb-44fb-a0ef-53cb63277d70-b616/?fullscreen",
+      label: "Roll for Init prototype (opens in a new tab)",
+    },
+    code: {
+      href: "https://github.com/Roll-For-Init",
+      label: "Roll for Init on GitHub (opens in a new tab)",
+    },
+  },
+  {
+    mono: "gt",
+    kind: "web app",
+    category: "web",
+    title: "Gator Trader",
+    description:
+      "A responsive React replacement for UF's Textbook Exchange, aiming to modernize the look and cut load times by at least 50%.",
+    tags: [
+      "React",
+      "Material UI",
+      "Express",
+      "React Router",
+      "Bootstrap",
+      "Basic Auth",
+    ],
+    code: {
+      href: "https://github.com/seanpstanley/react-gator-trader",
+      label: "Gator Trader on GitHub (opens in a new tab)",
+    },
+  },
+  {
+    mono: "xd",
+    kind: "client site",
+    category: "web",
+    title: "XDG Technologies",
+    description:
+      "Replaced an outdated WordPress site with a responsive React app, prototyped in Figma, with order and payment processing via Stripe.",
+    tags: ["React", "MongoDB", "Heroku", "React Router", "Basic Auth"],
+    code: {
+      href: "https://github.com/CEN30315A/Site/",
+      label: "XDG Technologies site on GitHub (opens in a new tab)",
+    },
+  },
+  {
+    mono: "v1",
+    kind: "archive",
+    category: "web",
+    title: "Portfolio v1",
+    description:
+      "A React app with no template and no CSS library — a reminder that those tools exist for a reason. It turned out okay, if a little clunky.",
+    tags: ["React", "React Router", "Netlify"],
+    code: {
+      href: "https://github.com/seanpstanley/personal-website",
+      label: "Portfolio v1 on GitHub (opens in a new tab)",
     },
   },
 ];
 
-export const skillsData = [
-  "HTML5",
-  "CSS/SCSS",
-  "JavaScript ES6+",
-  "TypeScript",
-  "React.js",
-  "Next.js",
-  "Radix UI",
-  "Accessible Design",
-  "axe DevTools",
-  "Google Lighthouse",
-  "Git",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Responsive Design",
-  "REST APIs",
-  "React Redux",
-  "Vitest",
-  "Cypress",
-  "React Testing Library",
-  "AWS S3",
-  "Vercel",
-  "Drizzle ORM",
-  "PostgreSQL",
-  "SQL",
-  "Unity",
-  "Python",
-  "Java",
-  ".NET/C#",
-  "Blender",
-  "Figma",
+export const projectFilters = [
+  { value: "all", label: "all" },
+  { value: "web", label: "web" },
+  { value: "research", label: "research" },
+] as const;
+
+export const skillGroups: SkillGroup[] = [
+  {
+    name: "languages",
+    color: "var(--fill)",
+    items: [
+      "TypeScript",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS/SCSS",
+      "SQL",
+      "Python",
+      "Java",
+      ".NET/C#",
+    ],
+  },
+  {
+    name: "frameworks",
+    color: "var(--navy)",
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Radix UI",
+      "Framer Motion",
+      "React Redux",
+      "Drizzle ORM",
+    ],
+  },
+  {
+    name: "quality & a11y",
+    color: "var(--signal)",
+    items: [
+      "Accessible Design",
+      "Responsive Design",
+      "axe DevTools",
+      "Google Lighthouse",
+      "Vitest",
+      "Cypress",
+      "React Testing Library",
+    ],
+  },
+  {
+    name: "tools",
+    color: "var(--tan)",
+    items: [
+      "Git",
+      "REST APIs",
+      "PostgreSQL",
+      "AWS S3",
+      "Vercel",
+      "Figma",
+      "Unity",
+      "Blender",
+    ],
+  },
 ];
 
 export const footerQuotes = {

@@ -1,22 +1,44 @@
 "use client";
 
-import SectionHeading from "@/components/SectionHeading";
-import SkillsChart from "@/components/SkillsChart";
-import SkillsList from "@/components/SkillsList";
-import { useSectionInView } from "@/lib/hooks";
+import Section from "@/components/Section";
+import { skillGroups } from "@/lib/data";
 
+const cap = "keycap min-h-[42px] rounded-xl px-[15px] text-[14.5px] font-medium";
+
+// keycaps grouped under colored legends, on one seamed sheet
 export default function Skills() {
-  const { ref } = useSectionInView("Skills", 0.45);
-
   return (
-    <section
-      ref={ref}
-      id="skills"
-      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0 max-w-4xl text-center"
-    >
-      <SectionHeading>Skills</SectionHeading>
-      <SkillsList />
-      <SkillsChart />
-    </section>
+    <Section name="Skills" threshold={0.3}>
+      <div className="sheet rounded-[26px]">
+        {skillGroups.map((group) => (
+          <div
+            key={group.name}
+            className="cell grid gap-[18px] px-6 py-[22px] sm:grid-cols-[150px_minmax(0,1fr)]"
+          >
+            <div className="flex items-center gap-[9px] sm:pt-3">
+              <span
+                aria-hidden="true"
+                className="size-2.5 rounded-[3px]"
+                style={{ background: group.color }}
+              />
+              <h3 className="label m-0 text-ink">{group.name}</h3>
+            </div>
+            <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0">
+              {group.items.map((skill) => (
+                <li key={skill} className={cap}>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div className="cell flex items-center justify-between gap-4 px-6 py-[18px]">
+          <span className="label">bonus key</span>
+          <span className={`${cap} bubble-signal font-semibold`}>
+            good personality :)
+          </span>
+        </div>
+      </div>
+    </Section>
   );
 }
