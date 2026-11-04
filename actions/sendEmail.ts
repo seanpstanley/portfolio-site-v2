@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { checkBotId } from "botid/server";
 import { Resend } from "resend";
 
 import ContactFormEmail from "@/email/ContactFormEmail";
@@ -28,6 +29,14 @@ export const sendEmail = async (
   // worked so they don't retry.
   if (formData.get("company")) {
     return {};
+  }
+
+  // Vercel BotID: the browser attaches a challenge result to this request
+  const { isBot } = await checkBotId();
+  if (isBot) {
+    return {
+      error: `Couldn't send your message. Please email ${socials.email}.`,
+    };
   }
 
   const senderName = formData.get("senderName");

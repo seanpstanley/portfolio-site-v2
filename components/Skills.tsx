@@ -33,7 +33,7 @@ export default function Skills() {
           </div>
         ))}
         <div className="cell flex items-center justify-between gap-4 px-6 py-[18px]">
-          <span className="label">bonus key</span>
+          <span className="label">freebie</span>
           <span className={`${cap} bubble-signal font-semibold`}>
             good personality :)
           </span>

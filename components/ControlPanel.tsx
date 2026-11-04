@@ -19,7 +19,8 @@ const themeLabel = { light: "light", system: "auto", dark: "dark" } as const;
 /*
   The left-hand control surface: one sheet of seamed tiles.
   Phones get the name plate and utility row; the readout, nav keys, clock
-  and bubble wrap are desktop-only (phones use MobileReadout + MobileDock).
+  are desktop-only (phones use MobileReadout + MobileDock); phones get a
+  collapsible bubble wrap instead.
 */
 const GAP = 40;
 
@@ -57,19 +58,19 @@ export default function ControlPanel() {
       className="lg:sticky lg:top-[var(--panel-top,2.5rem)] lg:w-[400px] lg:flex-none"
     >
       <div className="sheet rounded-[30px]">
-        <div className="cell flex flex-col gap-[18px] px-7 pt-7 pb-[26px]">
+        <div className="flex flex-col gap-[18px] px-7 pt-7 pb-[26px] cell">
           <div className="flex items-center justify-between">
             <span className="label">portfolio</span>
-            <div className="grille h-[22px] w-[66px]" aria-hidden="true" />
+            <div className="h-[22px] w-[66px] grille" aria-hidden="true" />
           </div>
           <TypedHeading className="text-[44px] sm:text-[50px]" />
           <p className="m-0 text-[17px] leading-normal text-pretty text-ink-2">
-            <span className="font-semibold text-ink">Frontend developer</span> who
-            likes stuff that looks good.
+            <span className="font-semibold text-ink">Frontend developer</span>{" "}
+            who likes stuff that looks good.
           </p>
         </div>
 
-        <div className="cell hidden p-3.5 lg:block">
+        <div className="hidden p-3.5 cell lg:block">
           <SectionReadout />
         </div>
 
@@ -78,13 +79,13 @@ export default function ControlPanel() {
         </nav>
 
         <div className="grid grid-cols-[1.45fr_1fr_1fr_1fr] gap-[2px]">
-          <div className="cell flex flex-col items-center gap-2.5 px-1.5 pt-4 pb-3.5">
+          <div className="flex flex-col items-center gap-2.5 px-1.5 pt-4 pb-3.5 cell">
             <ThemeSwitch />
             <span className="label" aria-hidden="true">
               {themeLabel[preference]}
             </span>
           </div>
-          <div className="cell flex flex-col items-center gap-2 px-2 py-3.5">
+          <div className="flex flex-col items-center gap-2 px-2 py-3.5 cell">
             <a
               className="bubble size-11 rounded-[14px]"
               href={resumeHref}
@@ -96,7 +97,7 @@ export default function ControlPanel() {
             </a>
             <span className="label">cv</span>
           </div>
-          <div className="cell flex flex-col items-center gap-2 px-2 py-3.5">
+          <div className="flex flex-col items-center gap-2 px-2 py-3.5 cell">
             <a
               className={`bubble size-11 rounded-full ${keyLabel}`}
               href={socials.github}
@@ -108,7 +109,7 @@ export default function ControlPanel() {
             </a>
             <span className="label">github</span>
           </div>
-          <div className="cell flex flex-col items-center gap-2 px-2 py-3.5">
+          <div className="flex flex-col items-center gap-2 px-2 py-3.5 cell">
             <a
               className={`bubble size-11 rounded-full ${keyLabel}`}
               href={socials.linkedin}
@@ -128,6 +129,10 @@ export default function ControlPanel() {
 
         <div className="hidden lg:block">
           <BubbleWrap />
+        </div>
+
+        <div className="lg:hidden">
+          <BubbleWrap collapsible />
         </div>
       </div>
     </header>
