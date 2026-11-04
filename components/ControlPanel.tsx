@@ -11,8 +11,10 @@ import SectionReadout from "@/components/SectionReadout";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import TypedHeading from "@/components/TypedHeading";
 import { resumeHref, socials } from "@/lib/data";
+import { useTheme } from "@/lib/theme";
 
 const keyLabel = "font-mono text-[13px] font-semibold";
+const themeLabel = { light: "light", system: "auto", dark: "dark" } as const;
 
 /*
   The left-hand control surface: one sheet of seamed tiles.
@@ -23,6 +25,7 @@ const GAP = 40;
 
 export default function ControlPanel() {
   const ref = useRef<HTMLElement>(null);
+  const { preference } = useTheme();
 
   /*
     Sticky, even when the panel is taller than the window: its sticky top
@@ -74,10 +77,12 @@ export default function ControlPanel() {
           <NavKeys variant="panel" />
         </nav>
 
-        <div className="grid grid-cols-4 gap-[2px]">
-          <div className="cell flex flex-col items-center gap-2.5 px-2 pt-4 pb-3.5">
+        <div className="grid grid-cols-[1.45fr_1fr_1fr_1fr] gap-[2px]">
+          <div className="cell flex flex-col items-center gap-2.5 px-1.5 pt-4 pb-3.5">
             <ThemeSwitch />
-            <span className="label">theme</span>
+            <span className="label" aria-hidden="true">
+              {themeLabel[preference]}
+            </span>
           </div>
           <div className="cell flex flex-col items-center gap-2 px-2 py-3.5">
             <a

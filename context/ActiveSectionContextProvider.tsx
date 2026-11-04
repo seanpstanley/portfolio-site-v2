@@ -54,7 +54,13 @@ export default function ActiveSectionContextProvider({
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           const link = links.find((l) => l.hash === `#${entry.target.id}`);
-          if (link) setActiveSection(link.name);
+          if (!link) continue;
+          setActiveSection(link.name);
+          // keep the URL shareable; replace (not push) so Back still
+          // leaves the page instead of stepping through sections
+          if (window.location.hash !== link.hash) {
+            window.history.replaceState(window.history.state, "", link.hash);
+          }
         }
       },
       { rootMargin: "-45% 0px -54% 0px" },

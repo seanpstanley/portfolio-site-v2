@@ -98,7 +98,7 @@ export default function About() {
           , I'm able to see up to three movies every week, with no blackout
           dates. Other benefits include free size upgrades on concessions, free
           online ticket reservations, and priority lanes, all for the low-low
-          price $19.95 per month (plus applicable local taxes). If you love
+          price $29.99 per month (plus applicable local taxes). If you love
           movies, you can't go wrong with AMC's{" "}
           <a
             className="inline-link"

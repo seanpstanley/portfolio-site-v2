@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import toast from "react-hot-toast";
 
@@ -13,12 +13,15 @@ const fieldLabel = "label text-ink";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
+  // every required field filled in and valid (drives the status light)
+  const [ready, setReady] = useState(false);
 
   return (
     <Section name="Contact">
       <form
         ref={formRef}
         className="pad relative flex flex-col gap-5 rounded-3xl px-6 py-7 sm:px-9 sm:py-8"
+        onInput={(event) => setReady(event.currentTarget.checkValidity())}
         action={async (formData) => {
           const { error } = await sendEmail(formData);
 
@@ -28,6 +31,7 @@ export default function Contact() {
           }
 
           formRef.current?.reset();
+          setReady(false);
           toast.success("Your message is on its way!");
         }}
       >
@@ -89,7 +93,7 @@ export default function Contact() {
             maxLength={5000}
           />
         </div>
-        <SubmitButton />
+        <SubmitButton ready={ready} />
       </form>
     </Section>
   );
