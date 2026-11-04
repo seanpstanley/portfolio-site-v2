@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
-
-import { cn } from "@/lib/utils";
 
 interface TechTagsProps {
   tags: string[];
@@ -28,22 +26,24 @@ export default function TechTags({ tags, max }: TechTagsProps) {
   );
 }
 
+// keep the popover this far from the screen edges
+const EDGE = 16;
+
 /*
   "+N" chip with a popover listing the rest. A disclosure button, so it
   works with hover, keyboard focus (Escape closes), and touch (tap toggles).
+  The popover opens above the chip and slides sideways as needed to stay
+  on screen.
 */
 function MoreTags({ tags }: { tags: string[] }) {
   const [open, setOpen] = useState(false);
-  const [alignRight, setAlignRight] = useState(false);
   const id = useId();
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const itemRef = useRef<HTMLLIElement>(null);
+  const popoverRef = useRef<HTMLUListElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const show = () => {
     clearTimeout(closeTimer.current);
-    // open toward whichever side has room
-    const rect = triggerRef.current?.getBoundingClientRect();
-    if (rect) setAlignRight(rect.left > window.innerWidth / 2);
     setOpen(true);
   };
   // a short delay lets the pointer cross the gap into the popover
@@ -53,12 +53,32 @@ function MoreTags({ tags }: { tags: string[] }) {
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
+  // shift the popover (left-aligned to the chip by default) back on screen,
+  // and grow it from the chip
+  useLayoutEffect(() => {
+    const item = itemRef.current;
+    const popover = popoverRef.current;
+    if (!open || !item || !popover) return;
+
+    const itemLeft = item.getBoundingClientRect().left;
+    const viewport = document.documentElement.clientWidth;
+    const room = viewport - EDGE - itemLeft - popover.offsetWidth;
+    const offset = Math.max(Math.min(0, room), EDGE - itemLeft);
+
+    popover.style.left = `${offset}px`;
+    popover.style.transformOrigin = `${item.offsetWidth / 2 - offset}px bottom`;
+  }, [open]);
+
   return (
-    <li className="relative" onMouseEnter={show} onMouseLeave={hide}>
+    <li
+      ref={itemRef}
+      className="relative"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+    >
       <button
-        ref={triggerRef}
         type="button"
-        className="chip cursor-pointer transition-colors hover:text-ink"
+        className="cursor-pointer chip transition-colors hover:text-ink"
         aria-expanded={open}
         aria-controls={id}
         onClick={() => (open ? setOpen(false) : show())}
@@ -74,16 +94,14 @@ function MoreTags({ tags }: { tags: string[] }) {
       <AnimatePresence>
         {open && (
           <motion.ul
+            ref={popoverRef}
             id={id}
             aria-label="More technologies"
             initial={{ opacity: 0, y: 6, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.97 }}
             transition={{ duration: 0.14 }}
-            className={cn(
-              "pad absolute bottom-full z-20 mb-2.5 flex w-max max-w-[min(280px,calc(100vw-48px))] list-none flex-wrap gap-2 rounded-2xl p-3",
-              alignRight ? "right-0 origin-bottom-right" : "left-0 origin-bottom-left",
-            )}
+            className="absolute bottom-full left-0 z-20 mb-2.5 flex w-max max-w-[min(280px,calc(100vw-32px))] list-none flex-wrap gap-2 rounded-2xl p-3 pad"
           >
             {tags.map((tag) => (
               <li key={tag} className="chip">
