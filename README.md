@@ -32,11 +32,16 @@ With the Vercel CLI linked, `vercel env pull .env.local` fetches it.
 
 ## Where things live
 
-- `app/globals.css`: the design tokens for the light ("chalk") and dark ("graphite") themes, plus the material utilities (`sheet`, `cell`, `well`, `chip`, `pad`, `bubble`, `keycap`, `lcd`, `led`, `field`).
-- `lib/data.ts`: all the content: experience, projects, skills, footer quotes.
-- `components/ControlPanel.tsx`: the left-hand panel. On phones it becomes `MobileReadout` (top) and `MobileDock` (bottom).
-- `actions/sendEmail.ts`: the contact form's server action.
-- `lib/theme.ts` and `lib/theme-script.ts`: theme state, plus the inline script that applies it before first paint.
+- `app/`: the page, layout, 404, link-preview image, robots, and sitemap.
+- `app/globals.css`: the design tokens for the light ("chalk") and dark ("graphite") themes, plus the material utilities (`sheet`, `cell`, `well`, `chip`, `pad`, `floating`, `bubble`, `keycap`, `lcd`, `led`, `field`).
+- `components/sections/`: the page's sections (About, Experience, Projects, Skills, Contact).
+- `components/panel/`: the left-hand control panel and its modules (name plate, nav keys, readout, theme switch, clock, bubble wrap).
+- `components/mobile/`: what replaces the panel's nav on phones: `MobileReadout` (top) and `MobileDock` (bottom).
+- `components/`: shared pieces (`Section`, `TechTags`, `SubmitButton`, `Footer`, `Disclaimer`, `Providers`).
+- `context/ActiveSectionProvider.tsx`: tracks which section is in view (the scroll spy).
+- `lib/data.ts`: all the content: experience, projects, skills, footer quotes. Its shapes are in `lib/types.ts`.
+- `lib/theme.ts`, `lib/sound.ts`, `lib/clock.ts`: client state for the theme, the pop sound, and the clock. `lib/theme-script.ts` applies the theme before first paint.
+- `actions/sendEmail.ts` and `emails/ContactFormEmail.tsx`: the contact form's server action and the email it sends.
 
 ## Accessibility
 

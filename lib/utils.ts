@@ -1,18 +1,31 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// combo of tailwind merge and clsx
+/**
+ * Joins class names (clsx syntax) and resolves Tailwind conflicts, so later
+ * classes win.
+ *
+ * @example
+ * cn("px-2", isActive && "bg-signal", className)
+ */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// fade up into place, staggered by index (used with motion's whileInView)
+/**
+ * Motion variants: fade up into place, staggered by the `custom` index.
+ * Used with `whileInView`.
+ */
 export const fadeUpVariants = {
   initial: { opacity: 0, y: 24 },
   animate: (index: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.04 * index, duration: 0.4, ease: [0.3, 0.7, 0.4, 1] as const },
+    transition: {
+      delay: 0.04 * index,
+      duration: 0.4,
+      ease: [0.3, 0.7, 0.4, 1] as const,
+    },
   }),
 };
 
@@ -32,8 +45,11 @@ const romanNumerals = [
   { value: 1, numeral: "I" },
 ];
 
-// convert number to roman numerals (used for year in footer)
-export const romanize = (num: number) => {
+/**
+ * Converts a number to Roman numerals, e.g. 2026 → "MMXXVI". Returns an
+ * empty string for `NaN`.
+ */
+export const romanize = (num: number): string => {
   if (isNaN(num)) {
     return "";
   }
@@ -47,10 +63,13 @@ export const romanize = (num: number) => {
   return romanNumeral;
 };
 
-// "01", "02", ...
+/** Pads a number to two digits: 1 → "01". */
 export const pad2 = (n: number) => (n < 10 ? `0${n}` : `${n}`);
 
-// server-side validation for email contents in contact
+/**
+ * Checks that a form value is a non-empty string no longer than `maxLength`.
+ * Used for server-side validation of the contact form.
+ */
 export const validateString = (
   value: unknown,
   maxLength: number,
@@ -62,8 +81,11 @@ export const validateString = (
   return true;
 };
 
-// retrieve message string from various error structures
-export const getErrorMessage = (error: unknown) => {
+/**
+ * Gets a readable message from anything thrown or returned as an error:
+ * an `Error`, an object with a `message`, or a string.
+ */
+export const getErrorMessage = (error: unknown): string => {
   let message: string;
 
   if (error instanceof Error) {

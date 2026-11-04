@@ -5,6 +5,7 @@ import { LuMonitor, LuMoon, LuSun } from "react-icons/lu";
 import { type ThemePreference, useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
+// The switch positions, left to right.
 const options: { value: ThemePreference; label: string; Icon: typeof LuSun }[] =
   [
     { value: "light", label: "Light", Icon: LuSun },
@@ -12,13 +13,15 @@ const options: { value: ThemePreference; label: string; Icon: typeof LuSun }[] =
     { value: "dark", label: "Dark", Icon: LuMoon },
   ];
 
-const SEGMENT = 30; // px per position
+// Width of one switch position, in px.
+const SEGMENT = 30;
 
-/*
-  A three-position slide switch: light / auto / dark.
-  Built on native radio buttons, so arrow keys move between positions and
-  screen readers announce it as a radio group.
-*/
+/**
+ * A three-position slide switch: light / auto (match system) / dark.
+ *
+ * Built on native radio buttons, so arrow keys move between positions and
+ * screen readers announce it as a radio group.
+ */
 export default function ThemeSwitch() {
   const { preference, setPreference } = useTheme();
   const index = options.findIndex((option) => option.value === preference);

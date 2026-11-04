@@ -1,16 +1,19 @@
-"use client";
-
 import Link from "next/link";
 
 import Disclaimer from "@/components/Disclaimer";
 import Section from "@/components/Section";
 
+// Spread onto links that open in a new tab.
 const external = { target: "_blank", rel: "noreferrer noopener" } as const;
 
+/**
+ * The About section: how I got into programming, what I'm building now, and
+ * an unsolicited AMC Stubs A-List™ endorsement (with disclaimer).
+ */
 export default function About() {
   return (
     <Section name="About">
-      <div className="pad flex flex-col gap-[18px] rounded-3xl px-6 py-7 text-[17px] leading-[1.7] text-ink-2 sm:px-10 sm:py-9">
+      <div className="flex flex-col gap-[18px] rounded-3xl px-6 py-7 text-[17px] leading-[1.7] text-ink-2 pad sm:px-10 sm:py-9">
         <p className="m-0 text-pretty">
           My first brush with coding was back in 2015. My Programming 1 teacher
           introduced basic programming concepts using MIT's{" "}

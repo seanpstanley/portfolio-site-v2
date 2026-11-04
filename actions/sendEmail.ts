@@ -5,16 +5,16 @@ import React from "react";
 import { checkBotId } from "botid/server";
 import { Resend } from "resend";
 
-import ContactFormEmail from "@/email/ContactFormEmail";
+import ContactFormEmail from "@/emails/ContactFormEmail";
 import { socials } from "@/lib/data";
 import { getErrorMessage, validateString } from "@/lib/utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// deliberately loose: the browser already checks format, this just rejects junk
+// Deliberately loose: the browser already checks the format; this just rejects junk.
 const EMAIL_PATTERN = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
-// strip anything that could break out of a quoted email display name
+// Strips anything that could break out of a quoted email display name.
 const toDisplayName = (name: string) =>
   name
     .replace(/[\r\n"<>\\]/g, " ")
@@ -22,20 +22,29 @@ const toDisplayName = (name: string) =>
     .trim()
     .slice(0, 80);
 
+/**
+ * Server action for the contact form: checks for bots, validates the fields,
+ * and emails me the message through Resend, with Reply-To set to the sender.
+ *
+ * @param formData - The submitted form: `senderName`, `senderEmail`,
+ * `message`, and the `company` honeypot.
+ * @returns An object with a visitor-facing `error` message if sending
+ * failed, or an empty object on success.
+ */
 export const sendEmail = async (
   formData: FormData,
 ): Promise<{ error?: string }> => {
-  // honeypot: hidden from people, but bots fill in every field. Pretend it
+  // Honeypot: hidden from people, but bots fill in every field. Pretend it
   // worked so they don't retry.
   if (formData.get("company")) {
     console.warn("Contact form: dropped a submission that filled the honeypot");
     return {};
   }
 
-  // Vercel BotID: the browser attaches a challenge result to this request
+  // Vercel BotID: the browser attaches a challenge result to this request.
   const verification = await checkBotId();
   if (verification.isBot) {
-    // logged so a wrongly blocked visitor shows up in the Vercel logs
+    // Logged so a wrongly blocked visitor shows up in the Vercel logs.
     console.warn("Contact form: BotID flagged a submission as a bot", {
       verifiedBot: verification.isVerifiedBot,
       bypassed: verification.bypassed,
@@ -49,7 +58,7 @@ export const sendEmail = async (
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");
 
-  // server-side validation
+  // Server-side validation.
   if (!validateString(senderName, 500) || !toDisplayName(senderName)) {
     return { error: "Please add your name." };
   }
@@ -79,7 +88,7 @@ export const sendEmail = async (
   });
 
   if (error) {
-    // details stay in the server logs; visitors get something actionable
+    // Details stay in the server logs; visitors get something actionable.
     console.error("Contact form send failed:", getErrorMessage(error));
     return {
       error: `Couldn't send your message. Please try again, or email ${socials.email}.`,

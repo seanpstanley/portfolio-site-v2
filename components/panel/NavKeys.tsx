@@ -10,11 +10,12 @@ import {
   LuUser,
 } from "react-icons/lu";
 
-import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider";
-import { links } from "@/lib/data";
+import { useActiveSection } from "@/context/ActiveSectionProvider";
+import { sections } from "@/lib/data";
 import type { SectionName } from "@/lib/types";
 import { cn, pad2 } from "@/lib/utils";
 
+// The icon on each section's key in the panel.
 const icons: Record<SectionName, IconType> = {
   About: LuUser,
   Experience: LuBriefcase,
@@ -23,34 +24,40 @@ const icons: Record<SectionName, IconType> = {
   Contact: LuMail,
 };
 
+/** Props for {@link NavKeys}. */
 interface NavKeysProps {
+  /**
+   * Where the keys sit: `"panel"` (desktop control panel, icon keys) or
+   * `"dock"` (phone dock, smaller numbered keys).
+   */
   variant: "panel" | "dock";
 }
 
-// one domed key per section; the active key stays pressed and its LED lights
+/**
+ * The section nav: one domed key per section. The active key stays pressed,
+ * its LED lights, and it's marked `aria-current`.
+ */
 export default function NavKeys({ variant }: NavKeysProps) {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
+  const { activeSection, selectSection } = useActiveSection();
   const isDock = variant === "dock";
 
   return (
     <ul className="grid grid-cols-5 gap-[2px]">
-      {links.map((link, i) => {
-        const isActive = link.name === activeSection;
-        const Icon = icons[link.name];
+      {sections.map((section, i) => {
+        const isActive = section.name === activeSection;
+        const Icon = icons[section.name];
 
         return (
-          <li key={link.hash} className="cell">
+          <li key={section.hash} className="cell">
             <Link
-              href={link.hash}
+              href={section.hash}
               aria-current={isActive ? "true" : undefined}
-              onClick={() => {
-                setActiveSection(link.name);
-                setTimeOfLastClick(Date.now());
-              }}
+              onClick={() => selectSection(section.name)}
               className={cn(
                 "group flex flex-col items-center outline-offset-[-4px]",
-                isDock ? "gap-1.5 px-0.5 pt-2.5 pb-2" : "gap-2.5 px-1 pt-4 pb-3.5",
+                isDock
+                  ? "gap-1.5 px-0.5 pt-2.5 pb-2"
+                  : "gap-2.5 px-1 pt-4 pb-3.5",
               )}
             >
               <span className="led" data-on={isActive} aria-hidden="true" />
@@ -75,7 +82,7 @@ export default function NavKeys({ variant }: NavKeysProps) {
                   isActive ? "text-ink" : "group-hover:text-ink",
                 )}
               >
-                {link.short}
+                {section.short}
               </span>
             </Link>
           </li>

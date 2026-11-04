@@ -1,12 +1,16 @@
 import type {
-  Experience,
+  ExperienceEntry,
   FeaturedProject,
-  FooterQuotesInterface,
+  FooterQuote,
   Project,
   SkillGroup,
 } from "@/lib/types";
 
-export const links = [
+/**
+ * The page's sections, in order. Drives the nav keys, the section readout,
+ * and the scroll spy.
+ */
+export const sections = [
   { name: "About", short: "about", hash: "#about" },
   { name: "Experience", short: "work", hash: "#experience" },
   { name: "Projects", short: "projects", hash: "#projects" },
@@ -14,16 +18,18 @@ export const links = [
   { name: "Contact", short: "contact", hash: "#contact" },
 ] as const;
 
+/** Path to the résumé PDF in `public/`. */
 export const resumeHref = "/files/sean-stanley-resume.pdf";
 
+/** Profile links and the contact email address. */
 export const socials = {
   github: "https://github.com/seanpstanley",
   linkedin: "https://www.linkedin.com/in/seanpstanley/",
   email: "seans09comp@gmail.com",
 };
 
-// newest first
-export const experiencesData: Experience[] = [
+/** Work and research history, newest first. */
+export const experiences: ExperienceEntry[] = [
   {
     kind: "work",
     title: "Software Engineer I",
@@ -74,6 +80,7 @@ export const experiencesData: Experience[] = [
   },
 ];
 
+/** The project highlighted at the top of the Projects section. */
 export const featuredProject: FeaturedProject = {
   title: "Brewd",
   subtitle: "A social coffee experience",
@@ -94,13 +101,17 @@ export const featuredProject: FeaturedProject = {
     "Dynamic Routes",
     "Vercel",
   ],
-  live: { href: "https://brewd.org/", label: "Open Brewd (opens in a new tab)" },
+  live: {
+    href: "https://brewd.org/",
+    label: "Open Brewd (opens in a new tab)",
+  },
 };
 
-export const projectsData: Project[] = [
+/** The cards in the Projects grid, in display order. */
+export const projects: Project[] = [
   {
-    mono: "hd",
-    kind: "web app",
+    monogram: "hd",
+    label: "web app",
     category: "web",
     title: "Hue Dat Boy",
     description:
@@ -116,15 +127,18 @@ export const projectsData: Project[] = [
       "Vitest",
       "Vercel",
     ],
-    live: { href: "https://huedatboy.com/", label: "Open Hue Dat Boy (opens in a new tab)" },
+    live: {
+      href: "https://huedatboy.com/",
+      label: "Open Hue Dat Boy (opens in a new tab)",
+    },
     code: {
       href: "https://github.com/seanpstanley/hue-dat-boy",
       label: "Hue Dat Boy source on GitHub (opens in a new tab)",
     },
   },
   {
-    mono: "v2",
-    kind: "this site",
+    monogram: "v2",
+    label: "this site",
     category: "web",
     title: "Portfolio v2",
     description:
@@ -147,8 +161,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "bx",
-    kind: "research · ieee",
+    monogram: "bx",
+    label: "research · ieee",
     category: "research",
     title: "BlockXR",
     description:
@@ -167,8 +181,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "pp",
-    kind: "research · acm",
+    monogram: "pp",
+    label: "research · acm",
     category: "research",
     title: "PPCards",
     description:
@@ -187,8 +201,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "r4",
-    kind: "web app",
+    monogram: "r4",
+    label: "web app",
     category: "web",
     title: "Roll for Init",
     description:
@@ -214,8 +228,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "gt",
-    kind: "web app",
+    monogram: "gt",
+    label: "web app",
     category: "web",
     title: "Gator Trader",
     description:
@@ -234,8 +248,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "xd",
-    kind: "client site",
+    monogram: "xd",
+    label: "client site",
     category: "web",
     title: "XDG Technologies",
     description:
@@ -247,8 +261,8 @@ export const projectsData: Project[] = [
     },
   },
   {
-    mono: "v1",
-    kind: "archive",
+    monogram: "v1",
+    label: "archive",
     category: "web",
     title: "Portfolio v1",
     description:
@@ -261,12 +275,14 @@ export const projectsData: Project[] = [
   },
 ];
 
+/** Filter tabs for the Projects grid. "all" shows every category. */
 export const projectFilters = [
   { value: "all", label: "all" },
   { value: "web", label: "web" },
   { value: "research", label: "research" },
 ] as const;
 
+/** Skills, grouped under colored legends. */
 export const skillGroups: SkillGroup[] = [
   {
     name: "languages",
@@ -324,7 +340,10 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-export const footerQuotes = {
+/**
+ * Quote of the day for the footer, keyed by day of the month (1–31).
+ */
+export const footerQuotes: Record<number, FooterQuote> = {
   1: {
     quote: "Some guys, they just hate for no reason, capisce?",
     source: "Rocky",
@@ -488,21 +507,4 @@ export const footerQuotes = {
     source: "Frieren: Beyond Journey's End",
     year: 2023,
   },
-} as FooterQuotesInterface;
-
-export const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-export const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+};

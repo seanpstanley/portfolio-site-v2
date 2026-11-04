@@ -1,11 +1,11 @@
-"use client";
-
 import { useCallback, useSyncExternalStore } from "react";
 
+// localStorage key for the sound setting ("on" or "off").
 const STORAGE_KEY = "bubble-sound";
 
 const listeners = new Set<() => void>();
 
+/** Reads the saved setting. Off when storage is unavailable. */
 function read(): boolean {
   try {
     return localStorage.getItem(STORAGE_KEY) === "on";
@@ -14,12 +14,18 @@ function read(): boolean {
   }
 }
 
+/** Registers a listener for setting changes. */
 function subscribe(listener: () => void) {
   listeners.add(listener);
   return () => listeners.delete(listener);
 }
 
-// sound is opt-in: off on the server and until the visitor turns it on
+/**
+ * Whether the bubble wrap's pop sound is on. Opt-in: off on the server and
+ * until the visitor turns it on. Saved across visits.
+ *
+ * @returns `enabled`: whether sound is on; `toggle`: flips and saves it.
+ */
 export function useSoundEnabled() {
   const enabled = useSyncExternalStore(subscribe, read, () => false);
 
@@ -27,7 +33,7 @@ export function useSoundEnabled() {
     try {
       localStorage.setItem(STORAGE_KEY, read() ? "off" : "on");
     } catch {
-      // storage unavailable: nothing to persist
+      // Storage unavailable: nothing to persist.
     }
     listeners.forEach((listener) => listener());
   }, []);
@@ -37,7 +43,10 @@ export function useSoundEnabled() {
 
 let audio: AudioContext | null = null;
 
-// a short synthesized "pop": a pitch-dropping blip plus a tiny noise click
+/**
+ * Plays a short synthesized "pop": a pitch-dropping blip plus a tiny noise
+ * click. No audio files needed. Does nothing outside the browser.
+ */
 export function playPop() {
   if (typeof window === "undefined" || !("AudioContext" in window)) return;
   audio ??= new AudioContext();

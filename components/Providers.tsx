@@ -2,13 +2,22 @@
 
 import { MotionConfig } from "motion/react";
 
-import ActiveSectionContextProvider from "@/context/ActiveSectionContextProvider";
+import ActiveSectionProvider from "@/context/ActiveSectionProvider";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+/** Props for {@link Providers}. */
+interface ProvidersProps {
+  /** The app. */
+  children: React.ReactNode;
+}
+
+/**
+ * App-wide client providers: the active-section tracker, and a Motion config
+ * that respects the OS "reduce motion" setting in every motion component.
+ */
+export default function Providers({ children }: ProvidersProps) {
   return (
-    // respect the OS "reduce motion" setting for every motion component
     <MotionConfig reducedMotion="user">
-      <ActiveSectionContextProvider>{children}</ActiveSectionContextProvider>
+      <ActiveSectionProvider>{children}</ActiveSectionProvider>
     </MotionConfig>
   );
 }

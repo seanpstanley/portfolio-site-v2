@@ -14,14 +14,22 @@ import {
   Text,
 } from "react-email";
 
+/** Props for {@link ContactFormEmail}. */
 interface ContactFormEmailProps {
+  /** The visitor's name, already sanitized for display. */
   senderName: string;
+  /** The visitor's email address. Shown as a mailto link. */
   senderEmail: string;
+  /** The message body. Line breaks are preserved. */
   message: string;
 }
 
-// colors from the site's "chalk" palette; email clients don't do depth,
-// so this keeps the palette and type feel and leaves the shadows out
+/**
+ * The email I receive when someone submits the contact form.
+ *
+ * Uses colors from the site's "chalk" palette. Email clients don't do depth,
+ * so it keeps the palette and type feel and leaves the shadows out.
+ */
 export default function ContactFormEmail({
   senderName,
   senderEmail,
@@ -41,7 +49,10 @@ export default function ContactFormEmail({
               {senderName} reached out
             </Heading>
             <Text className="mt-0 text-[15px] text-[#46464e]">
-              <Link href={`mailto:${senderEmail}`} className="text-[#5b45e0] underline">
+              <Link
+                href={`mailto:${senderEmail}`}
+                className="text-[#5b45e0] underline"
+              >
                 {senderEmail}
               </Link>
             </Text>

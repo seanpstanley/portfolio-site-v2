@@ -1,13 +1,31 @@
 "use client";
 
-import { useNow } from "@/lib/hooks";
+import { useNow } from "@/lib/clock";
 import { pad2 } from "@/lib/utils";
 
+// Lowercase, to match the panel's labels.
 const weekdays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const months = [
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec",
+];
 
-// digital readout + analog dial + date tile. Renders dashes until hydrated.
-export default function ClockModule() {
+/**
+ * The panel's clock: a digital readout, an analog dial, and a date tile, in
+ * the visitor's local time. Renders dashes until hydrated, since the server
+ * doesn't know the visitor's time.
+ */
+export default function Clock() {
   const now = useNow();
 
   const hours24 = now?.getHours() ?? 0;
@@ -19,9 +37,9 @@ export default function ClockModule() {
 
   return (
     <div className="grid grid-cols-[3fr_2fr] gap-[2px]">
-      <div className="cell flex items-center gap-3.5 p-3.5">
-        <div className="well flex-1 rounded-[14px] p-[5px]">
-          <div className="lcd flex items-baseline gap-2 rounded-[10px] px-3.5 py-3">
+      <div className="flex items-center gap-3.5 p-3.5 cell">
+        <div className="flex-1 rounded-[14px] p-[5px] well">
+          <div className="flex items-baseline gap-2 rounded-[10px] px-3.5 py-3 lcd">
             <time
               className="dot text-[34px]"
               dateTime={now?.toISOString()}
@@ -34,7 +52,10 @@ export default function ClockModule() {
             </span>
           </div>
         </div>
-        <div className="well relative size-[58px] flex-none rounded-full" aria-hidden="true">
+        <div
+          className="relative size-[58px] flex-none rounded-full well"
+          aria-hidden="true"
+        >
           {now && (
             <>
               <span
@@ -50,7 +71,7 @@ export default function ClockModule() {
           <span className="absolute top-1/2 left-1/2 -mt-[5px] -ml-[5px] size-2.5 rounded-full bg-signal" />
         </div>
       </div>
-      <div className="cell flex flex-col justify-center gap-1 px-4 py-3.5">
+      <div className="flex flex-col justify-center gap-1 px-4 py-3.5 cell">
         <span className="label">{now ? weekdays[now.getDay()] : "---"}</span>
         <span className="dot text-[30px]">
           {now ? `${months[now.getMonth()]} ${pad2(now.getDate())}` : "--- --"}

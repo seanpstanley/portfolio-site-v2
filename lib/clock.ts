@@ -1,16 +1,11 @@
-"use client";
-
 import { useSyncExternalStore } from "react";
 
-/*
-  A shared clock that ticks once a second while anything is subscribed.
-  Returns null during server render and hydration, so time-dependent UI
-  renders a placeholder first instead of a hydration mismatch.
-*/
+// A shared clock that ticks once a second while anything is subscribed.
 let now: Date | null = null;
 let timer: ReturnType<typeof setInterval> | null = null;
 const clockListeners = new Set<() => void>();
 
+/** Starts the shared ticker on first subscribe and stops it after the last unsubscribe. */
 function subscribeClock(listener: () => void) {
   clockListeners.add(listener);
   if (!timer) {
@@ -30,7 +25,17 @@ function subscribeClock(listener: () => void) {
   };
 }
 
-export function useNow() {
+/**
+ * The current time, updated every second.
+ *
+ * Returns `null` during server render and hydration, so time-dependent UI
+ * renders a placeholder first instead of causing a hydration mismatch.
+ *
+ * @example
+ * const now = useNow();
+ * return <span>{now ? now.toLocaleTimeString() : "--:--"}</span>;
+ */
+export function useNow(): Date | null {
   return useSyncExternalStore(
     subscribeClock,
     () => now,

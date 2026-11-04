@@ -3,13 +3,14 @@ import type { Metadata, Viewport } from "next";
 import { Doto, Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
-import ControlPanel from "@/components/ControlPanel";
 import Footer from "@/components/Footer";
-import MobileDock from "@/components/MobileDock";
-import MobileReadout from "@/components/MobileReadout";
+import MobileDock from "@/components/mobile/MobileDock";
+import MobileReadout from "@/components/mobile/MobileReadout";
+import ControlPanel from "@/components/panel/ControlPanel";
 import Providers from "@/components/Providers";
 import { themeInitScript } from "@/lib/theme-script";
 
+// Fonts, exposed as CSS variables for the Tailwind theme.
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -17,9 +18,11 @@ const geistMono = Geist_Mono({
 });
 const doto = Doto({ subsets: ["latin"], variable: "--font-doto" });
 
+// Used for search results and link previews.
 const description =
   "Sean Stanley, frontend developer who likes stuff that looks good. Experience, web projects, and augmented reality research.";
 
+// Title, description, and link-preview tags.
 export const metadata: Metadata = {
   metadataBase: new URL("https://seanpstanley.dev"),
   title: "Sean Stanley | Portfolio",
@@ -38,6 +41,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Browser UI color, matched to each theme's background.
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#e4e3df" },
@@ -45,15 +49,22 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
+/** Props for {@link RootLayout}. */
+interface RootLayoutProps {
+  /** The current page. */
   children: React.ReactNode;
-}) {
+}
+
+/**
+ * The shell around every page: fonts, the pre-paint theme script, the skip
+ * link, the control panel, the footer, the phone readout and dock, and the
+ * toast container.
+ */
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      // the theme script adds .dark before hydration
+      // The theme script adds .dark before hydration.
       suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable} ${doto.variable}`}
     >

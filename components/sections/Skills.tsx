@@ -1,11 +1,14 @@
-"use client";
-
 import Section from "@/components/Section";
 import { skillGroups } from "@/lib/data";
 
-const cap = "keycap min-h-[42px] rounded-xl px-[15px] text-[14.5px] font-medium";
+// Shared keycap styles for the skill chips.
+const cap =
+  "keycap min-h-[42px] rounded-xl px-[15px] text-[14.5px] font-medium";
 
-// keycaps grouped under colored legends, on one seamed sheet
+/**
+ * The Skills section: keycaps grouped under colored legends, on one seamed
+ * sheet, plus a freebie.
+ */
 export default function Skills() {
   return (
     <Section name="Skills">
@@ -13,7 +16,7 @@ export default function Skills() {
         {skillGroups.map((group) => (
           <div
             key={group.name}
-            className="cell grid gap-[18px] px-6 py-[22px] sm:grid-cols-[150px_minmax(0,1fr)]"
+            className="grid gap-[18px] px-6 py-[22px] cell sm:grid-cols-[150px_minmax(0,1fr)]"
           >
             <div className="flex items-center gap-[9px] sm:pt-3">
               <span
@@ -21,7 +24,7 @@ export default function Skills() {
                 className="size-2.5 rounded-[3px]"
                 style={{ background: group.color }}
               />
-              <h3 className="label m-0 text-ink">{group.name}</h3>
+              <h3 className="m-0 label text-ink">{group.name}</h3>
             </div>
             <ul className="m-0 flex list-none flex-wrap gap-2.5 p-0">
               {group.items.map((skill) => (
@@ -32,9 +35,9 @@ export default function Skills() {
             </ul>
           </div>
         ))}
-        <div className="cell flex items-center justify-between gap-4 px-6 py-[18px]">
+        <div className="flex items-center justify-between gap-4 px-6 py-[18px] cell">
           <span className="label">freebie</span>
-          <span className={`${cap} bubble-signal font-semibold`}>
+          <span className={`${cap} font-semibold bubble-signal`}>
             good personality :)
           </span>
         </div>

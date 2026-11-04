@@ -6,33 +6,39 @@ import { useReducedMotion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
-// [text to type, pause after it (ms)] — each step continues from the last
+// [text to type, pause after it in ms]. Each step continues from the last.
 const steps: [string, number][] = [
   ["sean", 500],
   ["\nstanley", 0],
 ];
 const FULL_TEXT = steps.map(([text]) => text).join("");
+// Timing, in ms.
 const START_DELAY = 400;
 const CHAR_DELAY = 85;
-// matches the caret keyframes: on for the first half of each cycle, off for the second
+// Matches the caret keyframes: on for the first half of each cycle, off for the second.
 const BLINK_MS = 1000;
+// How many times the caret blinks after typing ends.
 const BLINKS = 2;
 
+/** Props for {@link TypedHeading}. */
 interface TypedHeadingProps {
+  /** Extra classes for the `<h1>`, e.g. the font size. */
   className?: string;
 }
 
-/*
-  Types the name out on the dot-matrix display.
-  - Screen readers get the whole heading once (the typed text is aria-hidden).
-  - The final text is rendered invisibly underneath, so nothing shifts while
-    typing.
-  - With "reduce motion" on, the full text shows immediately.
-*/
+/**
+ * The page's `<h1>`: types "sean stanley" out on the dot-matrix display,
+ * with a caret that blinks twice and then disappears.
+ *
+ * - Screen readers get the whole heading once (the typed text is aria-hidden).
+ * - The final text is rendered invisibly underneath, so nothing shifts while
+ *   typing.
+ * - With "reduce motion" on, the full text shows immediately.
+ */
 export default function TypedHeading({ className }: TypedHeadingProps) {
   const reduceMotion = useReducedMotion();
   const [typed, setTyped] = useState("");
-  // solid while typing, then blinks, then goes away
+  // Solid while typing, then blinks, then goes away.
   const [caret, setCaret] = useState<"solid" | "blinking" | "gone">("solid");
 
   useEffect(() => {
@@ -51,8 +57,8 @@ export default function TypedHeading({ className }: TypedHeadingProps) {
       }
       at += pause;
     }
-    // the blink animation starts fresh when typing ends, so its phase is
-    // known: after two full blinks, remove it midway through the "off" half
+    // The blink animation starts fresh when typing ends, so its phase is
+    // known: after two full blinks, remove it midway through the "off" half.
     timers.push(setTimeout(() => setCaret("blinking"), at));
     timers.push(
       setTimeout(
@@ -70,7 +76,7 @@ export default function TypedHeading({ className }: TypedHeadingProps) {
   return (
     <h1 className={cn("relative m-0 dot whitespace-pre-line", className)}>
       <span className="sr-only">Sean Stanley</span>
-      {/* reserves the final size so the layout never moves */}
+      {/* Reserves the final size so the layout never moves. */}
       <span aria-hidden="true" className="invisible">
         {FULL_TEXT}
       </span>

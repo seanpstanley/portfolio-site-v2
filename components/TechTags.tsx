@@ -4,12 +4,26 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 
+/** Props for {@link TechTags}. */
 interface TechTagsProps {
+  /** Technologies to show, in display order. */
   tags: string[];
-  // show at most this many, then a "+N" chip that reveals the rest
+  /**
+   * Maximum number of chips to show before the rest collapse into a "+N" chip
+   * with a popover. Shows every tag when omitted.
+   */
   max?: number;
 }
 
+/**
+ * A wrapping row of technology chips, used on experience and project cards.
+ *
+ * With `max` set, the overflow collapses into a "+N" chip whose popover
+ * lists the rest (see {@link MoreTags}).
+ *
+ * @example
+ * <TechTags tags={project.tags} max={3} />
+ */
 export default function TechTags({ tags, max }: TechTagsProps) {
   const shown = max ? tags.slice(0, max) : tags;
   const hidden = tags.slice(shown.length);
@@ -26,16 +40,23 @@ export default function TechTags({ tags, max }: TechTagsProps) {
   );
 }
 
-// keep the popover this far from the screen edges
+// Keep the popover this far from the screen edges.
 const EDGE = 16;
 
-/*
-  "+N" chip with a popover listing the rest. A disclosure button, so it
-  works with hover, keyboard focus (Escape closes), and touch (tap toggles).
-  The popover opens above the chip and slides sideways as needed to stay
-  on screen.
-*/
-function MoreTags({ tags }: { tags: string[] }) {
+/** Props for {@link MoreTags}. */
+interface MoreTagsProps {
+  /** The tags that didn't fit, listed in the popover. */
+  tags: string[];
+}
+
+/**
+ * A "+N" chip with a popover listing the remaining tags.
+ *
+ * It's a disclosure button, so it works with hover, keyboard focus (Escape
+ * closes), and touch (tap toggles). The popover opens above the chip and
+ * slides sideways as needed to stay on screen.
+ */
+function MoreTags({ tags }: MoreTagsProps) {
   const [open, setOpen] = useState(false);
   const id = useId();
   const itemRef = useRef<HTMLLIElement>(null);
@@ -46,15 +67,15 @@ function MoreTags({ tags }: { tags: string[] }) {
     clearTimeout(closeTimer.current);
     setOpen(true);
   };
-  // a short delay lets the pointer cross the gap into the popover
+  // A short delay lets the pointer cross the gap into the popover.
   const hide = () => {
     closeTimer.current = setTimeout(() => setOpen(false), 120);
   };
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
-  // shift the popover (left-aligned to the chip by default) back on screen,
-  // and grow it from the chip
+  // Shift the popover (left-aligned to the chip by default) back on screen,
+  // and grow it from the chip.
   useLayoutEffect(() => {
     const item = itemRef.current;
     const popover = popoverRef.current;

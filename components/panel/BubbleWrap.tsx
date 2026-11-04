@@ -10,20 +10,26 @@ import { playPop, useSoundEnabled } from "@/lib/sound";
 import { cn } from "@/lib/utils";
 import alienDance from "@/public/alien-dance-transparent.gif";
 
+// Two rows of bubbles.
 const COLUMNS = 12;
 const COUNT = COLUMNS * 2;
 
-// the secret: pop the four corners clockwise, starting top-left
+// The secret: pop the four corners clockwise, starting top-left.
 const SEQUENCE = [0, COLUMNS - 1, COUNT - 1, COUNT - COLUMNS];
+// How long the dancing alien stays.
 const ALIEN_MS = 6000;
 
-/*
-  A strip of poppable bubbles. It's a toy, not a control: the bubbles are
-  hidden from assistive tech and skipped by Tab. The sound toggle is a real,
-  labelled button. Once every bubble is popped, the sheet refills.
-  It starts collapsed, so the control panel stays short enough for laptop
-  screens and doesn't push the content down on phones.
-*/
+/**
+ * A collapsible strip of poppable bubbles, with an opt-in pop sound.
+ *
+ * It's a toy, not a control: the bubbles are hidden from assistive tech and
+ * skipped by Tab, while the show/hide and sound toggles are real, labelled
+ * buttons. Once every bubble is popped, the sheet refills. Popping the four
+ * corners clockwise from the top-left summons a dancing alien.
+ *
+ * It starts collapsed, so the control panel fits laptop screens and doesn't
+ * push the content down on phones.
+ */
 export default function BubbleWrap() {
   const [open, setOpen] = useState(false);
   const [popped, setPopped] = useState<Set<number>>(() => new Set());
@@ -41,7 +47,7 @@ export default function BubbleWrap() {
       setPopped(next.size === COUNT ? new Set() : next);
     }
 
-    // advance the secret sequence, or start over. Presses on already-popped
+    // Advance the secret sequence, or start over. Presses on already-popped
     // bubbles count too, so the secret works no matter what's been popped.
     const step =
       SEQUENCE[progress] === i ? progress + 1 : i === SEQUENCE[0] ? 1 : 0;

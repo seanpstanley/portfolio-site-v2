@@ -3,12 +3,16 @@
 import { useFormStatus } from "react-dom";
 import { LuArrowRight } from "react-icons/lu";
 
+/** Props for {@link SubmitButton}. */
 interface SubmitButtonProps {
-  // every required field is filled in and valid
+  /** Every required field is filled in and valid. Turns the status light green. */
   ready: boolean;
 }
 
-// status light + send key. Must render inside the <form>.
+/**
+ * The contact form's status light, status text, and send key. Reads the
+ * pending state from the enclosing form, so it must render inside a `<form>`.
+ */
 export default function SubmitButton({ ready }: SubmitButtonProps) {
   const { pending } = useFormStatus();
 

@@ -9,18 +9,24 @@ import Section from "@/components/Section";
 import SubmitButton from "@/components/SubmitButton";
 import { socials } from "@/lib/data";
 
+// Shared styles for the field labels.
 const fieldLabel = "label text-ink";
 
+/**
+ * The Contact section: a form that sends me an email through the
+ * {@link sendEmail} server action, with a honeypot field for bots and a
+ * status light that turns green once every field is valid.
+ */
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  // every required field filled in and valid (drives the status light)
+  // Every required field is filled in and valid (drives the status light).
   const [ready, setReady] = useState(false);
 
   return (
     <Section name="Contact">
       <form
         ref={formRef}
-        className="pad relative flex flex-col gap-5 rounded-3xl px-6 py-7 sm:px-9 sm:py-8"
+        className="relative flex flex-col gap-5 rounded-3xl px-6 py-7 pad sm:px-9 sm:py-8"
         onInput={(event) => setReady(event.currentTarget.checkValidity())}
         action={async (formData) => {
           const { error } = await sendEmail(formData);
@@ -42,10 +48,19 @@ export default function Contact() {
           </a>
           .
         </p>
-        {/* honeypot: off-screen and skipped by Tab/screen readers; bots fill it */}
-        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        {/* Honeypot: off-screen and skipped by Tab and screen readers; bots fill it in. */}
+        <div
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-px w-px overflow-hidden"
+        >
           <label htmlFor="company">Company</label>
-          <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+          <input
+            id="company"
+            name="company"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] gap-[18px]">
           <div className="flex flex-col gap-2">
@@ -84,7 +99,7 @@ export default function Contact() {
             Message
           </label>
           <textarea
-            className="field min-h-36 resize-y"
+            className="min-h-36 field resize-y"
             id="message"
             name="message"
             rows={6}
