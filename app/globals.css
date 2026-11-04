@@ -430,3 +430,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* blinking caret for TypedHeading */
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

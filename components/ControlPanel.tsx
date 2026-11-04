@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 import { LuFileText } from "react-icons/lu";
 
 import BubbleWrap from "@/components/BubbleWrap";
@@ -7,32 +9,63 @@ import ClockModule from "@/components/ClockModule";
 import NavKeys from "@/components/NavKeys";
 import SectionReadout from "@/components/SectionReadout";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import TypedHeading from "@/components/TypedHeading";
 import { resumeHref, socials } from "@/lib/data";
+import { useTheme } from "@/lib/theme";
 
 const keyLabel = "font-mono text-[13px] font-semibold";
+const themeLabel = { light: "light", system: "auto", dark: "dark" } as const;
 
 /*
   The left-hand control surface: one sheet of seamed tiles.
   Phones get the name plate and utility row; the readout, nav keys, clock
   and bubble wrap are desktop-only (phones use MobileReadout + MobileDock).
 */
+const GAP = 40;
+
 export default function ControlPanel() {
+  const ref = useRef<HTMLElement>(null);
+  const { preference } = useTheme();
+
+  /*
+    Sticky, even when the panel is taller than the window: its sticky top
+    goes negative by the overflow, so it scrolls with the page until its
+    bottom edge is in view, then holds there.
+  */
+  useEffect(() => {
+    const panel = ref.current;
+    if (!panel) return;
+
+    const update = () => {
+      const top = Math.min(GAP, window.innerHeight - panel.offsetHeight - GAP);
+      panel.style.setProperty("--panel-top", `${top}px`);
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(panel);
+    window.addEventListener("resize", update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   return (
-    <header className="lg:sticky lg:top-10 lg:w-[400px] lg:flex-none">
+    <header
+      ref={ref}
+      className="lg:sticky lg:top-[var(--panel-top,2.5rem)] lg:w-[400px] lg:flex-none"
+    >
       <div className="sheet rounded-[30px]">
         <div className="cell flex flex-col gap-[18px] px-7 pt-7 pb-[26px]">
           <div className="flex items-center justify-between">
             <span className="label">portfolio</span>
             <div className="grille h-[22px] w-[66px]" aria-hidden="true" />
           </div>
-          <h1 className="dot m-0 text-[44px] sm:text-[50px]">
-            sean
-            <br />
-            stanley
-          </h1>
+          <TypedHeading className="text-[44px] sm:text-[50px]" />
           <p className="m-0 text-[17px] leading-normal text-pretty text-ink-2">
-            I'm a <span className="font-semibold text-ink">frontend developer</span>{" "}
-            who likes stuff that looks good.
+            <span className="font-semibold text-ink">Frontend developer</span> who
+            likes stuff that looks good.
           </p>
         </div>
 
@@ -44,10 +77,12 @@ export default function ControlPanel() {
           <NavKeys variant="panel" />
         </nav>
 
-        <div className="grid grid-cols-4 gap-[2px]">
-          <div className="cell flex flex-col items-center gap-2.5 px-2 pt-4 pb-3.5">
+        <div className="grid grid-cols-[1.45fr_1fr_1fr_1fr] gap-[2px]">
+          <div className="cell flex flex-col items-center gap-2.5 px-1.5 pt-4 pb-3.5">
             <ThemeSwitch />
-            <span className="label">theme</span>
+            <span className="label" aria-hidden="true">
+              {themeLabel[preference]}
+            </span>
           </div>
           <div className="cell flex flex-col items-center gap-2 px-2 py-3.5">
             <a
@@ -91,7 +126,7 @@ export default function ControlPanel() {
           <ClockModule />
         </div>
 
-        <div className="hidden lg:block [@media(max-height:900px)]:hidden">
+        <div className="hidden lg:block">
           <BubbleWrap />
         </div>
       </div>

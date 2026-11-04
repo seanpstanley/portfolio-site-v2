@@ -111,11 +111,20 @@ function ProjectFilter({
             aria-pressed={active}
             onClick={() => onChange(filter.value)}
             className={cn(
-              "label h-10 rounded-full px-[18px] transition-colors",
-              active ? "bubble text-ink hover:transform-none" : "cursor-pointer hover:text-ink",
+              "label relative h-10 cursor-pointer rounded-full px-[18px] transition-colors",
+              active ? "text-ink" : "hover:text-ink",
             )}
           >
-            {filter.label}
+            {/* one bubble that slides to whichever filter is active */}
+            {active && (
+              <motion.span
+                layoutId="project-filter-bubble"
+                aria-hidden="true"
+                className="keycap absolute inset-0 rounded-full"
+                transition={{ type: "spring", stiffness: 420, damping: 34 }}
+              />
+            )}
+            <span className="relative">{filter.label}</span>
           </button>
         );
       })}
@@ -129,7 +138,7 @@ export default function Projects() {
     filter === "all" ? projectsData : projectsData.filter((p) => p.category === filter);
 
   return (
-    <Section name="Projects" threshold={0.1}>
+    <Section name="Projects">
       <FeaturedProject />
       <div className="flex flex-wrap items-center justify-between gap-3 pt-4">
         <ProjectFilter value={filter} onChange={setFilter} />

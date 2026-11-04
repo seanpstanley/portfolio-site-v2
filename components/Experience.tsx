@@ -11,7 +11,7 @@ import { fadeUpVariants } from "@/lib/utils";
 // a recessed groove with a domed node per role, newest first
 export default function Experience() {
   return (
-    <Section name="Experience" threshold={0.25}>
+    <Section name="Experience">
       <ol className="relative m-0 flex list-none flex-col gap-7 p-0">
         <li
           aria-hidden="true"
