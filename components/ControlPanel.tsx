@@ -7,6 +7,7 @@ import ClockModule from "@/components/ClockModule";
 import NavKeys from "@/components/NavKeys";
 import SectionReadout from "@/components/SectionReadout";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import TypedHeading from "@/components/TypedHeading";
 import { resumeHref, socials } from "@/lib/data";
 
 const keyLabel = "font-mono text-[13px] font-semibold";
@@ -25,11 +26,7 @@ export default function ControlPanel() {
             <span className="label">portfolio</span>
             <div className="grille h-[22px] w-[66px]" aria-hidden="true" />
           </div>
-          <h1 className="dot m-0 text-[44px] sm:text-[50px]">
-            sean
-            <br />
-            stanley
-          </h1>
+          <TypedHeading className="text-[44px] sm:text-[50px]" />
           <p className="m-0 text-[17px] leading-normal text-pretty text-ink-2">
             I'm a <span className="font-semibold text-ink">frontend developer</span>{" "}
             who likes stuff that looks good.
