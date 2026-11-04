@@ -28,12 +28,18 @@ export const sendEmail = async (
   // honeypot: hidden from people, but bots fill in every field. Pretend it
   // worked so they don't retry.
   if (formData.get("company")) {
+    console.warn("Contact form: dropped a submission that filled the honeypot");
     return {};
   }
 
   // Vercel BotID: the browser attaches a challenge result to this request
-  const { isBot } = await checkBotId();
-  if (isBot) {
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    // logged so a wrongly blocked visitor shows up in the Vercel logs
+    console.warn("Contact form: BotID flagged a submission as a bot", {
+      verifiedBot: verification.isVerifiedBot,
+      bypassed: verification.bypassed,
+    });
     return {
       error: `Couldn't send your message. Please email ${socials.email}.`,
     };
