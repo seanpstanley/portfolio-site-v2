@@ -1,93 +1,84 @@
 "use client";
 
-import React from "react";
-
 import { motion } from "motion/react";
-import Link from "next/link";
-import { FaExternalLinkSquareAlt } from "react-icons/fa";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { LuArrowUpRight, LuBriefcase, LuFlaskConical } from "react-icons/lu";
 
-import SectionHeading from "@/components/SectionHeading";
+import Section from "@/components/Section";
 import TechTags from "@/components/TechTags";
-import { useTheme } from "@/context/ThemeContextProvider";
-import { experiencesData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
+import { experiencesData, resumeHref } from "@/lib/data";
+import { fadeUpVariants } from "@/lib/utils";
 
+// a recessed groove with a domed node per role, newest first
 export default function Experience() {
-  const { ref } = useSectionInView("Experience", 0.35);
-  const { theme } = useTheme();
-
   return (
-    <motion.section
-      ref={ref}
-      id="experience"
-      className="scroll-mt-0 lg:scroll-mt-24 mb-16 md:mb-24 lg:mb-32 px-2 lg:px-0"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-    >
-      <SectionHeading>Experience</SectionHeading>
-      <VerticalTimeline lineColor="#9ca3af" layout={"1-column-left"}>
-        {experiencesData.map((experience, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              visible={true}
-              contentStyle={{
-                background: theme === "light" ? "#e3eaf4" : "#1f2427",
-                boxShadow:
-                  theme === "light"
-                    ? "0.2em 0.2em calc(0.2em * 2) #8EABD3, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #FFFFFF"
-                    : "0.2em 0.2em calc(0.2em * 2) #16191B, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #272D31",
-                borderRadius: "0.5rem",
-                textAlign: "left",
-                padding: "1.25rem 1.25rem 0.75rem 1.25rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #e3eaf4"
-                    : "0.4rem solid #1f2427",
-              }}
-              date={experience.date}
-              icon={experience.icon}
-              iconStyle={{
-                background: theme === "light" ? "#e3eaf4 " : "#1f2427",
-                fontSize: "1.5rem",
-                color: theme === "light" ? "#374151" : "rgba(255,255,255,0.7)",
-                boxShadow:
-                  theme === "light"
-                    ? "0.05em 0.05em calc(0.05em * 2) #8EABD3, calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #FFFFFF"
-                    : "0.05em 0.05em calc(0.05em * 2) #16191B, calc(0.05em * -1) calc(0.05em * -1) calc(0.05em * 2) #272D31",
-              }}
-              iconClassName={""}
+    <Section name="Experience" threshold={0.25}>
+      <ol className="relative m-0 flex list-none flex-col gap-7 p-0">
+        <li
+          aria-hidden="true"
+          className="well absolute top-6 bottom-6 left-[21px] hidden w-1.5 rounded-md sm:block"
+        />
+        {experiencesData.map((job, i) => {
+          const Icon = job.kind === "work" ? LuBriefcase : LuFlaskConical;
+          return (
+            <motion.li
+              key={`${job.org}-${job.title}`}
+              className="relative flex items-start gap-[22px]"
+              variants={fadeUpVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={i}
             >
-              <h3 className="font-bold">{experience.title}</h3>
-              <p className="font-semibold mt-0!">{experience.location}</p>
-              <p className="mt-1! font-normal! text-gray-600 dark:text-white/60">
-                {experience.description}
-              </p>
-              <div className="flex mt-3 mb:1 justify-between items-end gap-2">
-                <TechTags tags={experience.tags} />
-              </div>
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
-      <Link
-        className="ml-2 md:ml-0 mt-6 group relative lowercase nm-flat-pattens-blue dark:nm-flat-cinder inline-flex items-center justify-center px-5 py-3 font-medium transition motion-reduce:transition-none rounded-full hover:nm-flat-pattens-blue-sm dark:hover:nm-flat-cinder-sm active:nm-inset-pattens-blue-sm dark:active:nm-inset-cinder-sm disabled:scale-100 disabled:hover:nm-inset-pattens-blue dark:disabled:hover:nm-inset-cinder disabled:nm-inset-pattens-blue dark:disabled:nm-inset-cinder hover:text-blue-genie dark:hover:text-blue-genie hover:scale-[1.025] active:scale-100 focus-visible:scale-[1.025] focus-visible:text-blue-genie dark:focus-visible:text-blue-genie focus text-gray-700 dark:text-white/85"
-        href="/files/sean-stanley-resume.pdf"
-        target="_blank"
-        rel="noreferrer noopener"
-        locale={false}
-        aria-label="View Full Résumé (opens in a new tab)"
-      >
-        View Full Résumé
-        <FaExternalLinkSquareAlt className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ml-2" />
-      </Link>
-    </motion.section>
+              <span
+                aria-hidden="true"
+                className="keycap mt-[18px] hidden size-12 flex-none justify-center rounded-full sm:inline-flex"
+              >
+                <Icon
+                  className="size-[18px]"
+                  style={{ color: job.kind === "work" ? "var(--navy)" : "var(--tan)" }}
+                />
+              </span>
+              <article className="pad flex min-w-0 flex-1 flex-col gap-3.5 rounded-3xl px-6 pt-6 pb-7 sm:px-[30px]">
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2.5">
+                  <div className="flex flex-col gap-1">
+                    <span className="label flex items-center gap-2">
+                      <span
+                        aria-hidden="true"
+                        className="size-2 rounded-full"
+                        style={{ background: job.kind === "work" ? "var(--navy)" : "var(--tan)" }}
+                      />
+                      {job.kind}
+                    </span>
+                    <h3 className="m-0 text-[21px] font-semibold tracking-[-0.01em]">
+                      {job.title}
+                    </h3>
+                    <span className="text-base text-ink-2">{job.org}</span>
+                  </div>
+                  <span className="lcd rounded-[9px] px-[11px] py-[7px] font-mono text-xs tracking-[0.04em] whitespace-nowrap lowercase">
+                    {job.date}
+                  </span>
+                </div>
+                <p className="m-0 text-[15.5px] leading-[1.65] text-pretty text-ink-2">
+                  {job.description}
+                </p>
+                <TechTags tags={job.tags} />
+              </article>
+            </motion.li>
+          );
+        })}
+      </ol>
+      <div className="sm:pl-[70px]">
+        <a
+          className="bubble h-[52px] gap-2.5 rounded-full px-[22px] text-[15px] font-semibold"
+          href={resumeHref}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="View full résumé (opens in a new tab)"
+        >
+          View full résumé
+          <LuArrowUpRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </Section>
   );
 }

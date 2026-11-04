@@ -1,4 +1,4 @@
-import { clsx, ClassValue } from "clsx";
+import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 // combo of tailwind merge and clsx
@@ -6,54 +6,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// fade in from bottom animation for projects, skills, etc.
-export const fadeUpAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
+// fade up into place, staggered by index (used with motion's whileInView)
+export const fadeUpVariants = {
+  initial: { opacity: 0, y: 24 },
+  animate: (index: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
+    transition: { delay: 0.04 * index, duration: 0.4, ease: [0.3, 0.7, 0.4, 1] as const },
   }),
-};
-
-// hamburger menu --> x animations
-export const hamburgerAnimationVariants = {
-  top: {
-    open: {
-      rotate: "45deg",
-      top: ["35%", "50%"],
-    },
-    closed: {
-      rotate: "0deg",
-      top: ["50%", "35%"],
-    },
-  },
-  middle: {
-    open: {
-      rotate: "-45deg",
-      opacity: 0,
-    },
-    closed: {
-      rotate: "0deg",
-      opacity: 100,
-    },
-  },
-  bottom: {
-    open: {
-      rotate: "-45deg",
-      bottom: ["35%", "50%"],
-      left: "50%",
-    },
-    closed: {
-      rotate: "0deg",
-      bottom: ["50%", "35%"],
-    },
-  },
 };
 
 const romanNumerals = [
@@ -78,35 +38,22 @@ export const romanize = (num: number) => {
     return "";
   }
   let romanNumeral = "";
-  for (let i = 0; i < romanNumerals.length; i++) {
-    while (num >= romanNumerals[i].value) {
-      romanNumeral += romanNumerals[i].numeral;
-      num -= romanNumerals[i].value;
+  for (const { value, numeral } of romanNumerals) {
+    while (num >= value) {
+      romanNumeral += numeral;
+      num -= value;
     }
   }
   return romanNumeral;
 };
 
-// takes in a url and returns just what's between the www. and the .com (host name)
-export const getHostName = (url: string) => {
-  const match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-  if (
-    match != null &&
-    match.length > 2 &&
-    typeof match[2] === "string" &&
-    match[2].length > 0
-  ) {
-    const hostname = match[2].split(".");
-    return hostname[0];
-  } else {
-    return null;
-  }
-};
+// "01", "02", ...
+export const pad2 = (n: number) => (n < 10 ? `0${n}` : `${n}`);
 
 // server-side validation for email contents in contact
 export const validateString = (
   value: unknown,
-  maxLength: number
+  maxLength: number,
 ): value is string => {
   if (!value || typeof value !== "string" || value.length > maxLength) {
     return false;

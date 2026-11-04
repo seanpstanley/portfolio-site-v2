@@ -1,48 +1,30 @@
 "use client";
 
-import { motion } from "motion/react";
-
-import DateAndTime from "@/components/DateAndTime";
 import { footerQuotes } from "@/lib/data";
+import { useNow } from "@/lib/hooks";
 import { romanize } from "@/lib/utils";
 
+// an LCD strip with the quote of the day (picked by day of the month).
+// Uses the visitor's clock, so it changes daily without a redeploy.
 export default function Footer() {
-  const date = new Date();
-
-  const dayToQuote = () => {
-    const quoteObj = footerQuotes[date.getDate()];
-    return quoteObj;
-  };
-  const { quote, source, year } = dayToQuote();
-
-  const curYear = date.getFullYear();
-  const romanYear = romanize(curYear);
+  const now = useNow();
+  const entry = now ? footerQuotes[now.getDate()] : null;
 
   return (
-    <footer className="pb-12 md:pb-16 lg:pb-20 text-gray-600 dark:text-white/60 text-start w-full px-2 lg:px-0 mt-auto">
-      <motion.div
-        className="border-t border-gray-400 dark:border-gray-400/20 pt-6"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.165,
-        }}
-      />
-      <motion.div
-        className="flex flex-col lg:flex-row items-center gap-y-1.5 md:gap-x-6 md:justify-between"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.175,
-        }}
-      >
-        <small className="mb-2 block text-xs leading-relaxed">
-          &copy; {romanYear} | "{`${quote}`}" -
-          <span className="italic">{source}</span>, {year}
-        </small>
-
-        <DateAndTime />
-      </motion.div>
+    <footer className="well mt-[104px] rounded-[20px] p-[7px]">
+      <div className="lcd flex min-h-[72px] flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-[15px] px-[22px] py-[18px]">
+        <span className="dot text-[22px] text-signal">
+          © {now ? romanize(now.getFullYear()) : ""}
+        </span>
+        {entry && (
+          <figure className="m-0 flex-[1_1_320px] text-right font-mono text-[13px] leading-[1.55]">
+            <blockquote className="m-0 inline">“{entry.quote}”</blockquote>{" "}
+            <figcaption className="inline text-lcd-dim">
+              — <cite className="not-italic">{entry.source}</cite>, {entry.year}
+            </figcaption>
+          </figure>
+        )}
+      </div>
     </footer>
   );
 }

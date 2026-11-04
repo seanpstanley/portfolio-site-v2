@@ -1,49 +1,432 @@
 @import "tailwindcss";
-@import "./neumorphism.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-pattens-blue: #e3eaf4;
-  --color-cinder: #1f2427;
-  --color-blue-genie: #6c5cfb;
+/*
+  Membrane design tokens.
+  "chalk" (light) is the default; "graphite" (dark) applies when <html> has
+  the .dark class (set before first paint by the inline script in layout.tsx).
+  All text pairings meet WCAG AA on --tile and --sheet.
+*/
+:root {
+  --sheet: #e4e3df;
+  --tile: #ebeae6;
+  --well: #dfddd8;
+  --seam: #cfccc5;
+  --dome-hi: #f8f7f4;
+  --dome-lo: #d9d7d1;
+  --rim: rgb(255 255 255 / 0.9);
+  --rim-lo: rgb(60 52 40 / 0.1);
+  --hi: rgb(255 255 255 / 0.95);
+  --amb: rgb(118 106 88 / 0.32);
+  --amb-soft: rgb(118 106 88 / 0.2);
+  --contact: rgb(60 52 40 / 0.2);
+
+  --ink: #1b1b1f;
+  --ink-2: #46464e;
+  --ink-3: #5c5c64;
+  --accent: #5b45e0;
+  --fill: #6c5cfb;
+  --fill-hi: #7d6fff;
+  --fill-lo: #5641e6;
+  --on-fill: #ffffff;
+  --signal: #ff5b1f;
+  --signal-hi: #ff8550;
+  --signal-lo: #e6470c;
+  --navy: #25305a;
+  --tan: #c49a5c;
+  --lcd: #111113;
+  --lcd-ink: #f2efe8;
+  --lcd-dim: #9a968f;
+  --lcd-off: #3a3a3e;
+  --grille: rgb(27 27 31 / 0.5);
+  --glass: rgb(228 227 223 / 0.82);
+  --ok: #3ccf7a;
+
+  color-scheme: light;
 }
 
-/*
-  The default border color changed to `currentcolor` in Tailwind CSS v4.
-  This keeps the v3 default so existing borders look the same.
-*/
+.dark {
+  --sheet: #1d1d20;
+  --tile: #242428;
+  --well: #19191c;
+  --seam: #111113;
+  --dome-hi: #34343a;
+  --dome-lo: #1e1e22;
+  --rim: rgb(255 255 255 / 0.09);
+  --rim-lo: rgb(0 0 0 / 0.45);
+  --hi: rgb(255 255 255 / 0.045);
+  --amb: rgb(0 0 0 / 0.62);
+  --amb-soft: rgb(0 0 0 / 0.45);
+  --contact: rgb(0 0 0 / 0.6);
+
+  --ink: #efeff2;
+  --ink-2: #bdbdc6;
+  --ink-3: #9d9da8;
+  --accent: #a99cff;
+  --signal: #ff6a2e;
+  --signal-hi: #ff8d5c;
+  --signal-lo: #e5531a;
+  --navy: #8fa0e6;
+  --tan: #d9b27a;
+  --lcd: #0a0a0b;
+  --lcd-dim: #8f8b85;
+  --grille: rgb(239 239 242 / 0.35);
+  --glass: rgb(29 29 32 / 0.82);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-sheet: var(--sheet);
+  --color-tile: var(--tile);
+  --color-well: var(--well);
+  --color-seam: var(--seam);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-fill: var(--fill);
+  --color-on-fill: var(--on-fill);
+  --color-signal: var(--signal);
+  --color-navy: var(--navy);
+  --color-tan: var(--tan);
+  --color-lcd: var(--lcd);
+  --color-lcd-ink: var(--lcd-ink);
+  --color-lcd-dim: var(--lcd-dim);
+  --color-lcd-off: var(--lcd-off);
+  --color-glass: var(--glass);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-dot: var(--font-doto), var(--font-geist-mono), monospace;
+}
+
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--seam);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--sheet);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--fill);
+    color: var(--on-fill);
   }
 }
 
-/* used by react-vertical-timeline-component */
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+/* ---------- type ---------- */
+
+/* printed panel label: Geist Mono, uppercase, tracked */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.71875rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 
-@utility nav {
-  @apply bg-pattens-blue/70 backdrop-blur-md dark:bg-cinder/70;
+/* dot-matrix display type (22px+ only) */
+@utility dot {
+  font-family: var(--font-dot);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
 }
 
-@utility focus {
-  @apply focus-visible:outline-hidden focus-within:ring-2 focus-within:ring-blue-genie focus-visible:ring-2 focus-visible:ring-blue-genie;
+/* inline text link */
+@utility inline-link {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+  &:hover {
+    color: var(--accent);
+  }
 }
 
-@utility card {
-  @apply bg-white/90 hover:nm-flat-pattens-blue-lg! group-hover:nm-flat-pattens-blue-sm dark:group-hover:nm-flat-cinder-sm transition motion-reduce:transition-none dark:text-white/80 dark:hover:nm-flat-cinder-lg! nm-flat-pattens-blue dark:nm-flat-cinder;
+/* ---------- elevation ---------- */
+
+/* 0: tiles separated by 2px seams. Children use `cell`. */
+@utility sheet {
+  background: var(--seam);
+  overflow: hidden;
+  display: grid;
+  gap: 2px;
+  box-shadow:
+    -10px -10px 24px var(--hi),
+    12px 16px 34px var(--amb-soft),
+    2px 3px 4px var(--contact);
 }
 
-@utility inset-card {
-  @apply bg-[#e6e9f3] hover:nm-concave-pattens-blue transition motion-reduce:transition-none dark:text-white/80 dark:hover:nm-concave-cinder nm-concave-pattens-blue-sm dark:nm-concave-cinder-sm;
+@utility cell {
+  background: var(--tile);
+  box-shadow: inset 0 1px 0 var(--rim);
 }
 
-@utility hamburger-line {
-  @apply absolute h-1 w-7 rounded-full bg-gray-500 group-hover:bg-blue-genie transition-colors dark:bg-gray-400 dark:group-hover:bg-blue-genie;
+/* -1: pressed into the sheet (inputs, grooves, sockets, bezels) */
+@utility well {
+  background: var(--well);
+  box-shadow:
+    inset 2px 3px 7px var(--amb),
+    inset -2px -2px 6px var(--hi);
+}
+
+/* +1: barely raised (tags) */
+@utility chip {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  padding: 5px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--tile);
+  box-shadow:
+    inset 0 1px 0 var(--rim),
+    -2px -2px 5px var(--hi),
+    2px 3px 6px var(--amb-soft);
+}
+
+/* +2: cards and modules */
+@utility pad {
+  background: var(--tile);
+  box-shadow:
+    inset 0 1px 0 var(--rim),
+    -7px -7px 18px var(--hi),
+    9px 12px 26px var(--amb-soft),
+    1px 2px 3px var(--contact);
+}
+
+/*
+  +3: anything pressable. A domed key lit from the top-left.
+  Pressed (active, or data-pressed="true"): the dome inverts and sinks 1px.
+*/
+@utility bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  background: radial-gradient(
+    130% 130% at 28% 18%,
+    var(--dome-hi) 0%,
+    var(--tile) 46%,
+    var(--dome-lo) 100%
+  );
+  box-shadow:
+    inset 0 1px 1px var(--rim),
+    inset 0 -2px 4px var(--rim-lo),
+    -4px -4px 10px var(--hi),
+    5px 7px 14px var(--amb),
+    1px 2px 2px var(--contact);
+  transition:
+    box-shadow 0.16s cubic-bezier(0.3, 0.7, 0.4, 1),
+    transform 0.16s cubic-bezier(0.3, 0.7, 0.4, 1);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 1px var(--rim),
+      inset 0 -2px 4px var(--rim-lo),
+      -5px -5px 12px var(--hi),
+      7px 10px 18px var(--amb),
+      1px 2px 2px var(--contact);
+  }
+
+  &:active,
+  &[data-pressed="true"] {
+    transform: translateY(1px) scale(0.985);
+    background: radial-gradient(
+      130% 130% at 72% 80%,
+      var(--dome-hi) 0%,
+      var(--tile) 52%,
+      var(--dome-lo) 100%
+    );
+    box-shadow:
+      inset 3px 4px 8px var(--amb),
+      inset -3px -3px 7px var(--hi);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--ink-3);
+    transform: none;
+    background: var(--tile);
+    box-shadow: inset 0 0 0 1.5px var(--seam);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover,
+    &:active,
+    &[data-pressed="true"] {
+      transform: none;
+    }
+  }
+}
+
+/* static keycap (skills): looks like a bubble but isn't interactive */
+@utility keycap {
+  display: inline-flex;
+  align-items: center;
+  background: radial-gradient(
+    130% 130% at 28% 18%,
+    var(--dome-hi) 0%,
+    var(--tile) 46%,
+    var(--dome-lo) 100%
+  );
+  box-shadow:
+    inset 0 1px 1px var(--rim),
+    inset 0 -2px 4px var(--rim-lo),
+    -3px -3px 8px var(--hi),
+    4px 6px 12px var(--amb),
+    1px 2px 2px var(--contact);
+}
+
+/* primary (violet) and signal (orange) keys: combine with `bubble` */
+@utility bubble-fill {
+  color: var(--on-fill);
+  background: radial-gradient(
+    130% 130% at 28% 18%,
+    var(--fill-hi) 0%,
+    var(--fill) 50%,
+    var(--fill-lo) 100%
+  );
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 0.35),
+    inset 0 -2px 4px rgb(20 0 80 / 0.25),
+    -4px -4px 10px var(--hi),
+    5px 7px 14px var(--amb),
+    1px 2px 2px var(--contact);
+  &:active {
+    background: radial-gradient(
+      130% 130% at 72% 80%,
+      var(--fill-hi) 0%,
+      var(--fill) 52%,
+      var(--fill-lo) 100%
+    );
+    box-shadow:
+      inset 3px 4px 8px rgb(20 0 80 / 0.45),
+      inset -2px -2px 6px rgb(255 255 255 / 0.2);
+  }
+}
+
+@utility bubble-signal {
+  color: #1b1b1f;
+  background: radial-gradient(
+    130% 130% at 28% 18%,
+    var(--signal-hi) 0%,
+    var(--signal) 50%,
+    var(--signal-lo) 100%
+  );
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 0.4),
+    inset 0 -2px 4px rgb(90 20 0 / 0.25),
+    -3px -3px 8px var(--hi),
+    4px 6px 12px var(--amb),
+    1px 2px 2px var(--contact);
+}
+
+/* -2: screen. Wrap in a `well` for the bezel. */
+@utility lcd {
+  background: var(--lcd);
+  color: var(--lcd-ink);
+  box-shadow:
+    inset 0 2px 10px rgb(0 0 0 / 0.75),
+    inset 0 0 0 1px rgb(255 255 255 / 0.05);
+}
+
+/* indicator light; add data-on="false" to switch it off */
+@utility led {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--signal);
+  box-shadow:
+    0 0 0 2px rgb(255 91 31 / 0.16),
+    0 0 10px rgb(255 91 31 / 0.75);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+  &[data-on="false"] {
+    background: var(--well);
+    box-shadow:
+      inset 1px 1px 2px var(--amb),
+      inset -1px -1px 1px var(--hi);
+  }
+  &[data-tone="ok"] {
+    background: var(--ok);
+    box-shadow:
+      0 0 0 2px rgb(60 207 122 / 0.16),
+      0 0 10px rgb(60 207 122 / 0.7);
+  }
+}
+
+/* speaker-grille dot texture */
+@utility grille {
+  background-image: radial-gradient(
+    circle,
+    var(--grille) 1.7px,
+    transparent 2.1px
+  );
+  background-size: 11px 11px;
+}
+
+/* text field pressed into the sheet */
+@utility field {
+  width: 100%;
+  font-size: 1rem;
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 15px 18px;
+  background: var(--well);
+  box-shadow:
+    inset 2px 3px 7px var(--amb),
+    inset -2px -2px 6px var(--hi);
+  &::placeholder {
+    color: var(--ink-3);
+  }
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+  &[aria-invalid="true"] {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
+  }
+}
+
+/* clamp body copy to 3 lines */
+@utility clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
