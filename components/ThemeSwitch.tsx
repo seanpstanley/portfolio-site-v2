@@ -5,11 +5,12 @@ import { LuMonitor, LuMoon, LuSun } from "react-icons/lu";
 import { type ThemePreference, useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
-const options: { value: ThemePreference; label: string; Icon: typeof LuSun }[] = [
-  { value: "light", label: "Light", Icon: LuSun },
-  { value: "system", label: "Auto (match system)", Icon: LuMonitor },
-  { value: "dark", label: "Dark", Icon: LuMoon },
-];
+const options: { value: ThemePreference; label: string; Icon: typeof LuSun }[] =
+  [
+    { value: "light", label: "Light", Icon: LuSun },
+    { value: "system", label: "Auto (match system)", Icon: LuMonitor },
+    { value: "dark", label: "Dark", Icon: LuMoon },
+  ];
 
 const SEGMENT = 30; // px per position
 
@@ -26,13 +27,16 @@ export default function ThemeSwitch() {
     <fieldset className="m-0 border-0 p-0">
       <legend className="sr-only">Theme</legend>
       <div
-        className="well relative flex h-[34px] rounded-full p-[3px]"
+        className="relative flex h-[34px] rounded-full p-[3px] well"
         style={{ width: SEGMENT * options.length + 6 }}
       >
         <span
           aria-hidden="true"
-          className="keycap pointer-events-none absolute top-[3px] left-[3px] h-7 rounded-full transition-transform duration-200 motion-reduce:transition-none"
-          style={{ width: SEGMENT, transform: `translateX(${index * SEGMENT}px)` }}
+          className="pointer-events-none absolute top-[3px] left-[3px] keycap h-7 rounded-full keycap-seated transition-transform duration-200 motion-reduce:transition-none"
+          style={{
+            width: SEGMENT,
+            transform: `translateX(${index * SEGMENT}px)`,
+          }}
         />
         {options.map(({ value, label, Icon }) => {
           const checked = value === preference;

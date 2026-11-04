@@ -263,14 +263,19 @@
     box-shadow 0.16s cubic-bezier(0.3, 0.7, 0.4, 1),
     transform 0.16s cubic-bezier(0.3, 0.7, 0.4, 1);
 
+  /*
+    Hover pulls the key away from the membrane: a bigger air pocket below
+    (wider ambient shadow), and the rubber stretches around its base, so the
+    crisp contact line and rim soften into a smooth fillet.
+  */
   &:hover {
     transform: translateY(-1px);
     box-shadow:
-      inset 0 1px 1px var(--rim),
-      inset 0 -2px 4px var(--rim-lo),
+      inset 0 1px 3px var(--rim),
+      inset 0 -3px 7px var(--rim-lo),
       -5px -5px 12px var(--hi),
       7px 10px 18px var(--amb),
-      1px 2px 2px var(--contact);
+      2px 4px 9px var(--contact);
   }
 
   &:active,
@@ -321,6 +326,16 @@
     -3px -3px 8px var(--hi),
     4px 6px 12px var(--amb),
     1px 2px 2px var(--contact);
+}
+
+/* a keycap seated inside a well (slider thumbs): shadow stays in the crater */
+@utility keycap-seated {
+  box-shadow:
+    inset 0 1px 1px var(--rim),
+    inset 0 -2px 3px var(--rim-lo),
+    -1px -1px 3px var(--hi),
+    1px 2px 3px var(--amb),
+    0 1px 1px var(--contact);
 }
 
 /* primary (violet) and signal (orange) keys: combine with `bubble` */
