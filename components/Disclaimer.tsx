@@ -1,3 +1,7 @@
+/**
+ * The AMC A-List disclaimer at the end of the About section. The `*` after
+ * the A-List bit links here.
+ */
 export default function Disclaimer() {
   return (
     <small

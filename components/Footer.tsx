@@ -1,11 +1,14 @@
 "use client";
 
+import { useNow } from "@/lib/clock";
 import { footerQuotes } from "@/lib/data";
-import { useNow } from "@/lib/hooks";
 import { romanize } from "@/lib/utils";
 
-// an LCD strip with the quote of the day (picked by day of the month).
-// Uses the visitor's clock, so it changes daily without a redeploy.
+/**
+ * An LCD strip with the year in Roman numerals and the quote of the day,
+ * picked by day of the month. Uses the visitor's clock, so it changes daily
+ * without a redeploy.
+ */
 export default function Footer() {
   const now = useNow();
   const entry = now ? footerQuotes[now.getDate()] : null;

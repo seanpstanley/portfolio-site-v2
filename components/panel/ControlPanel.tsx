@@ -4,25 +4,31 @@ import { useEffect, useRef } from "react";
 
 import { LuFileText } from "react-icons/lu";
 
-import BubbleWrap from "@/components/BubbleWrap";
-import ClockModule from "@/components/ClockModule";
-import NavKeys from "@/components/NavKeys";
-import SectionReadout from "@/components/SectionReadout";
-import ThemeSwitch from "@/components/ThemeSwitch";
-import TypedHeading from "@/components/TypedHeading";
+import BubbleWrap from "@/components/panel/BubbleWrap";
+import Clock from "@/components/panel/Clock";
+import NavKeys from "@/components/panel/NavKeys";
+import SectionReadout from "@/components/panel/SectionReadout";
+import ThemeSwitch from "@/components/panel/ThemeSwitch";
+import TypedHeading from "@/components/panel/TypedHeading";
 import { resumeHref, socials } from "@/lib/data";
 import { useTheme } from "@/lib/theme";
 
+// Shared styles for the text keys ("gh", "in").
 const keyLabel = "font-mono text-[13px] font-semibold";
+// The label under the theme switch, per preference.
 const themeLabel = { light: "light", system: "auto", dark: "dark" } as const;
-
-/*
-  The left-hand control surface: one sheet of seamed tiles.
-  Phones get the name plate, utility row, and bubble wrap; the readout, nav
-  keys, and clock are desktop-only (phones use MobileReadout + MobileDock).
-*/
+// Space kept between the sticky panel and the window edges, in px.
 const GAP = 40;
 
+/**
+ * The left-hand control surface: one sheet of seamed tiles with the name
+ * plate, section readout, nav keys, theme switch, links, clock, and bubble
+ * wrap. Sticky on desktop.
+ *
+ * Phones get the name plate, utility row, and bubble wrap. The readout, nav
+ * keys, and clock are desktop-only; phones use `MobileReadout` and
+ * `MobileDock` instead.
+ */
 export default function ControlPanel() {
   const ref = useRef<HTMLElement>(null);
   const { preference } = useTheme();
@@ -123,7 +129,7 @@ export default function ControlPanel() {
         </div>
 
         <div className="hidden lg:block">
-          <ClockModule />
+          <Clock />
         </div>
 
         <BubbleWrap />

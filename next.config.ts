@@ -1,5 +1,7 @@
+import type { NextConfig } from "next";
+
 const isDev = process.env.NODE_ENV === "development";
-// Vercel preview deployments load the Vercel toolbar (comments, feedback)
+// Vercel preview deployments load the Vercel toolbar (comments, feedback).
 const isPreview = process.env.VERCEL_ENV === "preview";
 const toolbar = isPreview ? " https://vercel.live" : "";
 
@@ -24,9 +26,8 @@ const csp = [
   ...(isDev ? [] : ["upgrade-insecure-requests"]),
 ].join("; ");
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Vercel already sends Strict-Transport-Security; these cover the rest
+const nextConfig: NextConfig = {
+  // Vercel already sends Strict-Transport-Security; these cover the rest.
   async headers() {
     return [
       {
@@ -38,7 +39,8 @@ const nextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+            value:
+              "camera=(), microphone=(), geolocation=(), browsing-topics=()",
           },
         ],
       },
@@ -46,4 +48,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
