@@ -1,43 +1,59 @@
 import React from "react";
 
 import {
-  Html,
   Body,
+  Container,
   Head,
   Heading,
   Hr,
-  Container,
+  Html,
+  Link,
   Preview,
   Section,
-  Text,
   Tailwind,
+  Text,
 } from "react-email";
 
 interface ContactFormEmailProps {
-  message: string;
+  senderName: string;
   senderEmail: string;
+  message: string;
 }
 
+// colors from the site's "chalk" palette; email clients don't do depth,
+// so this keeps the palette and type feel and leaves the shadows out
 export default function ContactFormEmail({
-  message,
+  senderName,
   senderEmail,
-}: // style this more based on react email docs?
-ContactFormEmailProps) {
+  message,
+}: ContactFormEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>Someone reached out to you!</Preview>
+      <Preview>{`${senderName}: ${message.slice(0, 80)}`}</Preview>
       <Tailwind>
-        <Body className="bg-gray-100 text-black">
-          <Container>
-            <Section className="bg-white border border-solid border-black/10 my-10 px-10 py-4 rounded-md">
-              <Heading className="leading-tight">
-                A new message for you from your contact form.
-              </Heading>
-              <Text>{message}</Text>
-              <Hr />
-              <Text>Reply to this message at: {senderEmail}</Text>
+        <Body className="m-0 bg-[#e4e3df] py-10 font-sans text-[#1b1b1f]">
+          <Container className="max-w-[560px] rounded-[20px] bg-[#ebeae6] px-8 py-6">
+            <Text className="m-0 font-mono text-[11px] tracking-[0.09em] text-[#5c5c64] uppercase">
+              portfolio · contact form
+            </Text>
+            <Heading className="mt-3 mb-1 text-[22px] leading-tight font-semibold">
+              {senderName} reached out
+            </Heading>
+            <Text className="mt-0 text-[15px] text-[#46464e]">
+              <Link href={`mailto:${senderEmail}`} className="text-[#5b45e0] underline">
+                {senderEmail}
+              </Link>
+            </Text>
+            <Section className="rounded-[14px] bg-[#dfddd8] px-5 py-1">
+              <Text className="text-[15px] leading-[1.6] whitespace-pre-wrap">
+                {message}
+              </Text>
             </Section>
+            <Hr className="my-5 border-[#cfccc5]" />
+            <Text className="m-0 text-[13px] text-[#5c5c64]">
+              Reply to this email to answer {senderName} directly.
+            </Text>
           </Container>
         </Body>
       </Tailwind>

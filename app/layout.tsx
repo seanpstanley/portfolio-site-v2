@@ -14,10 +14,25 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 const doto = Doto({ subsets: ["latin"], variable: "--font-doto" });
 
+const description =
+  "A responsive portfolio website showcasing my experience and a few of my personal projects";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://seanpstanley.dev"),
   title: "Sean Stanley | Portfolio",
-  description:
-    "A responsive portfolio website showcasing my experience and a few of my personal projects",
+  description,
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Sean Stanley",
+    title: "Sean Stanley | Portfolio",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sean Stanley | Portfolio",
+    description,
+  },
 };
 
 export const viewport: Viewport = {

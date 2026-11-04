@@ -129,7 +129,7 @@ export default function Projects() {
     filter === "all" ? projectsData : projectsData.filter((p) => p.category === filter);
 
   return (
-    <Section name="Projects" threshold={0.1}>
+    <Section name="Projects">
       <FeaturedProject />
       <div className="flex flex-wrap items-center justify-between gap-3 pt-4">
         <ProjectFilter value={filter} onChange={setFilter} />

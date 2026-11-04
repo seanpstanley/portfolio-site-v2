@@ -8,7 +8,7 @@ const cap = "keycap min-h-[42px] rounded-xl px-[15px] text-[14.5px] font-medium"
 // keycaps grouped under colored legends, on one seamed sheet
 export default function Skills() {
   return (
-    <Section name="Skills" threshold={0.3}>
+    <Section name="Skills">
       <div className="sheet rounded-[26px]">
         {skillGroups.map((group) => (
           <div

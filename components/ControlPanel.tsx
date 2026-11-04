@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 import { LuFileText } from "react-icons/lu";
 
 import BubbleWrap from "@/components/BubbleWrap";
@@ -17,9 +19,40 @@ const keyLabel = "font-mono text-[13px] font-semibold";
   Phones get the name plate and utility row; the readout, nav keys, clock
   and bubble wrap are desktop-only (phones use MobileReadout + MobileDock).
 */
+const GAP = 40;
+
 export default function ControlPanel() {
+  const ref = useRef<HTMLElement>(null);
+
+  /*
+    Sticky, even when the panel is taller than the window: its sticky top
+    goes negative by the overflow, so it scrolls with the page until its
+    bottom edge is in view, then holds there.
+  */
+  useEffect(() => {
+    const panel = ref.current;
+    if (!panel) return;
+
+    const update = () => {
+      const top = Math.min(GAP, window.innerHeight - panel.offsetHeight - GAP);
+      panel.style.setProperty("--panel-top", `${top}px`);
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(panel);
+    window.addEventListener("resize", update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   return (
-    <header className="lg:sticky lg:top-10 lg:w-[400px] lg:flex-none">
+    <header
+      ref={ref}
+      className="lg:sticky lg:top-[var(--panel-top,2.5rem)] lg:w-[400px] lg:flex-none"
+    >
       <div className="sheet rounded-[30px]">
         <div className="cell flex flex-col gap-[18px] px-7 pt-7 pb-[26px]">
           <div className="flex items-center justify-between">
@@ -88,7 +121,7 @@ export default function ControlPanel() {
           <ClockModule />
         </div>
 
-        <div className="hidden lg:block [@media(max-height:900px)]:hidden">
+        <div className="hidden lg:block">
           <BubbleWrap />
         </div>
       </div>

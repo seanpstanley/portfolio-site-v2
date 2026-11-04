@@ -9,7 +9,7 @@ const external = { target: "_blank", rel: "noreferrer noopener" } as const;
 
 export default function About() {
   return (
-    <Section name="About" threshold={0.4}>
+    <Section name="About">
       <div className="pad flex flex-col gap-[18px] rounded-3xl px-6 py-7 text-[17px] leading-[1.7] text-ink-2 sm:px-10 sm:py-9">
         <p className="m-0 text-pretty">
           My first brush with coding was back in 2015. My Programming 1 teacher

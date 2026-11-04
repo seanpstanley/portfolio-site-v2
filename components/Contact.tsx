@@ -15,10 +15,10 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <Section name="Contact" threshold={0.5}>
+    <Section name="Contact">
       <form
         ref={formRef}
-        className="pad flex flex-col gap-5 rounded-3xl px-6 py-7 sm:px-9 sm:py-8"
+        className="pad relative flex flex-col gap-5 rounded-3xl px-6 py-7 sm:px-9 sm:py-8"
         action={async (formData) => {
           const { error } = await sendEmail(formData);
 
@@ -38,6 +38,11 @@ export default function Contact() {
           </a>
           .
         </p>
+        {/* honeypot: off-screen and skipped by Tab/screen readers; bots fill it */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label htmlFor="company">Company</label>
+          <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] gap-[18px]">
           <div className="flex flex-col gap-2">
             <label className={fieldLabel} htmlFor="senderName">
