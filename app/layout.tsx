@@ -11,11 +11,14 @@ import Providers from "@/components/Providers";
 import { themeInitScript } from "@/lib/theme-script";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 const doto = Doto({ subsets: ["latin"], variable: "--font-doto" });
 
 const description =
-  "A responsive portfolio website showcasing my experience and a few of my personal projects";
+  "Sean Stanley, frontend developer who likes stuff that looks good. Experience, web projects, and augmented reality research.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://seanpstanley.dev"),
@@ -60,7 +63,7 @@ export default function RootLayout({
       <body className="min-h-screen font-sans antialiased">
         <a
           href="#main"
-          className="label sr-only rounded-full bg-tile px-4 py-3 text-ink focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50"
+          className="sr-only rounded-full bg-tile px-4 py-3 label text-ink focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50"
         >
           Skip to content
         </a>
