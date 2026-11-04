@@ -21,15 +21,11 @@ const ALIEN_MS = 6000;
   A strip of poppable bubbles. It's a toy, not a control: the bubbles are
   hidden from assistive tech and skipped by Tab. The sound toggle is a real,
   labelled button. Once every bubble is popped, the sheet refills.
-  On phones it's collapsible (closed by default) so it doesn't push the
-  content down.
+  It starts collapsed, so the control panel stays short enough for laptop
+  screens and doesn't push the content down on phones.
 */
-interface BubbleWrapProps {
-  collapsible?: boolean;
-}
-
-export default function BubbleWrap({ collapsible = false }: BubbleWrapProps) {
-  const [open, setOpen] = useState(!collapsible);
+export default function BubbleWrap() {
+  const [open, setOpen] = useState(false);
   const [popped, setPopped] = useState<Set<number>>(() => new Set());
   const [progress, setProgress] = useState(0);
   const [alien, setAlien] = useState(false);
@@ -84,24 +80,22 @@ export default function BubbleWrap({ collapsible = false }: BubbleWrapProps) {
               )}
             </button>
           )}
-          {collapsible && (
-            <button
-              type="button"
-              onClick={() => setOpen((o) => !o)}
-              aria-expanded={open}
-              className="bubble h-8 gap-1 rounded-full px-3 font-mono text-[11px] font-semibold tracking-wider uppercase"
-            >
-              {open ? "hide" : "show"}
-              <span className="sr-only"> bubble wrap</span>
-              <LuChevronDown
-                className={cn(
-                  "size-3.5 transition-transform motion-reduce:transition-none",
-                  open && "rotate-180",
-                )}
-                aria-hidden="true"
-              />
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            aria-expanded={open}
+            className="bubble h-8 gap-1 rounded-full px-3 font-mono text-[11px] font-semibold tracking-wider uppercase"
+          >
+            {open ? "hide" : "show"}
+            <span className="sr-only"> bubble wrap</span>
+            <LuChevronDown
+              className={cn(
+                "size-3.5 transition-transform motion-reduce:transition-none",
+                open && "rotate-180",
+              )}
+              aria-hidden="true"
+            />
+          </button>
         </div>
       </div>
       <AnimatePresence initial={false}>
