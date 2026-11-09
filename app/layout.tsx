@@ -1,4 +1,6 @@
 import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Doto, Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
@@ -57,8 +59,8 @@ interface RootLayoutProps {
 
 /**
  * The shell around every page: fonts, the pre-paint theme script, the skip
- * link, the control panel, the footer, the phone readout and dock, and the
- * toast container.
+ * link, the control panel, the footer, the phone readout and dock, the
+ * toast container, and Vercel Analytics and Speed Insights.
  */
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -105,6 +107,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             }}
           />
         </Providers>
+        {/* Vercel Web Analytics and Speed Insights. Both load from this origin, so the CSP allows them. */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
