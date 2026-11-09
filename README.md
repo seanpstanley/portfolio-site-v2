@@ -12,7 +12,7 @@ Fonts: [Doto](https://fonts.google.com/specimen/Doto) (dot-matrix display), [Gei
 
 ## Running it
 
-Needs Node 24 (see `.nvmrc`) and pnpm. The pnpm version is pinned in `package.json`, and pnpm switches to it automatically.
+Needs Node 26 (see `.nvmrc`) and pnpm. The pnpm version is pinned in `package.json`, and pnpm switches to it automatically.
 
 ```bash
 pnpm install
